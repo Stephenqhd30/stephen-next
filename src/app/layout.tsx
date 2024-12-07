@@ -1,8 +1,9 @@
-import type {Metadata} from 'next';
-import {Inter} from 'next/font/google';
-import './globals.css';
-import React from 'react';
-import {AntdRegistry} from '@ant-design/nextjs-registry';
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import "./globals.css";
+import React from "react";
+import { AntdRegistry } from "@ant-design/nextjs-registry";
+import { BasicLayout } from "@/layouts";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,10 +18,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-      <html lang="en">
-        <body>
-          <AntdRegistry>{children}</AntdRegistry>
-        </body>
-      </html>
+    <html lang="en">
+      <body>
+        <AntdRegistry>
+          <BasicLayout>{children}</BasicLayout>
+        </AntdRegistry>
+      </body>
+    </html>
   );
 }

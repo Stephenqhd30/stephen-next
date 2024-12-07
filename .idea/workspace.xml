@@ -4,18 +4,32 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8dbcbc52-4c42-496e-883d-5398720683c9" name="Changes" comment="feat(init):完成Stephen的next.js启动器项目的初始化">
+    <list default="true" id="8dbcbc52-4c42-496e-883d-5398720683c9" name="Changes" comment="feat(package):添加环境依赖">
+      <change afterPath="$PROJECT_DIR$/src/components/Footer/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Header/SearchInput.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Header/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/constants/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/enums/FileUploadBizEnum.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/enums/ReviewStatusEnum.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/enums/TagStatusEnum.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/enums/UserRoleEnum.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/layouts/BasicLayout.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/layouts/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript JSX File" />
+        <option value="TypeScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -25,6 +39,9 @@
   "associatedIndex": 4
 }]]></component>
   <component name="ProjectId" id="2ptJVOFOuKcvxXl561l9sVoERvl" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -34,12 +51,17 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
+    "last_opened_file_path": "D:/Stephen/Stephen/stephen-next/src/components",
     "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "pnpm",
     "npm.dev.executor": "Run",
+    "prettierjs.PrettierConfiguration.Package": "D:\\Stephen\\Stephen\\stephen-next\\node_modules\\prettier",
+    "settings.editor.selected.configurable": "settings.javascript.prettier",
     "ts.external.directory.path": "D:\\Stephen\\Stephen\\stephen-next\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
@@ -52,6 +74,12 @@
         <entry key="com.intellij.reactbuddy.storybook" value="false" />
       </map>
     </option>
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Stephen\Stephen\stephen-next\src\components" />
+      <recent name="D:\Stephen\Stephen\stephen-next\src" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
@@ -85,7 +113,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1733579462968</updated>
-      <workItem from="1733579470500" duration="1051000" />
+      <workItem from="1733579470500" duration="2989000" />
     </task>
     <task id="LOCAL-00001" summary="feat(init):完成Stephen的next.js启动器项目的初始化">
       <option name="closed" value="true" />
@@ -95,7 +123,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733579693626</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="feat(package):添加环境依赖">
+      <option name="closed" value="true" />
+      <created>1733580574040</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1733580574040</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -103,6 +139,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="feat(init):完成Stephen的next.js启动器项目的初始化" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(init):完成Stephen的next.js启动器项目的初始化" />
+    <MESSAGE value="feat(package):添加环境依赖" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(package):添加环境依赖" />
   </component>
 </project>
