@@ -85,10 +85,10 @@ const BasicLayout: React.FC<Props> = (props) => {
         // 渲染头部栏
         headerTitleRender={(logo, title, _) => {
           const defaultDom = (
-            <Typography.Link href={"/"} target={"_self"} key={"logoAndTitle"}>
+            <Link href={"/"} target={"_self"} key={"logoAndTitle"}>
               {logo}
               {title}
-            </Typography.Link>
+            </Link>
           );
           if (typeof window === "undefined") return defaultDom;
           if (document.body.clientWidth < 1400) {
