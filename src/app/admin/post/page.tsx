@@ -65,6 +65,7 @@ const PostList: React.FC = () => {
       title: '内容',
       dataIndex: 'content',
       valueType: 'text',
+      ellipsis: true,
       render: (_, record) => {
         return (
             <Typography.Paragraph
@@ -73,7 +74,7 @@ const PostList: React.FC = () => {
               {record.content}
             </Typography.Paragraph>
         );
-      }
+      },
     },
     {
       title: '封面',

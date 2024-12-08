@@ -3,7 +3,7 @@ import { config, HeadList, MdEditor } from 'md-editor-rt';
 import 'md-editor-rt/lib/style.css';
 import { FileUploadBiz } from '@/enums/FileUploadBizEnum';
 import { message } from 'antd';
-import './index.less';
+import './index.css';
 import {uploadFileUsingPost} from '@/api/fileController';
 
 interface Props {

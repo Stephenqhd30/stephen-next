@@ -1,5 +1,5 @@
 import React from 'react';
-import './index.less';
+import './index.css';
 import { MdPreview } from 'md-editor-rt';
 
 interface Props {

@@ -1,3 +1,4 @@
+"use client";
 import {
   ModalForm,
   ProForm,
@@ -10,6 +11,7 @@ import React, { useState } from "react";
 import { FileUploadBiz } from "@/enums/FileUploadBizEnum";
 import { uploadFileUsingPost } from "@/api/fileController";
 import { updatePostUsingPost } from "@/api/postController";
+import { MyMdEditor } from "@/components";
 
 interface Props {
   oldData?: API.Post;
@@ -41,10 +43,17 @@ const handleUpdate = async (fields: API.PostUpdateRequest) => {
     hide();
   }
 };
+
+/**
+ * 更新帖子
+ * @param props
+ * @constructor
+ */
 const UpdatePostModal: React.FC<Props> = (props) => {
   const { oldData, visible, onSubmit, onCancel } = props;
   // 帖子封面
   const [cover, setCover] = useState<any>();
+  const [content, setContent] = useState<any>(oldData?.content);
   const [form] = ProForm.useForm<API.PostUpdateRequest>();
   /**
    * 上传文章封面
@@ -93,6 +102,7 @@ const UpdatePostModal: React.FC<Props> = (props) => {
           ...values,
           id: oldData.id,
           cover,
+          content,
           tags: Array.isArray(values.tags)
             ? values.tags
             : JSON.parse(values.tags as any),
@@ -115,12 +125,13 @@ const UpdatePostModal: React.FC<Props> = (props) => {
         },
       }}
     >
-      <ProFormText initialValue={oldData?.title} name="title" label="标题" />
+      <ProFormText name="title" label="标题" />
       <ProFormTextArea
-        initialValue={oldData?.content}
         name="content"
         label="内容"
-      />
+      >
+        <MyMdEditor onChange={setContent} value={content} />
+      </ProFormTextArea>
       <ProFormUploadDragger
         title={"上传帖子封面"}
         max={1}

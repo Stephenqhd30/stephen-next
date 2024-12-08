@@ -1,6 +1,7 @@
 import { AvatarDropdown, SearchInput } from "@/components/Header";
 import Footer from "@/components/Footer";
 import { MdViewer, MyMdEditor, TableOfContents } from "@/components/Markdown";
+import GlobalLoading from "@/components/GlobalLoading";
 
 export {
   SearchInput,
@@ -8,5 +9,6 @@ export {
   Footer,
   MdViewer,
   MyMdEditor,
-	TableOfContents,
+  TableOfContents,
+  GlobalLoading,
 };

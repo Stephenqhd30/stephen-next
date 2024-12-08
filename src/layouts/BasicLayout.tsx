@@ -1,7 +1,7 @@
 "use client";
 
 import { ProLayout } from "@ant-design/pro-components";
-import React from "react";
+import React from 'react';
 import { Typography } from "antd";
 import { GitlabFilled } from "@ant-design/icons";
 import Image from "next/image";

@@ -4,17 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8dbcbc52-4c42-496e-883d-5398720683c9" name="Changes" comment="feat(admin/tag):添加标签的管理功能&#10;feat(admin/post):添加帖子的管理功能&#10;refactor(layouts):完善布局">
-      <change afterPath="$PROJECT_DIR$/src/components/Markdown/MdViewer/index.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Markdown/MdViewer/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Markdown/MyMdEditor/index.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Markdown/MyMdEditor/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Markdown/TableOfContents/index.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Markdown/TableOfContents/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Markdown/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="8dbcbc52-4c42-496e-883d-5398720683c9" name="Changes" comment="feat(Markdown):添加通用Md组件">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layouts/BasicLayout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/BasicLayout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/admin/post/components/CreatePostModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/admin/post/components/CreatePostModal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/admin/post/components/UpdatePostModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/admin/post/components/UpdatePostModal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/admin/post/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/admin/post/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Markdown/MdViewer/index.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Markdown/MdViewer/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Markdown/MdViewer/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Markdown/MdViewer/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Markdown/MyMdEditor/index.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Markdown/MyMdEditor/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Markdown/MyMdEditor/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Markdown/MyMdEditor/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Markdown/TableOfContents/index.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Markdown/TableOfContents/index.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,7 +134,7 @@
       <workItem from="1733579470500" duration="3305000" />
       <workItem from="1733623625179" duration="15528000" />
       <workItem from="1733644612191" duration="4390000" />
-      <workItem from="1733653153139" duration="1974000" />
+      <workItem from="1733653153139" duration="3787000" />
     </task>
     <task id="LOCAL-00001" summary="feat(init):完成Stephen的next.js启动器项目的初始化">
       <option name="closed" value="true" />
@@ -233,7 +232,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733653481827</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="feat(Markdown):添加通用Md组件">
+      <option name="closed" value="true" />
+      <created>1733657656664</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1733657656664</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -264,6 +271,7 @@
     <MESSAGE value="feat(user):完成用户登录页面和用户注册页面的开发&#10;refactor(layouts):完善布局" />
     <MESSAGE value="feat(user):完成用户登录页面和用户注册页面的开发&#10;feat(asserts):添加公用文件&#10;refactor(layouts):完善布局" />
     <MESSAGE value="feat(admin/tag):添加标签的管理功能&#10;feat(admin/post):添加帖子的管理功能&#10;refactor(layouts):完善布局" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(admin/tag):添加标签的管理功能&#10;feat(admin/post):添加帖子的管理功能&#10;refactor(layouts):完善布局" />
+    <MESSAGE value="feat(Markdown):添加通用Md组件" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(Markdown):添加通用Md组件" />
   </component>
 </project>

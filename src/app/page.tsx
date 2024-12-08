@@ -10,7 +10,7 @@ import React from 'react';
  */
 const Home: React.FC = () => {
   return (
-    <PageContainer title={WELCOME_TITLE} contentWidth="Fixed">
+    <PageContainer title={WELCOME_TITLE}>
       <div>想要对你说的不敢说的爱</div>
     </PageContainer>
   );

@@ -10,6 +10,7 @@ import {
 import { FileUploadBiz } from "@/enums/FileUploadBizEnum";
 import { addPostUsingPost } from "@/api/postController";
 import { uploadFileUsingPost } from "@/api/fileController";
+import { MyMdEditor } from "@/components";
 
 interface Props {
   onCancel: () => void;
@@ -116,7 +117,9 @@ const CreatePostModal: React.FC<Props> = (props) => {
       }}
     >
       <ProFormText name="title" label="标题" />
-      <ProFormTextArea name="content" label="描述" />
+      <ProFormTextArea name="content" label="内容">
+        <MyMdEditor onChange={setContent} value={content} />
+      </ProFormTextArea>
       <ProFormUploadDragger
         title={"上传帖子封面"}
         max={1}
