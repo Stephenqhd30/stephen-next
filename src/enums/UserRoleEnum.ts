@@ -2,9 +2,10 @@
  * 用户角色枚举
  */
 export enum UserRoleEnum {
-  ADMIN = 'admin',
-  USER = 'user',
-  BAN = 'ban',
+  ADMIN = "admin",
+  USER = "user",
+  BAN = "ban",
+  NOT_LOGIN = "notLogin",
 }
 
 /**

@@ -3,7 +3,7 @@
 import './globals.css';
 import React, {useCallback, useEffect} from 'react';
 import {AntdRegistry} from '@ant-design/nextjs-registry';
-import {BasicLayout} from '@/layouts';
+import { BasicLayout, UserLayout } from "@/layouts";
 import { Provider, useDispatch } from "react-redux";
 import store, { AppDispatch } from "@/store";
 import { usePathname } from "next/navigation";
@@ -32,8 +32,6 @@ const InitializeStatus: React.FC<Readonly<{ children: React.ReactNode }>> = ({
     try {
       const res = await getLoginUserUsingGet();
       if (res.data.code === 0 && res.data.data) {
-        // 保存用户登录信息
-        localStorage.setItem("stephen-next-token", res?.data?.data?.token || '');
         dispatch(setLoginUser(res.data.data as API.LoginUserVO));
       } else {
         dispatch(setLoginUser(DEFAULT_USER));
@@ -66,13 +64,18 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const pathname = usePathname();
+  // 判断是否是登录或注册页面
+  const isAuthPage =
+      pathname.startsWith('/user/login') || pathname.startsWith('/user/register');
+  const Layout = isAuthPage ? UserLayout : BasicLayout;
   return (
     <html lang="en">
       <body>
         <AntdRegistry>
           <Provider store={store}>
             <InitializeStatus>
-              <BasicLayout>{children}</BasicLayout>
+              <Layout>{children}</Layout>
             </InitializeStatus>
           </Provider>
         </AntdRegistry>

@@ -1,11 +1,32 @@
-import { ExceptionOutlined, HomeOutlined } from "@ant-design/icons";
+import {
+  CrownOutlined,
+  ExceptionOutlined,
+  HomeOutlined,
+} from "@ant-design/icons";
 import { MenuDataItem } from "@ant-design/pro-layout";
+import { UserRoleEnum } from "@/enums/UserRoleEnum";
 
 const menus: MenuDataItem[] = [
   {
     name: "欢迎",
     path: "/",
     icon: <HomeOutlined />,
+  },
+  {
+    path: '/admin',
+    name: '管理',
+    icon: <CrownOutlined/>,
+    access: UserRoleEnum.ADMIN,
+    children: [
+      {
+        path: '/admin',
+        redirect: '/admin/userList'
+      },
+      {
+        path: '/admin/userList',
+        name: '用户管理',
+      }
+    ]
   },
   {
     name: "异常页",
@@ -33,5 +54,6 @@ const menus: MenuDataItem[] = [
       },
     ],
   },
+  { path: '*', layout: false, component: './exception/404' },
 ];
 export default menus;
