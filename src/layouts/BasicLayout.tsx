@@ -32,13 +32,7 @@ const BasicLayout: React.FC<Props> = (props) => {
   const scene = useBreakpoint();
   const isMobile = !scene.md;
   return (
-    <div
-      id="basic-layout"
-      style={{
-        height: "100vh",
-        overflow: "auto",
-      }}
-    >
+    <div id="basic-layout">
       <ProLayout
         layout={"top"}
         title={STEPHEN_TITLE}
@@ -54,6 +48,7 @@ const BasicLayout: React.FC<Props> = (props) => {
         fixSiderbar={true}
         token={{
           pageContainer: {
+            paddingBlockPageContainerContent: isMobile ? 8 : 24,
             paddingInlinePageContainerContent: isMobile ? 8 : 40,
           },
         }}

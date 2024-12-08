@@ -2,57 +2,44 @@
 
 import { ProLayout } from "@ant-design/pro-components";
 import React from "react";
-import { Grid } from "antd";
-import { usePathname } from "next/navigation";
 import { Footer } from "@/components";
+import { BACKGROUND_IMAGE_URL } from "@/constants";
 
 interface Props {
   children: React.ReactNode;
 }
 
-const { useBreakpoint } = Grid;
 /**
- * 基础通用布局
+ * 用户布局
  * @param props
  * @constructor
  */
-const BasicLayout: React.FC<Props> = (props) => {
+const UserLayout: React.FC<Props> = (props) => {
   const { children } = props;
-  const pathname = usePathname();
-  const scene = useBreakpoint();
-  const isMobile = !scene.md;
   return (
     <div
       id="user-layout"
       style={{
         height: "100vh",
-        overflow: "auto",
+        overflow: "hidden",
       }}
     >
       <ProLayout
         bgLayoutImgList={[
           {
-            src: "https://mdn.alipayobjects.com/yuyan_qk0oxh/afts/img/D2LWSqNny4sAAAAAAAAAAAAAFl94AQBr",
-            left: 85,
-            bottom: 100,
-            height: "303px",
-          },
-          {
-            src: "https://mdn.alipayobjects.com/yuyan_qk0oxh/afts/img/C2TWRpJpiC0AAAAAAAAAAAAAFl94AQBr",
-            bottom: -68,
-            right: -45,
-            height: "303px",
-          },
-          {
-            src: "https://mdn.alipayobjects.com/yuyan_qk0oxh/afts/img/F6vSTbj8KpYAAAAAAAAAAAAAFl94AQBr",
-            bottom: 0,
-            left: 0,
-            width: "331px",
+            src: BACKGROUND_IMAGE_URL,
           },
         ]}
+        headerRender={false}
+        menuRender={false}
         // 渲染底部栏
         footerRender={() => {
           return <Footer key={"globalFooter"} />;
+        }}
+        contentStyle={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
         }}
       >
         {children}
@@ -61,4 +48,4 @@ const BasicLayout: React.FC<Props> = (props) => {
   );
 };
 
-export default BasicLayout;
+export default UserLayout;

@@ -1,10 +1,6 @@
-import {
-  CrownOutlined,
-  ExceptionOutlined,
-  HomeOutlined,
-} from "@ant-design/icons";
-import { MenuDataItem } from "@ant-design/pro-layout";
-import { UserRoleEnum } from "@/enums/UserRoleEnum";
+import {CrownOutlined, ExceptionOutlined, HomeOutlined} from '@ant-design/icons';
+import {MenuDataItem} from '@ant-design/pro-layout';
+import {UserRoleEnum} from '@/enums/UserRoleEnum';
 
 const menus: MenuDataItem[] = [
   {
@@ -29,9 +25,28 @@ const menus: MenuDataItem[] = [
     ]
   },
   {
+    name: '用户页',
+    path: '/user',
+    hideInMenu: true,
+    children: [
+      {
+        path: '/user',
+        redirect: '/user/login',
+      },
+      {
+        path: '/user/login',
+        name: "用户登录页"
+      },
+      {
+        path: '/user/register',
+        name: "用户注册页"
+      }
+    ]
+  },
+  {
     name: "异常页",
     path: "/exception",
-    icon: <ExceptionOutlined />,
+    hideInMenu: true,
     children: [
       {
         path: "/exception",

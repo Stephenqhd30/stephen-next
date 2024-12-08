@@ -1,3 +1,3 @@
-import loginUser from "@/store/modules/user/loginUser";
+import loginUser, { setLoginUser } from "@/store/modules/user/loginUser";
 
-export { loginUser };
+export { loginUser, setLoginUser };
