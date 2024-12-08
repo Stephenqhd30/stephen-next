@@ -1,25 +1,14 @@
 "use client";
 
-import { Button, message, Popconfirm, Space, Tag, Typography } from "antd";
-import {
-  deleteUserUsingPost,
-  listUserByPageUsingPost,
-} from "@/api/userController";
-import React, { useRef, useState } from "react";
-import { ActionType, ProColumns, ProTable } from "@ant-design/pro-components";
-import { downloadUsingGet } from "@/api/excelController";
-import { userRole, UserRoleEnum } from "@/enums/UserRoleEnum";
-import { TAG_EMPTY } from "@/constants";
-import {
-  DownloadOutlined,
-  PlusOutlined,
-  UploadOutlined,
-} from "@ant-design/icons";
-import {
-  CreateUserModal,
-  UpdateUserModal,
-  UploadUserModal,
-} from "@/app/admin/userList/components";
+import {Button, message, Popconfirm, Space, Tag, Typography} from 'antd';
+import {deleteUserUsingPost, listUserByPageUsingPost} from '@/api/userController';
+import React, {useRef, useState} from 'react';
+import {ActionType, ProColumns, ProTable} from '@ant-design/pro-components';
+import {downloadUsingGet} from '@/api/excelController';
+import {userRole, UserRoleEnum} from '@/enums/UserRoleEnum';
+import {TAG_EMPTY} from '@/constants';
+import {DownloadOutlined, PlusOutlined, UploadOutlined} from '@ant-design/icons';
+import {CreateUserModal, UpdateUserModal, UploadUserModal} from '@/app/admin/userList/components';
 
 /**
  * 删除节点
@@ -213,7 +202,7 @@ const UserList: React.FC = () => {
       <ProTable<API.User>
         headerTitle={"查询表格"}
         actionRef={actionRef}
-        rowKey={"key"}
+        rowKey={"id"}
         search={{
           labelWidth: 120,
         }}
@@ -252,7 +241,7 @@ const UserList: React.FC = () => {
         request={async (params, sort, filter) => {
           const sortField = Object.keys(sort)?.[0];
           const sortOrder = sort?.[sortField] ?? undefined;
-          const res = await listUserByPageUsingPost({
+          const {code, data} : any = await listUserByPageUsingPost({
             ...params,
             ...filter,
             sortField,
@@ -260,9 +249,9 @@ const UserList: React.FC = () => {
           } as API.UserQueryRequest);
 
           return {
-            success: res.data.code === 0,
-            data: res.data.data?.records || [],
-            total: res.data.data?.total || 0,
+            success: code === 0,
+            data: data?.records || [],
+            total: data?.total || 0,
           };
         }}
         columns={columns}

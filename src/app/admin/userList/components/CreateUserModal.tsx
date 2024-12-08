@@ -29,14 +29,14 @@ interface Props {
 const handleAdd = async (fields: API.UserAddRequest) => {
   const hide = message.loading("正在添加");
   try {
-    const res = await addUserUsingPost({
+    const res: any = await addUserUsingPost({
       ...fields,
     });
-    if (res.data.code === 0 && res.data.data) {
+    if (res.code === 0 && res.data) {
       message.success("添加成功");
       return true;
     } else {
-      message.error(`添加失败${res.data.message}, 请重试!`);
+      message.error(`添加失败${res.message}, 请重试!`);
       return false;
     }
   } catch (error: any) {
@@ -76,12 +76,12 @@ const CreateUserModal: React.FC<Props> = (props) => {
           },
           file,
         );
-        if (res.data.code === 0 && res.data.data) {
-          onSuccess(res.data.data);
-          setUserAvatar(res.data.data);
+        if (res.code === 0 && res.data) {
+          onSuccess(res.data);
+          setUserAvatar(res.data);
         } else {
-          onError(new Error(res.data.message));
-          message.error(`文件上传失败${res.data.message}`);
+          onError(new Error(res.message));
+          message.error(`文件上传失败${res.message}`);
         }
       } catch (error: any) {
         onError(error);

@@ -30,9 +30,9 @@ const InitializeStatus: React.FC<Readonly<{ children: React.ReactNode }>> = ({
    */
   const getInitialStatus = useCallback(async () => {
     try {
-      const res = await getLoginUserUsingGet();
-      if (res.data.code === 0 && res.data.data) {
-        dispatch(setLoginUser(res.data.data as API.LoginUserVO));
+      const res: any = await getLoginUserUsingGet();
+      if (res.code === 0 && res.data) {
+        dispatch(setLoginUser(res.data as API.LoginUserVO));
       } else {
         dispatch(setLoginUser(DEFAULT_USER));
       }

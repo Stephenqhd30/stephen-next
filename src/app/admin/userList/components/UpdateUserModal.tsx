@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import {
   ModalForm,
@@ -7,13 +7,13 @@ import {
   ProFormText,
   ProFormTextArea,
   ProFormUploadDragger,
-} from '@ant-design/pro-components';
-import { message, Select, UploadProps } from 'antd';
-import React, { useState } from 'react';
-import { userRole, UserRoleEnum } from '@/enums/UserRoleEnum';
-import { FileUploadBiz } from '@/enums/FileUploadBizEnum';
-import {updateUserUsingPost} from '@/api/userController';
-import {uploadFileUsingPost} from '@/api/fileController';
+} from "@ant-design/pro-components";
+import { message, Select, UploadProps } from "antd";
+import React, { useState } from "react";
+import { userRole, UserRoleEnum } from "@/enums/UserRoleEnum";
+import { FileUploadBiz } from "@/enums/FileUploadBizEnum";
+import { updateUserUsingPost } from "@/api/userController";
+import { uploadFileUsingPost } from "@/api/fileController";
 
 interface Props {
   oldData?: API.User;
@@ -28,14 +28,14 @@ interface Props {
  * @param fields
  */
 const handleUpdate = async (fields: API.UserUpdateRequest) => {
-  const hide = message.loading('正在更新');
+  const hide = message.loading("正在更新");
   try {
-    const res = await updateUserUsingPost(fields);
-    if (res.data.code === 0 && res.data.data) {
-      message.success('更新成功');
+    const res: any = await updateUserUsingPost(fields);
+    if (res.code === 0 && res.data) {
+      message.success("更新成功");
       return true;
     } else {
-      message.error(`更新失败${res.data.message}, 请重试!`);
+      message.error(`更新失败${res.message}, 请重试!`);
       return false;
     }
   } catch (error: any) {
@@ -60,13 +60,13 @@ const UpdateUserModal: React.FC<Props> = (props) => {
    * 用户更新头像
    */
   const uploadProps: UploadProps = {
-    name: 'file',
+    name: "file",
     multiple: false,
     maxCount: 1,
     customRequest: async (options: any) => {
       const { onSuccess, onError, file } = options;
       try {
-        const res : any = await uploadFileUsingPost(
+        const res: any = await uploadFileUsingPost(
           {
             biz: FileUploadBiz.USER_AVATAR,
           },
@@ -75,16 +75,16 @@ const UpdateUserModal: React.FC<Props> = (props) => {
           },
           file,
         );
-        if (res.data.code === 0 && res.data.data) {
-          onSuccess(res.data.data);
-          setUserAvatar(res.data.data);
+        if (res.code === 0 && res.data) {
+          onSuccess(res.data);
+          setUserAvatar(res.data);
         } else {
           onError(res);
-          message.error(`文件上传失败${res.data.message}`);
+          message.error(`文件上传失败${res.message}`);
         }
       } catch (error: any) {
         onError(error);
-        message.error('文件上传失败', error.message);
+        message.error("文件上传失败", error.message);
       }
     },
     onRemove() {
@@ -98,7 +98,7 @@ const UpdateUserModal: React.FC<Props> = (props) => {
 
   return (
     <ModalForm<API.UserUpdateRequest>
-      title={'更新用户信息'}
+      title={"更新用户信息"}
       open={visible}
       form={form}
       initialValues={oldData}
@@ -107,7 +107,9 @@ const UpdateUserModal: React.FC<Props> = (props) => {
           ...values,
           id: oldData?.id,
           userAvatar,
-          tags: Array.isArray(values.tags) ? values.tags : JSON.parse(values.tags as any),
+          tags: Array.isArray(values.tags)
+            ? values.tags
+            : JSON.parse(values.tags as any),
         });
         if (success) {
           onSubmit?.(values);
@@ -122,32 +124,36 @@ const UpdateUserModal: React.FC<Props> = (props) => {
       }}
       submitter={{
         searchConfig: {
-          submitText: '更新用户信息',
-          resetText: '取消',
+          submitText: "更新用户信息",
+          resetText: "取消",
         },
       }}
     >
-      <ProFormText name={'userAccount'} label={'账号'} />
-      <ProFormText name={'userName'} label={'用户名'} />
-      <ProFormTextArea name={'userProfile'} label={'简介'} />
-      <ProFormText name={'userPhone'} label={'电话'} />
-      <ProFormText name={'userEmail'} label={'邮箱'} />
+      <ProFormText name={"userAccount"} label={"账号"} />
+      <ProFormText name={"userName"} label={"用户名"} />
+      <ProFormTextArea name={"userProfile"} label={"简介"} />
+      <ProFormText name={"userPhone"} label={"电话"} />
+      <ProFormText name={"userEmail"} label={"邮箱"} />
       <ProFormUploadDragger
-        title={'上传头像'}
-        label={'头像'}
+        title={"上传头像"}
+        label={"头像"}
         max={1}
         fieldProps={{
           ...uploadProps,
         }}
         name="pic"
       />
-      <ProFormSelect name={'userRole'} label={'权限'} valueEnum={userRole}>
+      <ProFormSelect name={"userRole"} label={"权限"} valueEnum={userRole}>
         <Select>
           <Select.Option value={UserRoleEnum.ADMIN}>
             {userRole[UserRoleEnum.ADMIN].text}
           </Select.Option>
-          <Select.Option value={UserRoleEnum.USER}>{userRole[UserRoleEnum.USER].text}</Select.Option>
-          <Select.Option value={UserRoleEnum.BAN}>{userRole[UserRoleEnum.BAN].text}</Select.Option>
+          <Select.Option value={UserRoleEnum.USER}>
+            {userRole[UserRoleEnum.USER].text}
+          </Select.Option>
+          <Select.Option value={UserRoleEnum.BAN}>
+            {userRole[UserRoleEnum.BAN].text}
+          </Select.Option>
         </Select>
       </ProFormSelect>
     </ModalForm>

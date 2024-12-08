@@ -41,14 +41,14 @@ const UploadUserModal: React.FC<Props> = (props) => {
             file: values.file[0].originFileObj,
           });
           if (
-            res.data.code === 0 &&
-            res?.data.data?.errorRecords.length === 0
+            res.code === 0 &&
+            res?.data?.errorRecords.length === 0
           ) {
             message.success("用户导入成功");
             onSubmit?.();
           } else {
             message.error(
-              `用户导入失败${res?.data?.data?.errorRecords?.errorMessage}` +
+              `用户导入失败${res?.data?.errorRecords?.errorMessage}` +
                 "请重试",
             );
           }
