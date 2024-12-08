@@ -47,6 +47,13 @@ const BasicLayout: React.FC<Props> = (props) => {
             alt={STEPHEN_SUBTITLE}
           />
         }
+        fixedHeader={true}
+        fixSiderbar={true}
+        token={{
+          pageContainer: {
+            paddingInlinePageContainerContent: 8,
+          },
+        }}
         location={{
           pathname,
         }}
@@ -103,7 +110,6 @@ const BasicLayout: React.FC<Props> = (props) => {
         footerRender={() => {
           return <Footer key={"globalFooter"} />;
         }}
-        onMenuHeaderClick={(e) => console.log(e)}
         // 菜单项如何渲染
         menuItemRender={(item, dom) => (
           <Link href={item.path || "/welcome"} target={"_self"}>
