@@ -1,6 +1,6 @@
 // @ts-ignore
 /* eslint-disable */
-import request from "@/libs/request";
+import request from "@/request";
 
 /** doThumb POST /api/post_thumb/ */
 export async function doThumbUsingPost(

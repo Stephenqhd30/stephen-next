@@ -1,6 +1,6 @@
 // @ts-ignore
 /* eslint-disable */
-import request from "@/libs/request";
+import request from "@/request";
 
 /** doSearchAll POST /api/es/all */
 export async function doSearchAllUsingPost(

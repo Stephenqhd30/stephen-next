@@ -1,6 +1,6 @@
 // @ts-ignore
 /* eslint-disable */
-import request from "@/libs/request";
+import request from "@/request";
 
 /** doPostFavour POST /api/post_favour/ */
 export async function doPostFavourUsingPost(

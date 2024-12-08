@@ -1,6 +1,6 @@
 // @ts-ignore
 /* eslint-disable */
-import request from "@/libs/request";
+import request from "@/request";
 
 /** uploadFile POST /api/file/upload */
 export async function uploadFileUsingPost(
@@ -31,13 +31,13 @@ export async function uploadFileUsingPost(
       }
     }
   });
-
   return request<API.BaseResponseString_>("/api/file/upload", {
     method: "POST",
     params: {
       ...params,
     },
     data: formData,
+    // @ts-ignore
     requestType: "form",
     ...(options || {}),
   });

@@ -1,6 +1,6 @@
 // @ts-ignore
 /* eslint-disable */
-import request from "@/libs/request";
+import request from "@/request";
 
 /** download GET /api/excel/user/download */
 export async function downloadUsingGet(options?: { [key: string]: any }) {
