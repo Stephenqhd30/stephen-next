@@ -4,13 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8dbcbc52-4c42-496e-883d-5398720683c9" name="Changes" comment="feat(menus):添加自定义菜单项&#10;feat(exception):添加自定义异常处理&#10;refactor(layouts):优化布局">
+    <list default="true" id="8dbcbc52-4c42-496e-883d-5398720683c9" name="Changes" comment="feat(layout):添加全局初始化状态&#10;refactor(favicon.ico):修改网站图标&#10;refactor(layouts):优化布局">
+      <change afterPath="$PROJECT_DIR$/src/mock/user.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/store/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/store/modules/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/store/modules/user/loginUser.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/favicon.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/page.module.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layouts/BasicLayout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/BasicLayout.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,8 +23,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="TypeScript JSX File" />
-        <option value="TypeScript File" />
         <option value="CSS File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -125,7 +127,7 @@
       <option name="presentableId" value="Default" />
       <updated>1733579462968</updated>
       <workItem from="1733579470500" duration="3305000" />
-      <workItem from="1733623625179" duration="4527000" />
+      <workItem from="1733623625179" duration="5448000" />
     </task>
     <task id="LOCAL-00001" summary="feat(init):完成Stephen的next.js启动器项目的初始化">
       <option name="closed" value="true" />
@@ -175,7 +177,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733626151763</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="feat(layout):添加全局初始化状态&#10;refactor(favicon.ico):修改网站图标&#10;refactor(layouts):优化布局">
+      <option name="closed" value="true" />
+      <created>1733632214313</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1733632214313</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -188,6 +198,7 @@
     <MESSAGE value="feat(axios):安装axios请求库&#10;feat(api):添加api请求方法和类型&#10;refactor(layouts):完善通用布局" />
     <MESSAGE value="refactor(api):修改请求方法的引入" />
     <MESSAGE value="feat(menus):添加自定义菜单项&#10;feat(exception):添加自定义异常处理&#10;refactor(layouts):优化布局" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(menus):添加自定义菜单项&#10;feat(exception):添加自定义异常处理&#10;refactor(layouts):优化布局" />
+    <MESSAGE value="feat(layout):添加全局初始化状态&#10;refactor(favicon.ico):修改网站图标&#10;refactor(layouts):优化布局" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(layout):添加全局初始化状态&#10;refactor(favicon.ico):修改网站图标&#10;refactor(layouts):优化布局" />
   </component>
 </project>
