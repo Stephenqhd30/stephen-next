@@ -49,6 +49,12 @@ const BasicLayout: React.FC<Props> = (props) => {
         fixedHeader={true}
         fixSiderbar={true}
         contentWidth={"Fixed"}
+        token={{
+          pageContainer: {
+            paddingBlockPageContainerContent: 24,
+            paddingInlinePageContainerContent: 8,
+          },
+        }}
         location={{
           pathname,
         }}
