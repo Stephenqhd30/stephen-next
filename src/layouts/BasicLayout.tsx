@@ -2,8 +2,8 @@
 
 import { ProLayout } from "@ant-design/pro-components";
 import React from "react";
-import { Dropdown, Typography } from "antd";
-import { GitlabFilled, LogoutOutlined } from "@ant-design/icons";
+import { Grid, Typography } from "antd";
+import { GitlabFilled } from "@ant-design/icons";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
@@ -13,13 +13,14 @@ import {
   STEPHEN_SUBTITLE,
   STEPHEN_TITLE,
 } from "@/constants";
-import Footer from "@/components/Footer";
-import { SearchInput } from "@/components/Header";
+import {AvatarDropdown, Footer, SearchInput} from "@/components";
+import menus from "../../config/menus";
 
 interface Props {
   children: React.ReactNode;
 }
 
+const {useBreakpoint} = Grid;
 /**
  * 基础通用布局
  * @param props
@@ -28,6 +29,8 @@ interface Props {
 const BasicLayout: React.FC<Props> = (props) => {
   const { children } = props;
   const pathname = usePathname();
+  const scene = useBreakpoint();
+  const isMobile = !scene.md;
   return (
     <div
       id="basic-layout"
@@ -51,9 +54,10 @@ const BasicLayout: React.FC<Props> = (props) => {
         fixSiderbar={true}
         token={{
           pageContainer: {
-            paddingInlinePageContainerContent: 8,
+            paddingInlinePageContainerContent: isMobile ? 8 : 40,
           },
         }}
+        contentWidth={"Fixed"}
         location={{
           pathname,
         }}
@@ -62,21 +66,7 @@ const BasicLayout: React.FC<Props> = (props) => {
           size: "small",
           title: "七妮妮",
           render: (props, dom) => {
-            return (
-              <Dropdown
-                menu={{
-                  items: [
-                    {
-                      key: "logout",
-                      icon: <LogoutOutlined />,
-                      label: "退出登录",
-                    },
-                  ],
-                }}
-              >
-                {dom}
-              </Dropdown>
-            );
+            return <AvatarDropdown dom={dom} {...props} />;
           },
         }}
         actionsRender={(props) => {
@@ -92,12 +82,13 @@ const BasicLayout: React.FC<Props> = (props) => {
             </Typography.Link>,
           ];
         }}
+        // 渲染头部栏
         headerTitleRender={(logo, title, _) => {
           const defaultDom = (
-            <a>
+            <Typography.Link href={"/"} target={"_self"} key={"logoAndTitle"}>
               {logo}
               {title}
-            </a>
+            </Typography.Link>
           );
           if (typeof window === "undefined") return defaultDom;
           if (document.body.clientWidth < 1400) {
@@ -105,6 +96,10 @@ const BasicLayout: React.FC<Props> = (props) => {
           }
           if (_.isMobile) return defaultDom;
           return <>{defaultDom}</>;
+        }}
+        // 定义菜单
+        menuDataRender={() => {
+          return menus;
         }}
         // 渲染底部栏
         footerRender={() => {
