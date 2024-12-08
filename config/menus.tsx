@@ -1,6 +1,6 @@
 import { CrownOutlined, HomeOutlined } from "@ant-design/icons";
 import { MenuDataItem } from "@ant-design/pro-layout";
-import { UserRoleEnum } from "@/enums/UserRoleEnum";
+import {UserRoleEnum} from '@/enums/UserRoleEnum';
 
 const menus: MenuDataItem[] = [
   {
@@ -17,21 +17,25 @@ const menus: MenuDataItem[] = [
       {
         path: "/admin",
         redirect: "/admin/user",
+        access: UserRoleEnum.ADMIN,
       },
       {
         path: "/admin/user",
         name: "用户管理",
         component: "./admin/user",
+        access: UserRoleEnum.ADMIN,
       },
       {
         path: "/admin/post",
         name: "帖子管理",
         component: "./admin/post",
+        access: UserRoleEnum.ADMIN,
       },
 	    {
 		    path: "/admin/tag",
 		    name: "标签管理",
 		    component: "./admin/tag",
+        access: UserRoleEnum.ADMIN,
 	    },
     ],
   },
@@ -84,4 +88,36 @@ const menus: MenuDataItem[] = [
   },
   { path: "*", layout: false, component: "./exception/404" },
 ];
+
+/**
+ * 根据全部路径查找菜单
+ * @param path
+ */
+export const findAllMenusItemByPath = (path: string): MenuDataItem | null => {
+  return findMenusItemByPath(menus, path);
+};
+
+/**
+ * 根据路径查找菜单
+ * @param menus
+ * @param path
+ */
+export const findMenusItemByPath = (
+    menus: MenuDataItem[],
+    path: string,
+): MenuDataItem | null => {
+  for (const menu of menus) {
+    if (menu.path === path) {
+      return menu;
+    }
+    if (menu.children) {
+      const matchedMenuItem = findMenusItemByPath(menu.children, path);
+      if (matchedMenuItem) {
+        return matchedMenuItem;
+      }
+    }
+  }
+  return null;
+};
+
 export default menus;

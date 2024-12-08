@@ -11,7 +11,7 @@ const UnAccessiblePage: React.FC = () => (
   <Result
     status="403"
     title="403"
-    subTitle="Sorry, you are not authorized to access this page."
+    subTitle="Sorry, you are not authorized to checkAccess this page."
     extra={
       <Link href="/">
         <Button type="primary">Back to home</Button>

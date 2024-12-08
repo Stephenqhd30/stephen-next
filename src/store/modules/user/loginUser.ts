@@ -1,5 +1,5 @@
+import { DEFAULT_USER } from "@/enums/UserRoleEnum";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { DEFAULT_USER } from "@/mock/user";
 
 export const loginUserSlice = createSlice({
   name: "loginUser",

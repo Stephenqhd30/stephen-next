@@ -9,8 +9,8 @@ import store, { AppDispatch } from "@/store";
 import { usePathname } from "next/navigation";
 import { getLoginUserUsingGet } from "@/api/userController";
 import { setLoginUser } from "@/store/modules/user/loginUser";
-import { DEFAULT_USER } from "@/mock/user";
 import { GlobalLoading } from "@/components";
+import { DEFAULT_USER } from "@/enums/UserRoleEnum";
 
 /**
  * 全局初始化逻辑
@@ -56,7 +56,7 @@ const InitializeStatus: React.FC<Readonly<{ children: React.ReactNode }>> = ({
     // 渲染占位符，避免 SSR 和客户端渲染不一致
     return <GlobalLoading />;
   }
-  return children;
+  return <>{children}</>;
 };
 
 /**

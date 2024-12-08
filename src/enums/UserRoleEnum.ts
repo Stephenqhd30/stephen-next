@@ -28,3 +28,13 @@ export const userRole = {
     color: 'error',
   },
 };
+
+/**
+ * 默认用户
+ */
+export const DEFAULT_USER: API.LoginUserVO = {
+  userName: "未登录",
+  userAvatar: "public/default_avatar.png",
+  userRole: UserRoleEnum.NOT_LOGIN,
+  userProfile: "该用户很懒未设置简介",
+};

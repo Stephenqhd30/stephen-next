@@ -1,7 +1,7 @@
 "use client";
 
 import { ProLayout } from "@ant-design/pro-components";
-import React from 'react';
+import React from "react";
 import { Typography } from "antd";
 import { GitlabFilled } from "@ant-design/icons";
 import Image from "next/image";
@@ -15,6 +15,9 @@ import {
 } from "@/constants";
 import { AvatarDropdown, Footer, SearchInput } from "@/components";
 import menus from "../../config/menus";
+import { useSelector } from "react-redux";
+import { RootState } from "@/store";
+import getAccessibleMenus from "@/utils/menuAccess";
 
 interface Props {
   children: React.ReactNode;
@@ -27,6 +30,8 @@ interface Props {
 const BasicLayout: React.FC<Props> = (props) => {
   const { children } = props;
   const pathname = usePathname();
+  // 获取当前用户信息
+  const loginUser = useSelector((state: RootState) => state.loginUser);
   return (
     <div
       id="basic-layout"
@@ -59,9 +64,9 @@ const BasicLayout: React.FC<Props> = (props) => {
           pathname,
         }}
         avatarProps={{
-          src: "https://gw.alipayobjects.com/zos/antfincdn/efFD%24IOql2/weixintupian_20170331104822.jpg",
+          src: loginUser?.userAvatar,
           size: "small",
-          title: "七妮妮",
+          title: loginUser?.userName,
           render: (props, dom) => {
             return <AvatarDropdown dom={dom} {...props} />;
           },
@@ -96,7 +101,7 @@ const BasicLayout: React.FC<Props> = (props) => {
         }}
         // 定义菜单
         menuDataRender={() => {
-          return menus;
+          return getAccessibleMenus(loginUser, menus);
         }}
         bgLayoutImgList={[
           {

@@ -13,6 +13,7 @@ import { useDispatch } from "react-redux";
 import "./index.css";
 import { setLoginUser } from "@/store/modules";
 import { STEPHEN_LOGO, STEPHEN_SUBTITLE, STEPHEN_TITLE } from "@/constants";
+import {DEFAULT_USER} from '@/enums/UserRoleEnum';
 
 /**
  * 用户登录页面
@@ -37,9 +38,13 @@ const UserLoginPage: React.FC = (props) => {
         dispatch(setLoginUser(res.data));
         router.replace("/");
         form.resetFields();
+      } else {
+        message.error("登录失败，" + res.message);
+        dispatch(setLoginUser(DEFAULT_USER));
       }
     } catch (e: any) {
       message.error("登录失败，" + e.message);
+      dispatch(setLoginUser(DEFAULT_USER));
     }
   };
 
