@@ -4,17 +4,37 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8dbcbc52-4c42-496e-883d-5398720683c9" name="Changes" comment="feat(package):引入redux全局状态管理&#10;feat(store):添加全局状态管理">
-      <change afterPath="$PROJECT_DIR$/src/app/admin/userList/components/CreateUserModal.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/admin/userList/components/UpdateUserModal.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/admin/userList/components/UploadUserModal.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/admin/userList/components/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/admin/userList/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/admin/userList/page.tsx" afterDir="false" />
+    <list default="true" id="8dbcbc52-4c42-496e-883d-5398720683c9" name="Changes" comment="feat(admin/tag):添加标签的管理功能&#10;feat(admin/post):添加帖子的管理功能&#10;refactor(layouts):完善布局">
+      <change afterPath="$PROJECT_DIR$/public/default_avatar.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/admin/post/components/CreatePostModal.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/admin/post/components/UpdatePostModal.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/admin/post/components/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/admin/post/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/admin/tag/components/CreateTagModal.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/admin/tag/components/UpdateTagModal.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/admin/tag/components/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/admin/tag/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/admin/tag/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/admin/user/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/admin/user/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/menus.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/config/menus.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/enums/UserRoleEnum.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/enums/UserRoleEnum.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/next.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/vercel.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/admin/userList/components/CreateUserModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/admin/user/components/CreateUserModal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/admin/userList/components/UpdateUserModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/admin/user/components/UpdateUserModal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/admin/userList/components/UploadUserModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/admin/user/components/UploadUserModal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/admin/userList/components/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/admin/user/components/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/admin/userList/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/access.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/admin/userList/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/admin/post/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/asserts/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/asserts/logo.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/logo.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/layouts/BasicLayout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/BasicLayout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layouts/UserLayout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/UserLayout.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/mock/user.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/mock/user.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -47,27 +67,27 @@
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "D:/Stephen/Stephen/stephen-next/src/app/admin/UserList",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.standard": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.standard": "",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "pnpm",
-    "npm.dev.executor": "Run",
-    "npm.openapi2ts.executor": "Run",
-    "prettierjs.PrettierConfiguration.Package": "D:\\Stephen\\Stephen\\stephen-next\\node_modules\\prettier",
-    "settings.editor.selected.configurable": "settings.javascript.prettier",
-    "ts.external.directory.path": "D:\\Stephen\\Stephen\\stephen-next\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Stephen/Stephen/stephen-next/src/app/admin/post&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;pnpm&quot;,
+    &quot;npm.dev.executor&quot;: &quot;Run&quot;,
+    &quot;npm.openapi2ts.executor&quot;: &quot;Run&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;D:\\Stephen\\Stephen\\stephen-next\\node_modules\\prettier&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.prettier&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;D:\\Stephen\\Stephen\\stephen-next\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="ReactDesignerToolWindowState">
     <option name="myId2Visible">
       <map>
@@ -79,11 +99,15 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Stephen\Stephen\stephen-next\src\app\admin\UserList" />
-      <recent name="D:\Stephen\Stephen\stephen-next\src\enums" />
-      <recent name="D:\Stephen\Stephen\stephen-next\src\app" />
-      <recent name="D:\Stephen\Stephen\stephen-next\src\app\exception\500" />
-      <recent name="D:\Stephen\Stephen\stephen-next\src\app\exception\404" />
+      <recent name="D:\Stephen\Stephen\stephen-next\src\app\admin\post" />
+      <recent name="D:\Stephen\Stephen\stephen-next\src\app\admin\tag" />
+      <recent name="D:\Stephen\Stephen\stephen-next\src\app\admin" />
+      <recent name="D:\Stephen\Stephen\stephen-next\src\app\user\register" />
+      <recent name="D:\Stephen\Stephen\stephen-next\src\asserts" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Stephen\Stephen\stephen-next\public" />
+      <recent name="D:\Stephen\Stephen\stephen-next\src\app\user\login" />
     </key>
   </component>
   <component name="RunManager" selected="npm.dev">
@@ -130,7 +154,8 @@
       <option name="presentableId" value="Default" />
       <updated>1733579462968</updated>
       <workItem from="1733579470500" duration="3305000" />
-      <workItem from="1733623625179" duration="7986000" />
+      <workItem from="1733623625179" duration="15528000" />
+      <workItem from="1733644612191" duration="4390000" />
     </task>
     <task id="LOCAL-00001" summary="feat(init):完成Stephen的next.js启动器项目的初始化">
       <option name="closed" value="true" />
@@ -196,7 +221,31 @@
       <option name="project" value="LOCAL" />
       <updated>1733633576017</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="feat(layouts):添加用户布局&#10;feat(admin):添加用户管理页面&#10;feat(menus):添加菜单项">
+      <option name="closed" value="true" />
+      <created>1733637154873</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1733637154873</updated>
+    </task>
+    <task id="LOCAL-00010" summary="fixed():修复了返回数据展示的bug">
+      <option name="closed" value="true" />
+      <created>1733637606940</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1733637606940</updated>
+    </task>
+    <task id="LOCAL-00011" summary="feat(user):完成用户登录页面和用户注册页面的开发&#10;feat(asserts):添加公用文件&#10;refactor(layouts):完善布局">
+      <option name="closed" value="true" />
+      <created>1733641056271</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1733641056271</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -222,6 +271,11 @@
     <MESSAGE value="feat(menus):添加自定义菜单项&#10;feat(exception):添加自定义异常处理&#10;refactor(layouts):优化布局" />
     <MESSAGE value="feat(layout):添加全局初始化状态&#10;refactor(favicon.ico):修改网站图标&#10;refactor(layouts):优化布局" />
     <MESSAGE value="feat(package):引入redux全局状态管理&#10;feat(store):添加全局状态管理" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(package):引入redux全局状态管理&#10;feat(store):添加全局状态管理" />
+    <MESSAGE value="feat(layouts):添加用户布局&#10;feat(admin):添加用户管理页面&#10;feat(menus):添加菜单项" />
+    <MESSAGE value="fixed():修复了返回数据展示的bug" />
+    <MESSAGE value="feat(user):完成用户登录页面和用户注册页面的开发&#10;refactor(layouts):完善布局" />
+    <MESSAGE value="feat(user):完成用户登录页面和用户注册页面的开发&#10;feat(asserts):添加公用文件&#10;refactor(layouts):完善布局" />
+    <MESSAGE value="feat(admin/tag):添加标签的管理功能&#10;feat(admin/post):添加帖子的管理功能&#10;refactor(layouts):完善布局" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(admin/tag):添加标签的管理功能&#10;feat(admin/post):添加帖子的管理功能&#10;refactor(layouts):完善布局" />
   </component>
 </project>

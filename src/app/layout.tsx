@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import './globals.css';
 import React, {useCallback, useEffect} from 'react';
@@ -14,7 +14,7 @@ import { DEFAULT_USER } from "@/mock/user";
 /**
  * 全局初始化逻辑
  * @param children
- * @constructorpnp
+ * @constructor
  */
 const InitializeStatus: React.FC<Readonly<{ children: React.ReactNode }>> = ({
   children,
@@ -22,12 +22,8 @@ const InitializeStatus: React.FC<Readonly<{ children: React.ReactNode }>> = ({
   children: React.ReactNode;
 }>) => {
   const dispatch = useDispatch<AppDispatch>();
-  // 获取当前页面路径
   const pathname = usePathname();
 
-  /**
-   * 全局初始化，有单词调用的代码，都可以写到这里
-   */
   const getInitialStatus = useCallback(async () => {
     try {
       const res: any = await getLoginUserUsingGet();
@@ -39,9 +35,8 @@ const InitializeStatus: React.FC<Readonly<{ children: React.ReactNode }>> = ({
     } catch (error) {
       dispatch(setLoginUser(DEFAULT_USER));
     }
-  }, []);
+  }, [dispatch]);
 
-  // 只执行一次
   useEffect(() => {
     // 登录和注册页不用获取登录信息
     if (
@@ -51,6 +46,7 @@ const InitializeStatus: React.FC<Readonly<{ children: React.ReactNode }>> = ({
       getInitialStatus();
     }
   }, []);
+
   return children;
 };
 
@@ -61,14 +57,12 @@ const InitializeStatus: React.FC<Readonly<{ children: React.ReactNode }>> = ({
  */
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   const pathname = usePathname();
-  // 判断是否是登录或注册页面
-  const isAuthPage =
-      pathname.startsWith('/user/login') || pathname.startsWith('/user/register');
+  // 优化路径匹配
+  const isAuthPage = /\/user\/(login|register)/.test(pathname);
   const Layout = isAuthPage ? UserLayout : BasicLayout;
+
   return (
     <html lang="en">
       <body>

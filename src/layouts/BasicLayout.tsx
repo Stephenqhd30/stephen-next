@@ -2,7 +2,7 @@
 
 import { ProLayout } from "@ant-design/pro-components";
 import React from "react";
-import { Grid, Typography } from "antd";
+import { Typography } from "antd";
 import { GitlabFilled } from "@ant-design/icons";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
@@ -19,8 +19,6 @@ import menus from "../../config/menus";
 interface Props {
   children: React.ReactNode;
 }
-
-const { useBreakpoint } = Grid;
 /**
  * 基础通用布局
  * @param props
@@ -29,10 +27,14 @@ const { useBreakpoint } = Grid;
 const BasicLayout: React.FC<Props> = (props) => {
   const { children } = props;
   const pathname = usePathname();
-  const scene = useBreakpoint();
-  const isMobile = !scene.md;
   return (
-    <div id="basic-layout">
+    <div
+      id="basic-layout"
+      style={{
+        height: "100vh",
+        overflow: "auto",
+      }}
+    >
       <ProLayout
         layout={"top"}
         title={STEPHEN_TITLE}
@@ -46,12 +48,6 @@ const BasicLayout: React.FC<Props> = (props) => {
         }
         fixedHeader={true}
         fixSiderbar={true}
-        token={{
-          pageContainer: {
-            paddingBlockPageContainerContent: isMobile ? 8 : 24,
-            paddingInlinePageContainerContent: isMobile ? 8 : 40,
-          },
-        }}
         contentWidth={"Fixed"}
         location={{
           pathname,
@@ -122,7 +118,7 @@ const BasicLayout: React.FC<Props> = (props) => {
         }}
         // 菜单项如何渲染
         menuItemRender={(item, dom) => (
-          <Link href={item.path || "/welcome"} target={"_self"}>
+          <Link href={item.path || "/"} target={"_self"}>
             {dom}
           </Link>
         )}

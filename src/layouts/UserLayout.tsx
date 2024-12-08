@@ -1,5 +1,3 @@
-"use client";
-
 import { ProLayout } from "@ant-design/pro-components";
 import React from "react";
 import { Footer } from "@/components";
@@ -21,7 +19,7 @@ const UserLayout: React.FC<Props> = (props) => {
       id="user-layout"
       style={{
         height: "100vh",
-        overflow: "hidden",
+        overflow: "auto",
       }}
     >
       <ProLayout

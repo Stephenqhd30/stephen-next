@@ -8,7 +8,7 @@ import {downloadUsingGet} from '@/api/excelController';
 import {userRole, UserRoleEnum} from '@/enums/UserRoleEnum';
 import {TAG_EMPTY} from '@/constants';
 import {DownloadOutlined, PlusOutlined, UploadOutlined} from '@ant-design/icons';
-import {CreateUserModal, UpdateUserModal, UploadUserModal} from '@/app/admin/userList/components';
+import {CreateUserModal, UpdateUserModal, UploadUserModal} from '@/app/admin/user/components';
 
 /**
  * 删除节点
