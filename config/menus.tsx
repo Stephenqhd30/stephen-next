@@ -1,6 +1,7 @@
-import { CrownOutlined, HomeOutlined } from "@ant-design/icons";
+import {CrownOutlined, HomeOutlined, UserOutlined} from '@ant-design/icons';
 import { MenuDataItem } from "@ant-design/pro-layout";
 import {UserRoleEnum} from '@/enums/UserRoleEnum';
+import React from 'react';
 
 const menus: MenuDataItem[] = [
   {
@@ -37,6 +38,27 @@ const menus: MenuDataItem[] = [
 		    component: "./admin/tag",
         access: UserRoleEnum.ADMIN,
 	    },
+    ],
+  },
+  {
+    name: "个人页",
+    path: "/account",
+    icon: <UserOutlined />,
+    children: [
+      {
+        path: "/account",
+        redirect: "/account/center",
+      },
+      {
+        path: "/account/center",
+        name: "个人中心",
+        component: "./account/center",
+      },
+      {
+        path: "/account/setting",
+        name: "个人设置",
+        component: "./account/setting",
+      },
     ],
   },
   {

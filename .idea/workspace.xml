@@ -4,16 +4,34 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8dbcbc52-4c42-496e-883d-5398720683c9" name="Changes" comment="feat(Markdown):添加通用Md组件">
+    <list default="true" id="8dbcbc52-4c42-496e-883d-5398720683c9" name="Changes" comment="feat(utils):添加权限校验工具&#10;refactor(avatar):优化头部组件的用户头像显示">
+      <change afterPath="$PROJECT_DIR$/src/app/account/center/components/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/account/center/components/post/MyFavourPostList.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/account/center/components/post/MyPostList.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/account/center/components/post/MyThumbPostList.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/account/center/components/post/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/account/center/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/account/center/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/account/setting/components/BaseView.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/account/setting/components/BindingView.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/account/setting/components/SecurityView.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/account/setting/components/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/account/setting/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/account/setting/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/RePost/ActionTabbar.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/RePost/PostAvatarCard.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/RePost/PostCard.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/RePost/PostTitleCard.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/RePost/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/ReUser/RecommendUser.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/ReUser/UserCard.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/ReUser/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/admin/post/components/CreatePostModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/admin/post/components/CreatePostModal.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/admin/post/components/UpdatePostModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/admin/post/components/UpdatePostModal.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/admin/post/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/admin/post/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Markdown/MdViewer/index.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Markdown/MdViewer/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Markdown/MdViewer/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Markdown/MdViewer/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Markdown/MyMdEditor/index.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Markdown/MyMdEditor/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Markdown/MyMdEditor/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Markdown/MyMdEditor/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Markdown/TableOfContents/index.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Markdown/TableOfContents/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/defaultSettings.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/menus.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/config/menus.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/AvatarDropdown.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/AvatarDropdown.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layouts/BasicLayout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/BasicLayout.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,8 +42,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="TypeScript JSX File" />
-        <option value="CSS File" />
         <option value="TypeScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -49,7 +67,7 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "D:/Stephen/Stephen/stephen-next/src/components",
+    "last_opened_file_path": "D:/Stephen/Stephen/stephen-next/src/app/account/setting",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.standard": "true",
@@ -77,13 +95,14 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Stephen\Stephen\stephen-next\src\app\account\setting" />
       <recent name="D:\Stephen\Stephen\stephen-next\src\components" />
+      <recent name="D:\Stephen\Stephen\stephen-next\src\app\account\center" />
       <recent name="D:\Stephen\Stephen\stephen-next\src\app\admin\post" />
       <recent name="D:\Stephen\Stephen\stephen-next\src\app\admin\tag" />
-      <recent name="D:\Stephen\Stephen\stephen-next\src\app\admin" />
-      <recent name="D:\Stephen\Stephen\stephen-next\src\app\user\register" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Stephen\Stephen\stephen-next\src\utils" />
       <recent name="D:\Stephen\Stephen\stephen-next\public" />
       <recent name="D:\Stephen\Stephen\stephen-next\src\app\user\login" />
     </key>
@@ -134,7 +153,9 @@
       <workItem from="1733579470500" duration="3305000" />
       <workItem from="1733623625179" duration="15528000" />
       <workItem from="1733644612191" duration="4390000" />
-      <workItem from="1733653153139" duration="3787000" />
+      <workItem from="1733653153139" duration="12625000" />
+      <workItem from="1733668133455" duration="659000" />
+      <workItem from="1733708447018" duration="1566000" />
     </task>
     <task id="LOCAL-00001" summary="feat(init):完成Stephen的next.js启动器项目的初始化">
       <option name="closed" value="true" />
@@ -240,7 +261,23 @@
       <option name="project" value="LOCAL" />
       <updated>1733657656664</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="feat(loading):添加全局加载组件&#10;feat(prettier):添加prettier代码格式化&#10;fixed(Markdown):修复markdown组件样式引入">
+      <option name="closed" value="true" />
+      <created>1733663710579</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1733663710579</updated>
+    </task>
+    <task id="LOCAL-00015" summary="feat(utils):添加权限校验工具&#10;refactor(avatar):优化头部组件的用户头像显示">
+      <option name="closed" value="true" />
+      <created>1733668078742</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1733668078742</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -272,6 +309,8 @@
     <MESSAGE value="feat(user):完成用户登录页面和用户注册页面的开发&#10;feat(asserts):添加公用文件&#10;refactor(layouts):完善布局" />
     <MESSAGE value="feat(admin/tag):添加标签的管理功能&#10;feat(admin/post):添加帖子的管理功能&#10;refactor(layouts):完善布局" />
     <MESSAGE value="feat(Markdown):添加通用Md组件" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(Markdown):添加通用Md组件" />
+    <MESSAGE value="feat(loading):添加全局加载组件&#10;feat(prettier):添加prettier代码格式化&#10;fixed(Markdown):修复markdown组件样式引入" />
+    <MESSAGE value="feat(utils):添加权限校验工具&#10;refactor(avatar):优化头部组件的用户头像显示" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(utils):添加权限校验工具&#10;refactor(avatar):优化头部组件的用户头像显示" />
   </component>
 </project>

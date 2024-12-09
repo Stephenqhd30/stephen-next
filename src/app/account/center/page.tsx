@@ -1,0 +1,71 @@
+"use client";
+
+import React, { useState } from "react";
+import { PageContainer, ProCard } from "@ant-design/pro-components";
+import { ACCOUNT_TITLE } from "@/constants";
+import { Col, Grid, Row } from "antd";
+
+import {
+  MyFavourPostList,
+  MyPostList,
+  MyThumbPostList,
+} from "@/app/account/center/components";
+import { UserCard } from "@/components";
+import { useSelector } from "react-redux";
+import { RootState } from "@/store";
+import "./index.css";
+
+const { useBreakpoint } = Grid;
+
+/**
+ * 个人中心
+ * @constructor
+ */
+const AccountCenter: React.FC = () => {
+  const loginUser = useSelector((state: RootState) => state.loginUser);
+  const scene = useBreakpoint();
+  const isMobile = !scene.md;
+  const [tab, setTab] = useState("my-post");
+
+  return (
+    <PageContainer title={ACCOUNT_TITLE} breadcrumb={undefined}>
+      <Row gutter={[16, 16]}>
+        <Col span={isMobile ? 24 : 6}>
+          <UserCard user={loginUser ?? {}} />
+        </Col>
+        <Col span={isMobile ? 24 : 18}>
+          <ProCard
+            bodyStyle={{ padding: 4 }}
+            tabs={{
+              tabPosition: "top",
+              activeKey: tab,
+              items: [
+                {
+                  label: `我的帖子`,
+                  key: "my-post",
+                  children: <MyPostList />,
+                },
+                {
+                  label: `我的收藏`,
+                  key: "my-favour",
+                  children: <MyFavourPostList />,
+                },
+                {
+                  label: `我的点赞`,
+                  key: "my-thumb",
+                  children: <MyThumbPostList />,
+                },
+              ],
+              onChange: (key) => {
+                setTab(key);
+              },
+            }}
+            bordered
+          />
+        </Col>
+      </Row>
+    </PageContainer>
+  );
+};
+
+export default AccountCenter;

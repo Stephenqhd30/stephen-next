@@ -1,6 +1,10 @@
+"use client"
+
 import React from "react";
-import { LogoutOutlined } from "@ant-design/icons";
+import {LogoutOutlined, SettingOutlined, UserOutlined} from '@ant-design/icons';
 import { Dropdown } from "antd";
+import {useSelector} from 'react-redux';
+import {RootState} from '@/store';
 
 interface Props {
   dom: React.ReactNode;
@@ -12,14 +16,26 @@ interface Props {
  */
 const AvatarDropdown: React.FC<Props> = (props) => {
   const { dom } = props;
+  // 获取当前用户信息
+  const loginUser = useSelector((state: RootState) => state.loginUser);
   return (
     <Dropdown
       menu={{
         items: [
           {
-            key: "logout",
+            key: 'center',
+            icon: <UserOutlined />,
+            label: '个人中心',
+          },
+          {
+            key: 'settings',
+            icon: <SettingOutlined />,
+            label: '个人设置',
+          },
+          {
+            key: 'logout',
             icon: <LogoutOutlined />,
-            label: "退出登录",
+            label: '退出登录',
           },
         ],
       }}

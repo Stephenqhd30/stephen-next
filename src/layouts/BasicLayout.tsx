@@ -41,6 +41,8 @@ const BasicLayout: React.FC<Props> = (props) => {
       }}
     >
       <ProLayout
+        colorPrimary={"#1890ff"}
+        navTheme={"light"}
         layout={"top"}
         title={STEPHEN_TITLE}
         logo={
@@ -65,7 +67,6 @@ const BasicLayout: React.FC<Props> = (props) => {
         }}
         avatarProps={{
           src: loginUser?.userAvatar,
-          size: "small",
           title: loginUser?.userName,
           render: (props, dom) => {
             return <AvatarDropdown dom={dom} {...props} />;
