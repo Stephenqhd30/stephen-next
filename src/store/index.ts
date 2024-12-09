@@ -1,10 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { loginUser } from "@/store/modules";
+import { loginUser, tags } from "@/store/modules";
 
 const store = configureStore({
   reducer: {
     // 在这里存放状态
     loginUser,
+    tags,
   },
 });
 

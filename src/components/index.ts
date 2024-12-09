@@ -9,6 +9,7 @@ import {
   PostCard,
   PostTitleCard,
 } from "@/components/RePost";
+import { TagTreeSelect } from "@/components/ReTag";
 
 export {
   SearchInput,
@@ -24,4 +25,5 @@ export {
   PostCard,
   PostAvatarCard,
   PostTitleCard,
+  TagTreeSelect,
 };
