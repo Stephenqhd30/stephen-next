@@ -1,3 +1,5 @@
+"use client";
+
 import { ProFormTreeSelect } from "@ant-design/pro-components";
 import React, { useCallback, useEffect, useState } from "react";
 import { AppDispatch, RootState } from "@/store";
@@ -18,8 +20,8 @@ interface Props {
  */
 const TagTreeSelect: React.FC<Props> = (props) => {
   const { name, label = "", initialValue = [] } = props;
-  const tags = useSelector((state: RootState) => state.tags);
   const dispatch = useDispatch<AppDispatch>();
+  const tags = useSelector((state: RootState) => state.tags);
   const [value, setValue] = useState<string[]>(initialValue);
 
   const getInitialStatus = useCallback(async () => {
@@ -34,7 +36,7 @@ const TagTreeSelect: React.FC<Props> = (props) => {
       dispatch(setTags([] as API.TagDTO[]));
     }
   }, [dispatch]);
-
+  
   useEffect(() => {
     getInitialStatus();
   }, []);

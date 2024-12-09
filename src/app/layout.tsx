@@ -27,6 +27,7 @@ const InitializeStatus: React.FC<Readonly<{ children: React.ReactNode }>> = ({
   const [initialized, setInitialized] = useState<boolean>(false);
   
   const getInitialStatus = useCallback(async () => {
+    if (initialized) return;
     try {
       const res: any = await getLoginUserUsingGet();
       if (res.code === 0 && res.data) {
@@ -39,7 +40,7 @@ const InitializeStatus: React.FC<Readonly<{ children: React.ReactNode }>> = ({
     } finally {
       setInitialized(true);
     }
-  }, [dispatch]);
+  }, [dispatch, initialized]);
 
   useEffect(() => {
     // 登录和注册页不用获取登录信息
@@ -51,7 +52,7 @@ const InitializeStatus: React.FC<Readonly<{ children: React.ReactNode }>> = ({
     } else {
       setInitialized(true);      
     }
-  }, []);
+  }, [getInitialStatus, pathname]);
   if (!initialized) {
     // 渲染占位符，避免 SSR 和客户端渲染不一致
     return <GlobalLoading />;

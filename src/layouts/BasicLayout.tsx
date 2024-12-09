@@ -37,7 +37,6 @@ const BasicLayout: React.FC<Props> = (props) => {
       id="basic-layout"
       style={{
         height: "100vh",
-        overflow: "auto",
       }}
     >
       <ProLayout

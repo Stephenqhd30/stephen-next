@@ -1,4 +1,5 @@
 "use client";
+
 import {
   ModalForm,
   ProForm,
@@ -11,7 +12,7 @@ import React, { useState } from "react";
 import { FileUploadBiz } from "@/enums/FileUploadBizEnum";
 import { uploadFileUsingPost } from "@/api/fileController";
 import { updatePostUsingPost } from "@/api/postController";
-import { MyMdEditor } from "@/components";
+import { MyMdEditor, TagTreeSelect } from "@/components";
 
 interface Props {
   oldData?: API.Post;
@@ -126,10 +127,7 @@ const UpdatePostModal: React.FC<Props> = (props) => {
       }}
     >
       <ProFormText name="title" label="标题" />
-      <ProFormTextArea
-        name="content"
-        label="内容"
-      >
+      <ProFormTextArea name="content" label="内容">
         <MyMdEditor onChange={setContent} value={content} />
       </ProFormTextArea>
       <ProFormUploadDragger
@@ -140,6 +138,11 @@ const UpdatePostModal: React.FC<Props> = (props) => {
         }}
         name="pic"
         label={"封面"}
+      />
+      <TagTreeSelect
+          name={'tags'}
+          label={'标签'}
+          initialValue={oldData?.tags ? JSON.parse(oldData?.tags) : []}
       />
     </ModalForm>
   );

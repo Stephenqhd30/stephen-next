@@ -1,14 +1,15 @@
 "use client";
 
-import {Button, message, Popconfirm, Space, Tag, Typography} from 'antd';
-import {deleteUserUsingPost, listUserByPageUsingPost} from '@/api/userController';
-import React, {useRef, useState} from 'react';
-import {ActionType, ProColumns, ProTable} from '@ant-design/pro-components';
-import {downloadUsingGet} from '@/api/excelController';
-import {userRole, UserRoleEnum} from '@/enums/UserRoleEnum';
-import {TAG_EMPTY} from '@/constants';
 import {DownloadOutlined, PlusOutlined, UploadOutlined} from '@ant-design/icons';
+import {ActionType, ProColumns, ProTable} from '@ant-design/pro-components';
+import {Button, message, Popconfirm, Space, Tag, Typography} from 'antd';
+import React, {useRef, useState} from 'react';
+import {deleteUserUsingPost, listUserByPageUsingPost} from '@/api/userController';
+import {userRole, UserRoleEnum} from '@/enums/UserRoleEnum';
 import {CreateUserModal, UpdateUserModal, UploadUserModal} from '@/app/admin/user/components';
+import {TagTreeSelect} from '@/components';
+import {TAG_EMPTY} from '@/constants';
+import {downloadUsingGet} from '@/api/excelController';
 
 /**
  * 删除节点
@@ -86,80 +87,82 @@ const UserList: React.FC = () => {
       valueType: "text",
     },
     {
-      title: "用户名",
-      dataIndex: "userName",
-      valueType: "text",
+      title:"用户名",
+      dataIndex:"userName",
+      valueType:"text",
     },
     {
-      title: "头像",
-      dataIndex: "userAvatar",
-      valueType: "image",
+      title: '头像',
+      dataIndex: 'userAvatar',
+      valueType: 'image',
       fieldProps: {
         width: 64,
       },
       hideInSearch: true,
     },
     {
-      title: "简介",
-      dataIndex: "userProfile",
-      valueType: "textarea",
+      title: '简介',
+      dataIndex: 'userProfile',
+      valueType: 'textarea'
     },
     {
-      title: "电话",
-      dataIndex: "userPhone",
-      valueType: "text",
+      title: '电话',
+      dataIndex: 'userPhone',
+      valueType: 'text'
     },
     {
-      title: "邮箱",
-      dataIndex: "userEmail",
-      valueType: "text",
+      title: '邮箱',
+      dataIndex: 'userEmail',
+      valueType: 'text'
     },
     {
-      title: "权限",
-      dataIndex: "userRole",
+      title: '权限',
+      dataIndex: 'userRole',
       valueEnum: userRole,
       render: (_, record) => {
-        // @ts-ignore
+        //@ts-ignore
         const role = userRole[record.userRole as UserRoleEnum];
         return <Tag color={role.color}>{role.text}</Tag>;
       },
     },
     {
-      title: "用户标签",
-      dataIndex: "tags",
-      valueType: "text",
+      title: '用户标签',
+      dataIndex: 'tags',
+      valueType: 'text',
       render: (_, record) => {
         if (record.tags) {
-          const tagList = JSON.parse(record.tags as string);
-          return tagList.map((tag: any) => (
-            <Tag key={tag} color={"blue"}>
+          const tags = JSON.parse(record.tags as string);
+          //@ts-ignore
+          return tags.map((tag) => (
+            <Tag key={tag} color={'blue'}>
               {tag}
             </Tag>
           ));
         }
         return <Tag>{TAG_EMPTY}</Tag>;
       },
+      renderFormItem: () => <TagTreeSelect name={'tags'} />
     },
     {
-      title: "创建时间",
+      title: '创建时间',
       sorter: true,
-      dataIndex: "createTime",
-      valueType: "dateTime",
+      dataIndex: 'createTime',
+      valueType: 'dateTime',
       hideInSearch: true,
       hideInForm: true,
     },
     {
-      title: "更新时间",
+      title: '更新时间',
       sorter: true,
-      dataIndex: "updateTime",
-      valueType: "dateTime",
+      dataIndex: 'updateTime',
+      valueType: 'dateTime',
       hideInSearch: true,
       hideInForm: true,
     },
     {
-      title: "操作",
-      dataIndex: "option",
-      valueType: "option",
+      title: '操作',
+      dataIndex: 'option',
+      valueType: 'option',
       render: (_, record) => (
         <Space size={"middle"}>
           <Typography.Link
@@ -241,7 +244,7 @@ const UserList: React.FC = () => {
         request={async (params, sort, filter) => {
           const sortField = Object.keys(sort)?.[0];
           const sortOrder = sort?.[sortField] ?? undefined;
-          const {code, data} : any = await listUserByPageUsingPost({
+          const { data, code }: any = await listUserByPageUsingPost({
             ...params,
             ...filter,
             sortField,

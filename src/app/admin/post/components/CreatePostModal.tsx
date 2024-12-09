@@ -1,3 +1,5 @@
+"use client";
+
 import { message, UploadProps } from "antd";
 import React, { useState } from "react";
 import {
@@ -10,7 +12,7 @@ import {
 import { FileUploadBiz } from "@/enums/FileUploadBizEnum";
 import { addPostUsingPost } from "@/api/postController";
 import { uploadFileUsingPost } from "@/api/fileController";
-import { MyMdEditor } from "@/components";
+import { MyMdEditor, TagTreeSelect } from "@/components";
 
 interface Props {
   onCancel: () => void;
@@ -129,6 +131,7 @@ const CreatePostModal: React.FC<Props> = (props) => {
         name="cover"
         label={"封面"}
       />
+      <TagTreeSelect name={'tags'} label={'标签'} />
     </ModalForm>
   );
 };

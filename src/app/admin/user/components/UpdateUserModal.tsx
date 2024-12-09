@@ -1,5 +1,3 @@
-"use client";
-
 import {
   ModalForm,
   ProForm,
@@ -14,6 +12,7 @@ import { userRole, UserRoleEnum } from "@/enums/UserRoleEnum";
 import { FileUploadBiz } from "@/enums/FileUploadBizEnum";
 import { updateUserUsingPost } from "@/api/userController";
 import { uploadFileUsingPost } from "@/api/fileController";
+import { TagTreeSelect } from "@/components";
 
 interface Props {
   oldData?: API.User;
@@ -156,6 +155,11 @@ const UpdateUserModal: React.FC<Props> = (props) => {
           </Select.Option>
         </Select>
       </ProFormSelect>
+      <TagTreeSelect
+          name={'tags'}
+          label={'标签'}
+          initialValue={oldData?.tags ? JSON.parse(oldData?.tags) : []}
+      />
     </ModalForm>
   );
 };

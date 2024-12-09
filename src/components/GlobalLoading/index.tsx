@@ -9,7 +9,7 @@ import styles from "./GlobalLoading.module.css";
 const GlobalLoading: React.FC = () => {
   return (
     <div className={styles.loadingContainer}>
-      <Spin size="large"/>
+      <Spin size="large" />
     </div>
   );
 };

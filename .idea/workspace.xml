@@ -4,34 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8dbcbc52-4c42-496e-883d-5398720683c9" name="Changes" comment="feat(utils):添加权限校验工具&#10;refactor(avatar):优化头部组件的用户头像显示">
-      <change afterPath="$PROJECT_DIR$/src/app/account/center/components/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/account/center/components/post/MyFavourPostList.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/account/center/components/post/MyPostList.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/account/center/components/post/MyThumbPostList.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/account/center/components/post/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/account/center/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/account/center/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/account/setting/components/BaseView.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/account/setting/components/BindingView.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/account/setting/components/SecurityView.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/account/setting/components/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/account/setting/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/account/setting/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/RePost/ActionTabbar.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/RePost/PostAvatarCard.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/RePost/PostCard.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/RePost/PostTitleCard.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/RePost/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ReUser/RecommendUser.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ReUser/UserCard.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ReUser/index.ts" afterDir="false" />
+    <list default="true" id="8dbcbc52-4c42-496e-883d-5398720683c9" name="Changes" comment="fixed(admin/user):修复了更新用户请求不成功的bug&#10;refactor(layout):优化布局">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/defaultSettings.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/menus.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/config/menus.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header/AvatarDropdown.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/AvatarDropdown.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layouts/BasicLayout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/BasicLayout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/admin/post/components/CreatePostModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/admin/post/components/CreatePostModal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/admin/post/components/UpdatePostModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/admin/post/components/UpdatePostModal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/admin/user/components/CreateUserModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/admin/user/components/CreateUserModal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/admin/user/components/UpdateUserModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/admin/user/components/UpdateUserModal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/admin/user/components/UploadUserModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/admin/user/components/UploadUserModal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/admin/user/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/admin/user/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/GlobalLoading/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GlobalLoading/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ReTag/TagTreeSelect.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ReTag/TagTreeSelect.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/request.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/request.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +51,7 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "D:/Stephen/Stephen/stephen-next/src/app/account/setting",
+    "last_opened_file_path": "D:/Stephen/Stephen/stephen-next/src/components",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.standard": "true",
@@ -79,7 +63,7 @@
     "npm.dev.executor": "Run",
     "npm.openapi2ts.executor": "Run",
     "prettierjs.PrettierConfiguration.Package": "D:\\Stephen\\Stephen\\stephen-next\\node_modules\\prettier",
-    "settings.editor.selected.configurable": "settings.javascript.prettier",
+    "settings.editor.selected.configurable": "settings.javascript.linters.eslint",
     "ts.external.directory.path": "D:\\Stephen\\Stephen\\stephen-next\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
@@ -95,11 +79,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Stephen\Stephen\stephen-next\src\app\account\setting" />
       <recent name="D:\Stephen\Stephen\stephen-next\src\components" />
+      <recent name="D:\Stephen\Stephen\stephen-next\src\store\modules\tag" />
+      <recent name="D:\Stephen\Stephen\stephen-next\src\app\account\setting" />
       <recent name="D:\Stephen\Stephen\stephen-next\src\app\account\center" />
       <recent name="D:\Stephen\Stephen\stephen-next\src\app\admin\post" />
-      <recent name="D:\Stephen\Stephen\stephen-next\src\app\admin\tag" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Stephen\Stephen\stephen-next\src\utils" />
@@ -155,7 +139,7 @@
       <workItem from="1733644612191" duration="4390000" />
       <workItem from="1733653153139" duration="12625000" />
       <workItem from="1733668133455" duration="659000" />
-      <workItem from="1733708447018" duration="1566000" />
+      <workItem from="1733708447018" duration="6730000" />
     </task>
     <task id="LOCAL-00001" summary="feat(init):完成Stephen的next.js启动器项目的初始化">
       <option name="closed" value="true" />
@@ -277,7 +261,23 @@
       <option name="project" value="LOCAL" />
       <updated>1733668078742</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="feat(account/center):添加个人中心&#10;feat(account/setting):添加个人设置&#10;feat(components/ReUser):添加通用用户组件&#10;feat(components/RePost):添加通用帖子组件">
+      <option name="closed" value="true" />
+      <created>1733710477189</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1733710477189</updated>
+    </task>
+    <task id="LOCAL-00017" summary="feat(store/tag):添加标签状态管理&#10;feat(components/ReTag):添加标签通用组件">
+      <option name="closed" value="true" />
+      <created>1733711293238</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1733711293238</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -311,6 +311,9 @@
     <MESSAGE value="feat(Markdown):添加通用Md组件" />
     <MESSAGE value="feat(loading):添加全局加载组件&#10;feat(prettier):添加prettier代码格式化&#10;fixed(Markdown):修复markdown组件样式引入" />
     <MESSAGE value="feat(utils):添加权限校验工具&#10;refactor(avatar):优化头部组件的用户头像显示" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(utils):添加权限校验工具&#10;refactor(avatar):优化头部组件的用户头像显示" />
+    <MESSAGE value="feat(account/center):添加个人中心&#10;feat(account/setting):添加个人设置&#10;feat(components/ReUser):添加通用用户组件&#10;feat(components/RePost):添加通用帖子组件" />
+    <MESSAGE value="feat(store/tag):添加标签状态管理&#10;feat(components/ReTag):添加标签通用组件" />
+    <MESSAGE value="fixed(admin/user):修复了更新用户请求不成功的bug&#10;refactor(layout):优化布局" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed(admin/user):修复了更新用户请求不成功的bug&#10;refactor(layout):优化布局" />
   </component>
 </project>

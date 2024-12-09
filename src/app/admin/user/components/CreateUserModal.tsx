@@ -1,5 +1,3 @@
-"use client";
-
 import {
   ModalForm,
   ProForm,
@@ -14,6 +12,7 @@ import { userRole, UserRoleEnum } from "@/enums/UserRoleEnum";
 import { FileUploadBiz } from "@/enums/FileUploadBizEnum";
 import { addUserUsingPost } from "@/api/userController";
 import { uploadFileUsingPost } from "@/api/fileController";
+import {TagTreeSelect} from '@/components';
 
 interface Props {
   onCancel: () => void;
@@ -148,6 +147,7 @@ const CreateUserModal: React.FC<Props> = (props) => {
           </Select.Option>
         </Select>
       </ProFormSelect>
+      <TagTreeSelect name={'tags'} label={"标签"}/>
     </ModalForm>
   );
 };

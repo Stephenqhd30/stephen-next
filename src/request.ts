@@ -51,9 +51,6 @@ request.interceptors.response.use(
       ) {
         window.location.href = `/user/login?redirect=${window.location.href}`;
       }
-    } else if (data.code !== 0) {
-      // 其他错误
-      throw new Error(data.message ?? "服务器错误");
     }
     return data;
   },
