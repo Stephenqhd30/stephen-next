@@ -4,18 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8dbcbc52-4c42-496e-883d-5398720683c9" name="Changes" comment="fixed(admin/user):修复了更新用户请求不成功的bug&#10;refactor(layout):优化布局">
+    <list default="true" id="8dbcbc52-4c42-496e-883d-5398720683c9" name="Changes" comment="fixed(admin/user):修复了更新用户请求不成功的bug&#10;feat(tagTree):添加了标签树功能&#10;refactor(layout):优化布局">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/admin/post/components/CreatePostModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/admin/post/components/CreatePostModal.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/admin/post/components/UpdatePostModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/admin/post/components/UpdatePostModal.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/admin/user/components/CreateUserModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/admin/user/components/CreateUserModal.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/admin/user/components/UpdateUserModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/admin/user/components/UpdateUserModal.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/admin/user/components/UploadUserModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/admin/user/components/UploadUserModal.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/admin/user/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/admin/user/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/GlobalLoading/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GlobalLoading/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ReTag/TagTreeSelect.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ReTag/TagTreeSelect.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/request.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/request.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +24,22 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitLabMergeRequestFiltersHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPENED&quot;,
+    &quot;assignee&quot;: {
+      &quot;type&quot;: &quot;org.jetbrains.plugins.gitlab.mergerequest.ui.filters.GitLabMergeRequestsFiltersValue.MergeRequestsMemberFilterValue.MergeRequestsAssigneeFilterValue&quot;,
+      &quot;username&quot;: &quot;popcornqhd&quot;,
+      &quot;fullname&quot;: &quot;Stephen Qiu&quot;
+    }
+  }
+}</component>
+  <component name="GitLabMergeRequestsSettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;first&quot;: &quot;https://gitlab.com/popcornqhd/stephen-next.git&quot;,
+    &quot;second&quot;: &quot;1d97ac03-0ae6-4f42-a656-c9aed305275e&quot;
+  }
+}</component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 4
@@ -47,27 +53,28 @@
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "D:/Stephen/Stephen/stephen-next/src/components",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.standard": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.standard": "",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "pnpm",
-    "npm.dev.executor": "Run",
-    "npm.openapi2ts.executor": "Run",
-    "prettierjs.PrettierConfiguration.Package": "D:\\Stephen\\Stephen\\stephen-next\\node_modules\\prettier",
-    "settings.editor.selected.configurable": "settings.javascript.linters.eslint",
-    "ts.external.directory.path": "D:\\Stephen\\Stephen\\stephen-next\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Stephen/Stephen/stephen-next&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;pnpm&quot;,
+    &quot;npm.dev.executor&quot;: &quot;Run&quot;,
+    &quot;npm.openapi2ts.executor&quot;: &quot;Run&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;D:\\Stephen\\Stephen\\stephen-next\\node_modules\\prettier&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.linters.eslint&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;D:\\Stephen\\Stephen\\stephen-next\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="ReactDesignerToolWindowState">
     <option name="myId2Visible">
       <map>
@@ -122,7 +129,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-WS-242.23339.15" />
+        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23339.11" />
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23339.11" />
       </set>
     </attachedChunks>
   </component>
@@ -139,7 +147,9 @@
       <workItem from="1733644612191" duration="4390000" />
       <workItem from="1733653153139" duration="12625000" />
       <workItem from="1733668133455" duration="659000" />
-      <workItem from="1733708447018" duration="6730000" />
+      <workItem from="1733708447018" duration="9005000" />
+      <workItem from="1734090219022" duration="301000" />
+      <workItem from="1738584777931" duration="170000" />
     </task>
     <task id="LOCAL-00001" summary="feat(init):完成Stephen的next.js启动器项目的初始化">
       <option name="closed" value="true" />
@@ -277,7 +287,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733711293238</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="fixed(admin/user):修复了更新用户请求不成功的bug&#10;feat(tagTree):添加了标签树功能&#10;refactor(layout):优化布局">
+      <option name="closed" value="true" />
+      <created>1733718223721</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1733718223721</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -314,6 +332,7 @@
     <MESSAGE value="feat(account/center):添加个人中心&#10;feat(account/setting):添加个人设置&#10;feat(components/ReUser):添加通用用户组件&#10;feat(components/RePost):添加通用帖子组件" />
     <MESSAGE value="feat(store/tag):添加标签状态管理&#10;feat(components/ReTag):添加标签通用组件" />
     <MESSAGE value="fixed(admin/user):修复了更新用户请求不成功的bug&#10;refactor(layout):优化布局" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed(admin/user):修复了更新用户请求不成功的bug&#10;refactor(layout):优化布局" />
+    <MESSAGE value="fixed(admin/user):修复了更新用户请求不成功的bug&#10;feat(tagTree):添加了标签树功能&#10;refactor(layout):优化布局" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed(admin/user):修复了更新用户请求不成功的bug&#10;feat(tagTree):添加了标签树功能&#10;refactor(layout):优化布局" />
   </component>
 </project>
