@@ -17,11 +17,13 @@
     "@ant-design/pro-form": "^2.31.6",
     "@ant-design/pro-layout": "^7.22.3",
     "@ant-design/x": "^1.0.5",
+    "@react-spring/web": "^9.7.5",
     "@reduxjs/toolkit": "^2.6.1",
+    "@tailwindcss/postcss": "^4.0.13",
     "antd": "^5.24.3",
     "antd-style": "^3.7.1",
     "axios": "^1.8.2",
-    "next": "14.2.10",
+    "next": "15.1.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-redux": "^9.2.0"
@@ -31,10 +33,13 @@
     "@types/react": "^18.3.18",
     "@types/react-dom": "^18.3.5",
     "@umijs/openapi": "^1.13.0",
+    "autoprefixer": "^10.4.21",
     "eslint": "^8.57.1",
     "eslint-config-next": "14.2.6",
     "eslint-config-prettier": "^9.1.0",
+    "postcss": "^8.5.3",
     "prettier": "3.4.2",
+    "tailwindcss": "^4.0.13",
     "typescript": "^5.8.2"
   }
 }
