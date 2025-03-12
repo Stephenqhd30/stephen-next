@@ -1,19 +1,19 @@
 "use client";
 
+import React from "react";
 import { PageContainer } from "@ant-design/pro-layout";
-import { WELCOME_TITLE } from "@/constants";
-import React from 'react';
+import { ProCard } from "@ant-design/pro-components";
 
 /**
- * 主页
+ *
  * @constructor
  */
-const Home: React.FC = () => {
+const ChatPage: React.FC = () => {
   return (
-    <PageContainer title={WELCOME_TITLE}>
-      <div>想要对你说的不敢说的爱</div>
+    <PageContainer>
+      <ProCard></ProCard>
     </PageContainer>
   );
 };
 
-export default Home;
+export default ChatPage;

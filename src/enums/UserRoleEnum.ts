@@ -5,7 +5,6 @@ export enum UserRoleEnum {
   ADMIN = "admin",
   USER = "user",
   BAN = "ban",
-  NOT_LOGIN = "notLogin",
 }
 
 /**
@@ -13,28 +12,18 @@ export enum UserRoleEnum {
  */
 export const userRole = {
   [UserRoleEnum.ADMIN]: {
-    text: '管理员',
+    text: "管理员",
     value: UserRoleEnum.ADMIN,
-    color: 'processing',
+    color: "processing",
   },
   [UserRoleEnum.USER]: {
-    text: '普通用户',
+    text: "普通用户",
     value: UserRoleEnum.USER,
-    color: 'success',
+    color: "success",
   },
   [UserRoleEnum.BAN]: {
-    text: '封禁',
+    text: "封禁",
     value: UserRoleEnum.BAN,
-    color: 'error',
+    color: "error",
   },
-};
-
-/**
- * 默认用户
- */
-export const DEFAULT_USER: API.LoginUserVO = {
-  userName: "未登录",
-  userAvatar: "public/default_avatar.png",
-  userRole: UserRoleEnum.NOT_LOGIN,
-  userProfile: "该用户很懒未设置简介",
 };

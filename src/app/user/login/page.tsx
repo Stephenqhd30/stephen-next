@@ -12,14 +12,13 @@ import { AppDispatch } from "@/store";
 import { useDispatch } from "react-redux";
 import "./index.css";
 import { setLoginUser } from "@/store/modules";
-import { STEPHEN_LOGO, STEPHEN_SUBTITLE, STEPHEN_TITLE } from "@/constants";
-import {DEFAULT_USER} from '@/enums/UserRoleEnum';
+import {LOGO, STEPHEN_SUBTITLE, STEPHEN_TITLE} from '@/constants';
+import { DEFAULT_USER } from "@/mock/user";
 
 /**
  * 用户登录页面
- * @param props
  */
-const UserLoginPage: React.FC = (props) => {
+const UserLoginPage: React.FC = () => {
   const [form] = ProForm.useForm();
   const router = useRouter();
   const dispatch = useDispatch<AppDispatch>();
@@ -54,7 +53,7 @@ const UserLoginPage: React.FC = (props) => {
         form={form}
         logo={
           <Image
-            src={STEPHEN_LOGO}
+            src={LOGO}
             alt={STEPHEN_TITLE}
             width={44}
             height={44}

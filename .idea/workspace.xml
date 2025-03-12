@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8dbcbc52-4c42-496e-883d-5398720683c9" name="Changes" comment="fixed(admin/user):修复了更新用户请求不成功的bug&#10;feat(tagTree):添加了标签树功能&#10;refactor(layout):优化布局">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="8dbcbc52-4c42-496e-883d-5398720683c9" name="Changes" comment="feat: 添加api接口&#10;refactor: 更新组件" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -16,8 +14,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="TypeScript JSX File" />
-        <option value="TypeScript File" />
         <option value="CSS File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -37,9 +35,12 @@
   <component name="GitLabMergeRequestsSettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;first&quot;: &quot;https://gitlab.com/popcornqhd/stephen-next.git&quot;,
-    &quot;second&quot;: &quot;1d97ac03-0ae6-4f42-a656-c9aed305275e&quot;
+    &quot;second&quot;: &quot;4eeae389-a65c-4e83-bdc0-4b2489a010be&quot;
   }
 }</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 4
@@ -58,7 +59,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Stephen/Stephen/stephen-next&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/stephenqiu/Desktop/Stephen/Stephen/stephen-next&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
@@ -69,9 +70,9 @@
     &quot;nodejs_package_manager_path&quot;: &quot;pnpm&quot;,
     &quot;npm.dev.executor&quot;: &quot;Run&quot;,
     &quot;npm.openapi2ts.executor&quot;: &quot;Run&quot;,
-    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;D:\\Stephen\\Stephen\\stephen-next\\node_modules\\prettier&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/Users/stephenqiu/Desktop/Stephen/Stephen/stephen-next/node_modules/prettier&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.linters.eslint&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;D:\\Stephen\\Stephen\\stephen-next\\node_modules\\typescript\\lib&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/stephenqiu/Desktop/Stephen/Stephen/stephen-next/node_modules/typescript/lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -86,11 +87,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/layouts/ChatLayout" />
+      <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$/src/compoents" />
+      <recent name="$PROJECT_DIR$" />
       <recent name="D:\Stephen\Stephen\stephen-next\src\components" />
-      <recent name="D:\Stephen\Stephen\stephen-next\src\store\modules\tag" />
-      <recent name="D:\Stephen\Stephen\stephen-next\src\app\account\setting" />
-      <recent name="D:\Stephen\Stephen\stephen-next\src\app\account\center" />
-      <recent name="D:\Stephen\Stephen\stephen-next\src\app\admin\post" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Stephen\Stephen\stephen-next\src\utils" />
@@ -129,8 +130,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23339.11" />
-        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23339.11" />
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-WS-241.19416.2" />
       </set>
     </attachedChunks>
   </component>
@@ -150,6 +150,9 @@
       <workItem from="1733708447018" duration="9005000" />
       <workItem from="1734090219022" duration="301000" />
       <workItem from="1738584777931" duration="170000" />
+      <workItem from="1741673533510" duration="5024000" />
+      <workItem from="1741785156370" duration="47000" />
+      <workItem from="1741785379634" duration="30000" />
     </task>
     <task id="LOCAL-00001" summary="feat(init):完成Stephen的next.js启动器项目的初始化">
       <option name="closed" value="true" />
@@ -333,6 +336,7 @@
     <MESSAGE value="feat(store/tag):添加标签状态管理&#10;feat(components/ReTag):添加标签通用组件" />
     <MESSAGE value="fixed(admin/user):修复了更新用户请求不成功的bug&#10;refactor(layout):优化布局" />
     <MESSAGE value="fixed(admin/user):修复了更新用户请求不成功的bug&#10;feat(tagTree):添加了标签树功能&#10;refactor(layout):优化布局" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed(admin/user):修复了更新用户请求不成功的bug&#10;feat(tagTree):添加了标签树功能&#10;refactor(layout):优化布局" />
+    <MESSAGE value="feat: 添加api接口&#10;refactor: 更新组件" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: 添加api接口&#10;refactor: 更新组件" />
   </component>
 </project>

@@ -1,15 +1,15 @@
 "use client";
 
-import React from "react";
-import { LoginForm, ProForm, ProFormText } from "@ant-design/pro-form";
-import { message } from "antd";
-import { LockOutlined, UserOutlined } from "@ant-design/icons";
-import { userRegisterUsingPost } from "@/api/userController";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
-import Image from "next/image";
-import "./index.css";
-import {STEPHEN_LOGO, STEPHEN_SUBTITLE, STEPHEN_TITLE} from '@/constants';
+import React from 'react';
+import {LoginForm, ProForm, ProFormText} from '@ant-design/pro-form';
+import {message} from 'antd';
+import {LockOutlined, UserOutlined} from '@ant-design/icons';
+import {userRegisterUsingPost} from '@/api/userController';
+import Link from 'next/link';
+import {useRouter} from 'next/navigation';
+import Image from 'next/image';
+import './index.css';
+import {LOGO, STEPHEN_SUBTITLE, STEPHEN_TITLE} from '@/constants';
 
 /**
  * 用户注册页面
@@ -18,7 +18,7 @@ import {STEPHEN_LOGO, STEPHEN_SUBTITLE, STEPHEN_TITLE} from '@/constants';
 const UserRegisterPage: React.FC = (props) => {
   const [form] = ProForm.useForm();
   const router = useRouter();
-  
+
   /**
    * 提交
    * @param values
@@ -35,83 +35,76 @@ const UserRegisterPage: React.FC = (props) => {
       message.error("注册失败，" + error.message);
     }
   };
-  
+
   return (
-      <div id="userRegisterPage">
-        <LoginForm<API.UserAddRequest>
-            form={form}
-            logo={
-              <Image
-                  src={STEPHEN_LOGO}
-                  alt={STEPHEN_TITLE}
-                  width={44}
-                  height={44}
-              />
-            }
-            title={STEPHEN_TITLE}
-            subTitle={STEPHEN_SUBTITLE}
-            onFinish={doSubmit}
-            submitter={{
-              searchConfig: {
-                submitText: "注册",
-              },
-            }}
+    <div id="userRegisterPage">
+      <LoginForm<API.UserAddRequest>
+        form={form}
+        logo={<Image src={LOGO} alt={STEPHEN_TITLE} width={44} height={44} />}
+        title={STEPHEN_TITLE}
+        subTitle={STEPHEN_SUBTITLE}
+        onFinish={doSubmit}
+        submitter={{
+          searchConfig: {
+            submitText: "注册",
+          },
+        }}
+      >
+        <ProFormText
+          fieldProps={{
+            size: "large",
+            prefix: <UserOutlined />,
+          }}
+          name="userAccount"
+          placeholder={"请输入用户名"}
+          rules={[
+            {
+              required: true,
+              message: "请输入用户名！",
+            },
+          ]}
+        />
+        <ProFormText.Password
+          name="userPassword"
+          fieldProps={{
+            size: "large",
+            prefix: <LockOutlined />,
+          }}
+          placeholder={"请输入密码"}
+          rules={[
+            {
+              required: true,
+              message: "请输入密码！",
+            },
+          ]}
+        />
+        <ProFormText.Password
+          name="checkPassword"
+          fieldProps={{
+            size: "large",
+            prefix: <LockOutlined />,
+          }}
+          placeholder={"确认密码"}
+          rules={[
+            {
+              required: true,
+              message: "请再次输入密码！",
+            },
+          ]}
+        />
+        <div
+          style={{
+            marginBlockEnd: 24,
+            textAlign: "end",
+          }}
         >
-          <ProFormText
-              fieldProps={{
-                size: "large",
-                prefix: <UserOutlined />,
-              }}
-              name="userAccount"
-              placeholder={"请输入用户名"}
-              rules={[
-                {
-                  required: true,
-                  message: "请输入用户名！",
-                },
-              ]}
-          />
-          <ProFormText.Password
-              name="userPassword"
-              fieldProps={{
-                size: "large",
-                prefix: <LockOutlined />,
-              }}
-              placeholder={"请输入密码"}
-              rules={[
-                {
-                  required: true,
-                  message: "请输入密码！",
-                },
-              ]}
-          />
-          <ProFormText.Password
-              name="checkPassword"
-              fieldProps={{
-                size: "large",
-                prefix: <LockOutlined />,
-              }}
-              placeholder={"确认密码"}
-              rules={[
-                {
-                  required: true,
-                  message: "请再次输入密码！",
-                },
-              ]}
-          />
-          <div
-              style={{
-                marginBlockEnd: 24,
-                textAlign: "end",
-              }}
-          >
-            已有账号？
-            <Link prefetch={false} href={"/user/login"}>
-              去登录
-            </Link>
-          </div>
-        </LoginForm>
-      </div>
+          已有账号？
+          <Link prefetch={false} href={"/user/login"}>
+            去登录
+          </Link>
+        </div>
+      </LoginForm>
+    </div>
   );
 };
 

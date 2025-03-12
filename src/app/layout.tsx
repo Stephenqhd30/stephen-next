@@ -1,21 +1,20 @@
 "use client";
 
-import './globals.css';
-import React, { useCallback, useEffect, useState } from "react";
-import { AntdRegistry } from "@ant-design/nextjs-registry";
-import { BasicLayout, UserLayout } from "@/layouts";
+import React, { useCallback, useEffect } from "react";
+import "./globals.css";
+import BasicLayout from "@/layouts/BasicLayout";
 import { Provider, useDispatch } from "react-redux";
-import store, { AppDispatch } from "@/store";
-import { usePathname } from "next/navigation";
 import { getLoginUserUsingGet } from "@/api/userController";
-import { setLoginUser } from "@/store/modules/user/loginUser";
-import { GlobalLoading } from "@/components";
-import { DEFAULT_USER } from "@/enums/UserRoleEnum";
+import { AntdRegistry } from "@ant-design/nextjs-registry";
+import store, { AppDispatch } from "@/store";
+import { setLoginUser } from "@/store/modules";
+import { usePathname } from "next/navigation";
+import ChatLayout from "@/layouts/ChatLayout";
 
 /**
  * 全局初始化逻辑
  * @param children
- * @constructor
+ * @constructorpnp
  */
 const InitializeStatus: React.FC<Readonly<{ children: React.ReactNode }>> = ({
   children,
@@ -23,67 +22,45 @@ const InitializeStatus: React.FC<Readonly<{ children: React.ReactNode }>> = ({
   children: React.ReactNode;
 }>) => {
   const dispatch = useDispatch<AppDispatch>();
-  const pathname = usePathname();
-  const [initialized, setInitialized] = useState<boolean>(false);
-  
-  const getInitialStatus = useCallback(async () => {
-    if (initialized) return;
-    try {
-      const res: any = await getLoginUserUsingGet();
-      if (res.code === 0 && res.data) {
-        dispatch(setLoginUser(res.data as API.LoginUserVO));
-      } else {
-        dispatch(setLoginUser(DEFAULT_USER));
-      }
-    } catch (error) {
-      dispatch(setLoginUser(DEFAULT_USER));
-    } finally {
-      setInitialized(true);
+  /**
+   * 全局初始数，有单词调用的代码，都可以写到这里
+   */
+  const doInitLoginUser = useCallback(async () => {
+    const res: any = await getLoginUserUsingGet();
+    if (res.code === 0 && res.data) {
+      // 更新全局用户状态
+      dispatch(setLoginUser(res.data as API.LoginUserVO));
     }
-  }, [dispatch, initialized]);
+  }, []);
 
   useEffect(() => {
-    // 登录和注册页不用获取登录信息
-    if (
-      !pathname.startsWith("/user/login") &&
-      !pathname.startsWith("/user/register")
-    ) {
-      getInitialStatus();
-    } else {
-      setInitialized(true);      
-    }
-  }, [getInitialStatus, pathname]);
-  if (!initialized) {
-    // 渲染占位符，避免 SSR 和客户端渲染不一致
-    return <GlobalLoading />;
-  }
-  return <>{children}</>;
+    doInitLoginUser();
+  }, []);
+  return children;
 };
 
-/**
- * 根布局
- * @param children
- * @constructor
- */
-export default function RootLayout({
-  children,
-}: Readonly<{ children: React.ReactNode }>) {
+const RootLayout = ({ children }: Readonly<{ children: React.ReactNode }>) => {
   const pathname = usePathname();
-  // 优化路径匹配
-  const isAuthPage = pathname?.startsWith('/user/login') || pathname?.startsWith('/user/register');
-  const Layout = isAuthPage ? UserLayout : BasicLayout;
 
+  // 判断是否是 AI 对话页面
+  const isChatPage = pathname.startsWith("/chat");
   return (
     <html lang="en">
       <body>
         <AntdRegistry>
           <Provider store={store}>
             <InitializeStatus>
-              <Layout>{children}</Layout>
+              {isChatPage ? (
+                <ChatLayout>{children}</ChatLayout>
+              ) : (
+                <BasicLayout>{children}</BasicLayout>
+              )}
             </InitializeStatus>
           </Provider>
         </AntdRegistry>
       </body>
     </html>
   );
-}
+};
+
+export default RootLayout;
