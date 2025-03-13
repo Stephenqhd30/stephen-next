@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import styles from "@/styles/moment/MomentShow.module.scss";
 import { clsx } from "clsx";
@@ -34,7 +32,9 @@ const MomentShow = () => {
         </Typography.Title>
         <p className="mt-4 flex justify-end text-gray-400 text-[0.75rem]">
           <span className="mr-4">{STEPHEN_AUTHOR} </span>
-          <span className="mr-1">发布于 {new Date().toLocaleDateString()}</span>
+          <span className="mr-1">
+            发布于: {new Date().toLocaleDateString()}
+          </span>
         </p>
       </div>
     </div>

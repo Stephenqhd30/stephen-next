@@ -1,15 +1,13 @@
-"use client";
-
 import React from "react";
 import styles from "@/styles/home/Home.module.scss";
 import { clsx } from "clsx";
-import { Avatar, Image, Typography } from "antd";
+import { Image, Typography } from "antd";
 import { ProCard, StatisticCard } from "@ant-design/pro-components";
 import { BlurText } from "@/components/Reactbits";
 
 const AuthorCard = () => {
   return (
-    <div className={styles.bannerCard}>
+    <div className={clsx(styles.bannerCard, "backdrop-blur-lg")}>
       <div className="relative w-full max-w-md">
         <div
           className={clsx(
@@ -24,7 +22,6 @@ const AuthorCard = () => {
           )}
         />
         <ProCard
-          className="w-full max-w-5xl p-6"
           title={
             <StatisticCard
               bodyStyle={{

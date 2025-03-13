@@ -10,10 +10,13 @@ const theme: ThemeConfig = {
   },
 };
 
-const App = ({ Component, pageProps }: AppProps) => (
-  <XProvider theme={theme}>
-    <Component {...pageProps} />
-  </XProvider>
-);
+const App = ({ Component, pageProps }: AppProps) => {
+  return (
+    <XProvider theme={theme}>
+      {/* 只在客户端渲染组件，防止 Hydration 错误 */}
+      <Component {...pageProps} />
+    </XProvider>
+  );
+};
 
 export default App;

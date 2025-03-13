@@ -1,5 +1,6 @@
+"use client";
 import { ProLayout } from "@ant-design/pro-components";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import {
   LOGO,
@@ -10,7 +11,6 @@ import {
 import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
 import GlobalFooter from "@/components/GlobalFooter";
-import "./index.css";
 import { useSelector } from "react-redux";
 import { AvatarDropdown } from "@/components/GlobalHeader";
 import { RootState } from "@/store";
@@ -33,8 +33,18 @@ const BasicLayout: React.FC<Props> = (props) => {
   const pathname = usePathname();
   const loginUser = useSelector((state: RootState) => state.loginUser);
   const router = useRouter();
+
+  const [isMounted, setIsMounted] = useState(false);
   const scene = useBreakpoint();
   const isMobile = !scene.md;
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  if (!isMounted) {
+    return null; // 🚀 避免 SSR 期间渲染，确保 `ProLayout` 只在 CSR 渲染
+  }
   // 判断是否为登录页面
   const isLoginPage =
     pathname === "/user/login" || pathname === "/user/register";

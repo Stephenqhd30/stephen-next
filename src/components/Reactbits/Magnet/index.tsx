@@ -1,9 +1,11 @@
+"use client";
+
 import React, {
-  useState,
+  HTMLAttributes,
+  ReactNode,
   useEffect,
   useRef,
-  ReactNode,
-  HTMLAttributes,
+  useState,
 } from "react";
 
 interface MagnetProps extends HTMLAttributes<HTMLDivElement> {

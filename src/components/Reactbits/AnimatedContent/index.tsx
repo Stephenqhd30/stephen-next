@@ -42,7 +42,6 @@ const AnimatedContent: React.FC<AnimatedContentProps> = ({
 }) => {
   const [inView, setInView] = useState(false);
   const ref = useRef<HTMLDivElement | null>(null);
-
   useEffect(() => {
     const element = ref.current;
     if (!element) return;
