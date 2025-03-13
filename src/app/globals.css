@@ -18,12 +18,17 @@ body,
 .ant-layout {
   min-height: 100vh;
 }
+
 .ant-pro-sider.ant-layout-sider.ant-pro-sider-fixed {
   left: unset;
 }
 
 canvas {
   display: block;
+}
+
+.ant-pro-basicLayout {
+  max-width: 1400px;
 }
 
 body {
@@ -41,11 +46,13 @@ ol {
   .ant-table {
     width: 100%;
     overflow-x: auto;
-    &-thead > tr,
-    &-tbody > tr {
+
+    & -thead > tr,
+    & -tbody > tr {
       > th,
       > td {
         white-space: pre;
+
         > span {
           display: block;
         }

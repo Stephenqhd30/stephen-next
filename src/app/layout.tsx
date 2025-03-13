@@ -8,8 +8,6 @@ import { getLoginUserUsingGet } from "@/api/userController";
 import { AntdRegistry } from "@ant-design/nextjs-registry";
 import store, { AppDispatch } from "@/store";
 import { setLoginUser } from "@/store/modules";
-import { usePathname } from "next/navigation";
-import ChatLayout from "@/layouts/ChatLayout";
 
 /**
  * 全局初始化逻辑
@@ -40,21 +38,13 @@ const InitializeStatus: React.FC<Readonly<{ children: React.ReactNode }>> = ({
 };
 
 const RootLayout = ({ children }: Readonly<{ children: React.ReactNode }>) => {
-  const pathname = usePathname();
-
-  // 判断是否是 AI 对话页面
-  const isChatPage = pathname.startsWith("/chat");
   return (
     <html lang="en">
       <body>
         <AntdRegistry>
           <Provider store={store}>
             <InitializeStatus>
-              {isChatPage ? (
-                <ChatLayout>{children}</ChatLayout>
-              ) : (
-                <BasicLayout>{children}</BasicLayout>
-              )}
+              <BasicLayout>{children}</BasicLayout>
             </InitializeStatus>
           </Provider>
         </AntdRegistry>

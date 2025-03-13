@@ -1,5 +1,5 @@
-import LogoNode from "@/components/ReHome/LogoNode";
-import WelcomeCard from "@/components/ReHome/WelcomeCard";
+import BannerTitle from "@/components/ReHome/BannerTitle";
+import AuthorCard from "@/components/ReHome/AuthorCard";
+import MomentShow from "@/components/ReHome/MomentShow";
 
-
-export { LogoNode, WelcomeCard };
+export { BannerTitle, AuthorCard, MomentShow };

@@ -1,6 +1,6 @@
 import React from "react";
 import { DefaultFooter } from "@ant-design/pro-layout";
-import { GitlabOutlined } from "@ant-design/icons";
+import {GithubOutlined, GitlabOutlined} from '@ant-design/icons';
 import {
   GITHUB,
   GITLAB,
@@ -8,8 +8,6 @@ import {
   STEPHEN_BLOG,
   STEPHEN_DEFAULT_MESSAGE,
 } from "@/constants";
-
-import "./index.css";
 
 /**
  * 全局底部栏组件
@@ -30,9 +28,9 @@ const GlobalFooter: React.FC = () => {
           blankTarget: true,
         },
         {
-          key: "Gitlab",
-          title: <GitlabOutlined />,
-          href: GITLAB,
+          key: "Github",
+          title: <GithubOutlined />,
+          href: GITHUB,
           blankTarget: true,
         },
         {

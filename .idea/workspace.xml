@@ -4,7 +4,32 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8dbcbc52-4c42-496e-883d-5398720683c9" name="Changes" comment="feat: 添加api接口&#10;refactor: 更新组件" />
+    <list default="true" id="8dbcbc52-4c42-496e-883d-5398720683c9" name="Changes" comment="feat: 添加tailwindcss支持">
+      <change afterPath="$PROJECT_DIR$/src/components/ReHome/BannerTitle/BannerTitle.module.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/ReHome/BannerTitle/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/ReHome/BannerTitle/styles.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/ReHome/WebsiteInfoProvider/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Reactbits/Magnet/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Reactbits/ScrollReveal/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/_app.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/_document.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/fonts/GeistMonoVF.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/fonts/GeistVF.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/fonts/font.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/index.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/menus.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/config/menus.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/next.config.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ReHome/LogoNode.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ReHome/WelcomeCard.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ReHome/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ReHome/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Reactbits/BlurText.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Reactbits/BlurText/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Reactbits/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Reactbits/index.ts" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,8 +38,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript JSX File" />
         <option value="CSS File" />
+        <option value="TypeScript JSX File" />
         <option value="TypeScript File" />
       </list>
     </option>
@@ -22,6 +47,12 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Stephenqhd30&quot;
+  }
+}</component>
   <component name="GitLabMergeRequestFiltersHistory">{
   &quot;lastFilter&quot;: {
     &quot;state&quot;: &quot;OPENED&quot;,
@@ -38,9 +69,12 @@
     &quot;second&quot;: &quot;4eeae389-a65c-4e83-bdc0-4b2489a010be&quot;
   }
 }</component>
-  <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
-  </component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Stephenqhd30/stephen-next.git&quot;,
+    &quot;accountId&quot;: &quot;920bf041-ebdd-439f-b5e9-eaad440e3011&quot;
+  }
+}</component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 4
@@ -54,28 +88,28 @@
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/stephenqiu/Desktop/Stephen/Stephen/stephen-next&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;pnpm&quot;,
-    &quot;npm.dev.executor&quot;: &quot;Run&quot;,
-    &quot;npm.openapi2ts.executor&quot;: &quot;Run&quot;,
-    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/Users/stephenqiu/Desktop/Stephen/Stephen/stephen-next/node_modules/prettier&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.linters.eslint&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/Users/stephenqiu/Desktop/Stephen/Stephen/stephen-next/node_modules/typescript/lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/stephenqiu/Desktop/Stephen/Stephen/stephen-next/src",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "pnpm",
+    "npm.dev.executor": "Run",
+    "npm.openapi2ts.executor": "Run",
+    "prettierjs.PrettierConfiguration.Package": "/Users/stephenqiu/Desktop/Stephen/Stephen/stephen-next/node_modules/prettier",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "ts.external.directory.path": "/Users/stephenqiu/Desktop/Stephen/Stephen/stephen-next/node_modules/typescript/lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="ReactDesignerToolWindowState">
     <option name="myId2Visible">
       <map>
@@ -87,16 +121,18 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/layouts/ChatLayout" />
       <recent name="$PROJECT_DIR$/src" />
-      <recent name="$PROJECT_DIR$/src/compoents" />
       <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/src/layouts/ChatLayout" />
+      <recent name="$PROJECT_DIR$/src/compoents" />
       <recent name="D:\Stephen\Stephen\stephen-next\src\components" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Stephen\Stephen\stephen-next\src\utils" />
-      <recent name="D:\Stephen\Stephen\stephen-next\public" />
-      <recent name="D:\Stephen\Stephen\stephen-next\src\app\user\login" />
+      <recent name="$PROJECT_DIR$/src/styles" />
+      <recent name="$PROJECT_DIR$/src/fonts" />
+      <recent name="$PROJECT_DIR$/src/components/ReHome/WebsiteInfoProvider" />
+      <recent name="$PROJECT_DIR$/src/components/Reactbits/BlurText" />
+      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="RunManager" selected="npm.dev">
@@ -152,7 +188,8 @@
       <workItem from="1738584777931" duration="170000" />
       <workItem from="1741673533510" duration="5024000" />
       <workItem from="1741785156370" duration="47000" />
-      <workItem from="1741785379634" duration="30000" />
+      <workItem from="1741785259404" duration="4100000" />
+      <workItem from="1741833890929" duration="7389000" />
     </task>
     <task id="LOCAL-00001" summary="feat(init):完成Stephen的next.js启动器项目的初始化">
       <option name="closed" value="true" />
@@ -298,7 +335,23 @@
       <option name="project" value="LOCAL" />
       <updated>1733718223721</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="feat: 添加api接口&#10;refactor: 更新组件">
+      <option name="closed" value="true" />
+      <created>1741785518484</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1741785518484</updated>
+    </task>
+    <task id="LOCAL-00020" summary="feat: 添加tailwindcss支持">
+      <option name="closed" value="true" />
+      <created>1741791302565</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1741791302565</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -337,6 +390,7 @@
     <MESSAGE value="fixed(admin/user):修复了更新用户请求不成功的bug&#10;refactor(layout):优化布局" />
     <MESSAGE value="fixed(admin/user):修复了更新用户请求不成功的bug&#10;feat(tagTree):添加了标签树功能&#10;refactor(layout):优化布局" />
     <MESSAGE value="feat: 添加api接口&#10;refactor: 更新组件" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: 添加api接口&#10;refactor: 更新组件" />
+    <MESSAGE value="feat: 添加tailwindcss支持" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: 添加tailwindcss支持" />
   </component>
 </project>

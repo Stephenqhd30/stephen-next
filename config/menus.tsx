@@ -1,13 +1,11 @@
 import { MenuDataItem } from "@ant-design/pro-layout";
+import { HomeOutlined } from "@ant-design/icons";
 
 const menus: MenuDataItem[] = [
   {
     path: "/",
-    redirect: "/chat",
-  },
-  {
-    name: "我们开始聊天吧",
-    path: "/chat",
+    name: "首页",
+    icon: <HomeOutlined />,
   },
   {
     name: "用户页",

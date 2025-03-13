@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
-import "./index.less";
+import styles from "@/styles/markdown/Markdown.module.scss";
+
 import { MarkdownEditor, MarkdownEditorInstance } from "@ant-design/md-editor";
 
 interface Props {

@@ -15,6 +15,9 @@ import { useSelector } from "react-redux";
 import { AvatarDropdown } from "@/components/GlobalHeader";
 import { RootState } from "@/store";
 import menus from "../../../config/menus";
+import { Grid } from "antd";
+
+const { useBreakpoint } = Grid;
 
 interface Props {
   children: React.ReactNode;
@@ -30,7 +33,8 @@ const BasicLayout: React.FC<Props> = (props) => {
   const pathname = usePathname();
   const loginUser = useSelector((state: RootState) => state.loginUser);
   const router = useRouter();
-
+  const scene = useBreakpoint();
+  const isMobile = !scene.md;
   // 判断是否为登录页面
   const isLoginPage =
     pathname === "/user/login" || pathname === "/user/register";
@@ -41,58 +45,58 @@ const BasicLayout: React.FC<Props> = (props) => {
   }
 
   return (
-    <div id="basic-layout">
-      <ProLayout
-        layout={"top"}
-        contentWidth={"Fluid"}
-        fixedHeader={true}
-        title={STEPHEN_TITLE}
-        logo={
-          <Image src={LOGO} height={32} width={32} alt={STEPHEN_SUBTITLE} />
-        }
-        location={{
-          // @ts-ignore
-          pathname,
-        }}
-        avatarProps={{
-          src: loginUser.userAvatar || LOGO,
-          size: "small",
-          title: loginUser.userName || STEPHEN_AUTHOR,
-          render: (props, dom) => {
-            if (!loginUser.id) {
-              return (
-                <div onClick={() => router.push("/user/login")}>{dom}</div>
-              );
-            }
-            return <AvatarDropdown currentUser={loginUser} />;
-          },
-        }}
-        headerTitleRender={(logo, title) => {
-          return (
-            <a>
-              {logo}
-              {title}
-            </a>
-          );
-        }}
-        // 渲染底部栏
-        footerRender={() => {
-          return <GlobalFooter key={"globalFooter"} />;
-        }}
-        // 定义菜单
-        menuDataRender={() => {
-          return menus;
-        }}
-        // 菜单项如何渲染
-        menuItemRender={(item, dom) => (
-          <Link href={item.path || "/"} target={"_self"}>
-            {dom}
-          </Link>
-        )}
-      >
-        {children}
-      </ProLayout>
-    </div>
+    <ProLayout
+      layout={"top"}
+      contentWidth={"Fixed"}
+      fixedHeader={true}
+      title={STEPHEN_TITLE}
+      logo={<Image src={LOGO} height={32} width={32} alt={STEPHEN_SUBTITLE} />}
+      location={{
+        // @ts-ignore
+        pathname,
+      }}
+      token={{
+        pageContainer: {
+          paddingBlockPageContainerContent: isMobile ? 0 : 24,
+          paddingInlinePageContainerContent: isMobile ? 0 : 40,
+        },
+      }}
+      avatarProps={{
+        src: loginUser.userAvatar || LOGO,
+        size: "small",
+        title: loginUser.userName || STEPHEN_AUTHOR,
+        render: (props, dom) => {
+          if (!loginUser.id) {
+            return <div onClick={() => router.push("/user/login")}>{dom}</div>;
+          }
+          return <AvatarDropdown currentUser={loginUser} />;
+        },
+      }}
+      headerTitleRender={(logo, title) => {
+        return (
+          <a>
+            {logo}
+            {title}
+          </a>
+        );
+      }}
+      // 渲染底部栏
+      footerRender={() => {
+        return <GlobalFooter key={"globalFooter"} />;
+      }}
+      // 定义菜单
+      menuDataRender={() => {
+        return menus;
+      }}
+      // 菜单项如何渲染
+      menuItemRender={(item, dom) => (
+        <Link href={item.path || "/"} target={"_self"}>
+          {dom}
+        </Link>
+      )}
+    >
+      {children}
+    </ProLayout>
   );
 };
 

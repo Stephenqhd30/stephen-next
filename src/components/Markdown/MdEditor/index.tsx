@@ -3,7 +3,7 @@ import React, { useRef } from "react";
 import { Card } from "antd";
 import { MarkdownEditor, MarkdownEditorInstance } from "@ant-design/md-editor";
 import { uploadFileUsingPost } from "@/api/fileController";
-
+import styles from "@/styles/markdown/Markdown.module.scss";
 const uploadImage = async (fileList: File[] | string[]): Promise<string[]> => {
   try {
     const uploadedUrls = await Promise.all(

@@ -1,4 +1,6 @@
-import { useRef, useEffect, useState } from "react";
+"use client";
+
+import React, { useRef, useEffect, useState } from "react";
 import { useSprings, animated, SpringValue } from "@react-spring/web";
 
 const AnimatedSpan = animated.span as React.FC<
@@ -19,6 +21,21 @@ interface BlurTextProps {
   onAnimationComplete?: () => void;
 }
 
+/**
+ * 动效文字
+ * @param text
+ * @param delay
+ * @param className
+ * @param animateBy
+ * @param direction
+ * @param threshold
+ * @param rootMargin
+ * @param animationFrom
+ * @param animationTo
+ * @param easing
+ * @param onAnimationComplete
+ * @constructor
+ */
 const BlurText: React.FC<BlurTextProps> = ({
   text = "",
   delay = 200,
