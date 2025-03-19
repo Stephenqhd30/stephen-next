@@ -1,12 +1,8 @@
-import React, { useRef } from "react";
-import styles from "@/styles/markdown/Markdown.module.scss";
-
-import { MarkdownEditor, MarkdownEditorInstance } from "@ant-design/md-editor";
+import React from "react";
+import { Markdown } from "@ant-design/pro-editor";
 
 interface Props {
   value?: string;
-  onChange?: (value: string) => void;
-  isMobile?: boolean;
 }
 
 /**
@@ -15,22 +11,9 @@ interface Props {
  * @constructor
  */
 const MdViewer: React.FC<Props> = (props) => {
-  const { value = "", onChange, isMobile } = props;
-  const editorRef = useRef<MarkdownEditorInstance>();
-  return (
-    <MarkdownEditor
-      editorRef={editorRef}
-      initValue={value}
-      onChange={onChange}
-      width={"100vw"}
-      toc={!isMobile}
-      readonly={true}
-      style={{
-        maxWidth: "100%",
-        overflow: "hidden",
-      }}
-    />
-  );
+  const { value = "" } = props;
+
+  return <Markdown>{value}</Markdown>;
 };
 
 export default MdViewer;

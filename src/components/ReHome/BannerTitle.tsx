@@ -7,6 +7,7 @@ import {
   playwrite_us_modern,
   varela_round,
 } from "@/styles/fonts/font";
+import { BANNER_SUBTITLE, BANNER_TITLE, BANNER_TRAJECTORY } from "@/constants";
 
 const BannerTitle = () => {
   return (
@@ -18,7 +19,7 @@ const BannerTitle = () => {
     >
       <div className={clsx(varela_round.className, styles.title)}>
         <ReactTyped
-          strings={["StephenQiu’s Blog"]}
+          strings={[BANNER_TITLE]}
           fadeOut={true}
           startWhenVisible={true}
           shuffle={true}
@@ -30,9 +31,7 @@ const BannerTitle = () => {
       </div>
       <div className={clsx(playwrite_us_modern.className, styles.subtitle)}>
         <ReactTyped
-          strings={[
-            "When you have succeeded, tell the story of your journey with the poetry of time.",
-          ]}
+          strings={[BANNER_SUBTITLE]}
           typeSpeed={20}
           startDelay={1000}
           fadeOut={true}
@@ -46,7 +45,7 @@ const BannerTitle = () => {
       </div>
       <div className={clsx(noto_sans_sc.className, styles.subtitle, "mt-3")}>
         <ReactTyped
-          strings={["一起长大的约定，那样真心，与你聊不完的曾经"]}
+          strings={[BANNER_TRAJECTORY]}
           typeSpeed={40}
           startDelay={2300}
           fadeOut={true}

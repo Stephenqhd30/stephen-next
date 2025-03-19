@@ -4,6 +4,7 @@ import { clsx } from "clsx";
 import { Image, Typography } from "antd";
 import { ProCard, StatisticCard } from "@ant-design/pro-components";
 import { BlurText } from "@/components/Reactbits";
+import { AUTHOR_SUBTITLE, AUTHOR_TEXT, AUTHOR_TITLE } from "@/constants";
 
 const AuthorCard = () => {
   return (
@@ -22,6 +23,7 @@ const AuthorCard = () => {
           )}
         />
         <ProCard
+          className="w-80"
           title={
             <StatisticCard
               bodyStyle={{
@@ -34,7 +36,7 @@ const AuthorCard = () => {
                       "text-3xl font-semibold text-gray-800 dark:text-gray-300"
                     }
                   >
-                    {"Stephen的爆米花"}
+                    {AUTHOR_TITLE}
                   </Typography>
                 ),
                 valueRender: () => (
@@ -43,7 +45,7 @@ const AuthorCard = () => {
                       "text-sm text-gray-600 mt-1 dark:text-gray-400 text-2xl"
                     }
                   >
-                    {"I can do all things."}
+                    {AUTHOR_SUBTITLE}
                   </Typography>
                 ),
               }}
@@ -51,8 +53,9 @@ const AuthorCard = () => {
                 <Image
                   preview={false}
                   className="w-8 h-8 border-2 border-white shadow-lg"
-                  src="https://dogeoss.grtsinry43.com/img/author.jpeg"
+                  src={"/logo.svg"}
                   alt="Author"
+                  draggable="false"
                   width={48}
                   height={48}
                 />
@@ -64,7 +67,7 @@ const AuthorCard = () => {
           direction={"column"}
         >
           <BlurText
-            text="伫倚危楼风细细，望极春愁，黯黯生天际。草色烟光残照里，无言谁会凭阑意。拟把疏狂图一醉，对酒当歌，强乐还无味。衣带渐宽终不悔，为伊消得人憔悴。"
+            text={AUTHOR_TEXT}
             delay={0}
             animateBy="letters"
             direction="bottom"

@@ -9,15 +9,15 @@
 /* 桌面端样式 */
 :where(.css-dev-only-do-not-override-1ayddhh) .ant-image .ant-image-img {
   max-width: 100%;
-  max-height: 500px;
-  object-fit: contain;
+  max-height: 400px;
+  object-fit: cover;
 }
 
 /* 移动端样式 */
 @media (max-width: 768px) {
   :where(.css-dev-only-do-not-override-1ayddhh) .ant-image .ant-image-img {
     max-width: 90%;
-    max-height: 300px;
+    max-height: 256px;
   }
 }
 

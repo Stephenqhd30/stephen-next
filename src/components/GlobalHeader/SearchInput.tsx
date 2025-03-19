@@ -1,34 +1,73 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import { Input, theme } from "antd";
 import { SearchOutlined } from "@ant-design/icons";
+import { clsx } from "clsx";
+import styles from "@/styles/search/SearchInput.module.scss";
+import { useRouter } from "next/navigation";
+import { SearchResource } from "@/enums/SearchResourceEnum";
 
-/**
- * 搜索框
- * @constructor
- */
-const SearchInput: React.FC = () => {
+interface Props {
+  onSearch?: (searchText: string) => void;
+}
+
+// 初始化搜索参数
+const initialSearchParams: API.SearchRequest = {
+  searchText: undefined,
+  type: SearchResource.POST,
+};
+
+const SearchInput: React.FC<Props> = (props) => {
+  const { onSearch } = props;
+  const router = useRouter();
   const { token } = theme.useToken();
+  const [searchParams, setSearchParams] =
+    useState<API.SearchRequest>(initialSearchParams);
+
+  /**
+   * 处理搜索
+   */
+  const handleSearch = () => {
+    if (onSearch) {
+      onSearch(searchParams.searchText || "");
+    } else {
+      // 去除多余的空格
+      const searchQuery = searchParams.searchText?.trim() || "";
+      if (searchQuery) {
+        router.push(
+          `/search?type=${initialSearchParams.type}&searchText=${encodeURIComponent(searchQuery)}`,
+        );
+      } else {
+        // 如果搜索文本为空，跳转到默认搜索页面
+        router.push(`/search?type=${initialSearchParams.type}`);
+      }
+    }
+  };
+
   return (
     <div
-      key="SearchOutlined"
-      aria-hidden="true"
-      className={"search-input"}
+      className={clsx("relative w-full max-w-xs", styles.searchInput)}
       onMouseDown={(e) => {
         e.stopPropagation();
         e.preventDefault();
       }}
     >
       <Input
-        className={"input"}
+        className="pl-10 pr-4 py-2 w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-0 focus:border-transparent shadow-none hover:border-transparent hover:shadow-none"
+        style={{ transition: "none", backgroundColor: "transparent" }}
         prefix={
           <SearchOutlined
-            style={{
-              color: token.colorTextLightSolid,
-            }}
+            className="absolute left-3 top-1/2 transform -translate-y-1/2"
+            style={{ color: token.colorTextLightSolid }}
           />
         }
-        placeholder="搜索题目"
+        placeholder="搜索..."
         variant="borderless"
+        onChange={(e) =>
+          setSearchParams({ ...searchParams, searchText: e.target.value })
+        }
+        onPressEnter={handleSearch}
       />
     </div>
   );
