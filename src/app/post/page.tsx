@@ -16,7 +16,7 @@ const PostListPage: React.FC = () => {
   // 搜索参数状态
   const [searchParams, setSearchParams] = useState<API.SearchRequest>({
     current: 1,
-    pageSize: 10,
+    pageSize: 20,
   });
 
   return (

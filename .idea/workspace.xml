@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8dbcbc52-4c42-496e-883d-5398720683c9" name="Changes" comment="fixed: 修复了服务端渲染和客户端渲染冲突的问题&#10;refactor: 更新项目版本依赖">
+    <list default="true" id="8dbcbc52-4c42-496e-883d-5398720683c9" name="Changes" comment="feat: 添加美化页面&#10;feat: 添加帖子相关的组件">
+      <change afterPath="$PROJECT_DIR$/public/asserts/404.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ReHome/AuthorCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ReHome/AuthorCard.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/constants/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/index.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +73,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/stephenqiu/Desktop/Stephen/Stephen/stephen-next/src&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/stephenqiu/Desktop/Stephen/Stephen/stephen-next/public/asserts&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;SCSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
@@ -102,11 +101,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/asserts" />
       <recent name="$PROJECT_DIR$/src" />
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/src/layouts/ChatLayout" />
-      <recent name="$PROJECT_DIR$/src/compoents" />
-      <recent name="D:\Stephen\Stephen\stephen-next\src\components" />
+      <recent name="$PROJECT_DIR$/src/app" />
+      <recent name="$PROJECT_DIR$/src/components" />
+      <recent name="$PROJECT_DIR$/src/enums" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/public/asserts" />
@@ -173,6 +172,11 @@
       <workItem from="1741833890929" duration="23440000" />
       <workItem from="1741869326281" duration="2560000" />
       <workItem from="1742275514203" duration="619000" />
+      <workItem from="1742385539663" duration="1657000" />
+      <workItem from="1742654610259" duration="637000" />
+      <workItem from="1742746378674" duration="21000" />
+      <workItem from="1743216920457" duration="262000" />
+      <workItem from="1743521080357" duration="853000" />
     </task>
     <task id="LOCAL-00001" summary="feat(init):完成Stephen的next.js启动器项目的初始化">
       <option name="closed" value="true" />
@@ -350,7 +354,15 @@
       <option name="project" value="LOCAL" />
       <updated>1741862428416</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="feat: 添加美化页面&#10;feat: 添加帖子相关的组件">
+      <option name="closed" value="true" />
+      <created>1742395196459</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1742395196459</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -392,6 +404,7 @@
     <MESSAGE value="feat: 添加tailwindcss支持" />
     <MESSAGE value="feat: 添加动画库支持&#10;feat: 添加scss模块化css&#10;feat: 添加首页页面设计" />
     <MESSAGE value="fixed: 修复了服务端渲染和客户端渲染冲突的问题&#10;refactor: 更新项目版本依赖" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed: 修复了服务端渲染和客户端渲染冲突的问题&#10;refactor: 更新项目版本依赖" />
+    <MESSAGE value="feat: 添加美化页面&#10;feat: 添加帖子相关的组件" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: 添加美化页面&#10;feat: 添加帖子相关的组件" />
   </component>
 </project>
