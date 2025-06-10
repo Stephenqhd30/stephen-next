@@ -2,12 +2,12 @@
 /* eslint-disable */
 import request from "@/request";
 
-/** doSearchAll POST /api/es/all */
-export async function doSearchAllUsingPost(
+/** 聚合搜索查询 POST /es/all */
+export async function doSearchAll(
   body: API.SearchRequest,
   options?: { [key: string]: any }
 ) {
-  return request<API.BaseResponseSearchVOObject_>("/api/es/all", {
+  return request<API.BaseResponseSearchVOObject>("/es/all", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -17,12 +17,12 @@ export async function doSearchAllUsingPost(
   });
 }
 
-/** searchPostVOByPage POST /api/es/search/post/page/vo */
-export async function searchPostVoByPageUsingPost(
+/** 分页搜索帖子（从 ES 查询，封装类） POST /es/search/post/page/vo */
+export async function searchPostVoByPage(
   body: API.PostQueryRequest,
   options?: { [key: string]: any }
 ) {
-  return request<API.BaseResponsePagePostVO_>("/api/es/search/post/page/vo", {
+  return request<API.BaseResponsePagePostVO>("/es/search/post/page/vo", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -32,12 +32,12 @@ export async function searchPostVoByPageUsingPost(
   });
 }
 
-/** searchUserVOByPage POST /api/es/search/user/page/vo */
-export async function searchUserVoByPageUsingPost(
+/** 分页搜索用户（从 ES 查询，封装类） POST /es/search/user/page/vo */
+export async function searchUserVoByPage(
   body: API.UserQueryRequest,
   options?: { [key: string]: any }
 ) {
-  return request<API.BaseResponsePageUserVO_>("/api/es/search/user/page/vo", {
+  return request<API.BaseResponsePageUserVO>("/es/search/user/page/vo", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

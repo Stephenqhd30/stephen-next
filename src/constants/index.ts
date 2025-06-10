@@ -4,7 +4,7 @@ export const AUTHOR = "StephenQiu";
 export const DEFAULT_MESSAGE = "Stephen的爆米花";
 export const BLOG = "https://blog.stephenqiu.icu/";
 export const SUBTITLE = "想要对你说的不敢说的爱，会不会有人可以明白";
-export const BASE_URL = "http://localhost:8080";
+export const BASE_URL = "http://localhost:8080/api";
 export const TITLE = "Stephen的爆米花";
 
 // BannerTitle

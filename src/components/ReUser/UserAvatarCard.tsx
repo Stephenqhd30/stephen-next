@@ -1,6 +1,6 @@
 import React from "react";
 import { Avatar, Typography } from "antd";
-import {StatisticCard} from '@ant-design/pro-components';
+import { StatisticCard } from "@ant-design/pro-components";
 
 interface Props {
   user: API.UserVO;

@@ -3,9 +3,8 @@
 import React, { useRef, useState } from "react";
 import { PageContainer } from "@ant-design/pro-layout";
 import { PostCard } from "@/components/RePost";
-import { searchPostVoByPageUsingPost } from "@/api/searchController";
 import { ActionType, ProList } from "@ant-design/pro-components";
-
+import { searchPostVoByPage } from "@/api/searchController";
 
 /**
  * 文章列表
@@ -36,9 +35,9 @@ const PostListPage: React.FC = () => {
         itemLayout="vertical"
         rowKey={"id"}
         request={async (params, sort, filter) => {
-          const sortField = "updateTime";
+          const sortField = "createTime";
           const sortOrder = sort?.[sortField] ?? "descend";
-          const { data, code }: any = await searchPostVoByPageUsingPost({
+          const { data, code }: any = await searchPostVoByPage({
             ...params,
             ...filter,
             sortField,

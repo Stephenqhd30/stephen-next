@@ -2,12 +2,12 @@
 /* eslint-disable */
 import request from "@/request";
 
-/** addTag POST /api/tag/add */
-export async function addTagUsingPost(
+/** 此处后端没有提供注释 POST /tag/add */
+export async function addTag(
   body: API.TagAddRequest,
   options?: { [key: string]: any }
 ) {
-  return request<API.BaseResponseLong_>("/api/tag/add", {
+  return request<API.BaseResponseLong>("/tag/add", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -17,12 +17,12 @@ export async function addTagUsingPost(
   });
 }
 
-/** deleteTag POST /api/tag/delete */
-export async function deleteTagUsingPost(
+/** 此处后端没有提供注释 POST /tag/delete */
+export async function deleteTag(
   body: API.DeleteRequest,
   options?: { [key: string]: any }
 ) {
-  return request<API.BaseResponseBoolean_>("/api/tag/delete", {
+  return request<API.BaseResponseBoolean>("/tag/delete", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -32,12 +32,12 @@ export async function deleteTagUsingPost(
   });
 }
 
-/** editTag POST /api/tag/edit */
-export async function editTagUsingPost(
+/** 此处后端没有提供注释 POST /tag/edit */
+export async function editTag(
   body: API.TagEditRequest,
   options?: { [key: string]: any }
 ) {
-  return request<API.BaseResponseBoolean_>("/api/tag/edit", {
+  return request<API.BaseResponseBoolean>("/tag/edit", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -47,13 +47,13 @@ export async function editTagUsingPost(
   });
 }
 
-/** getTagVOById GET /api/tag/get/vo */
-export async function getTagVoByIdUsingGet(
+/** 此处后端没有提供注释 GET /tag/get/vo */
+export async function getTagVoById(
   // 叠加生成的Param类型 (非body参数swagger默认没有生成对象)
-  params: API.getTagVOByIdUsingGETParams,
+  params: API.getTagVOByIdParams,
   options?: { [key: string]: any }
 ) {
-  return request<API.BaseResponseTagVO_>("/api/tag/get/vo", {
+  return request<API.BaseResponseTagVO>("/tag/get/vo", {
     method: "GET",
     params: {
       ...params,
@@ -62,12 +62,12 @@ export async function getTagVoByIdUsingGet(
   });
 }
 
-/** listTagByPage POST /api/tag/list/page */
-export async function listTagByPageUsingPost(
+/** 此处后端没有提供注释 POST /tag/list/page */
+export async function listTagByPage(
   body: API.TagQueryRequest,
   options?: { [key: string]: any }
 ) {
-  return request<API.BaseResponsePageTag_>("/api/tag/list/page", {
+  return request<API.BaseResponsePageTag>("/tag/list/page", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -77,12 +77,12 @@ export async function listTagByPageUsingPost(
   });
 }
 
-/** listTagVOByPage POST /api/tag/list/page/vo */
-export async function listTagVoByPageUsingPost(
+/** 此处后端没有提供注释 POST /tag/list/page/vo */
+export async function listTagVoByPage(
   body: API.TagQueryRequest,
   options?: { [key: string]: any }
 ) {
-  return request<API.BaseResponsePageTagVO_>("/api/tag/list/page/vo", {
+  return request<API.BaseResponsePageTagVO>("/tag/list/page/vo", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -92,20 +92,12 @@ export async function listTagVoByPageUsingPost(
   });
 }
 
-/** listTagByTree GET /api/tag/list/tree */
-export async function listTagByTreeUsingGet(options?: { [key: string]: any }) {
-  return request<API.BaseResponseListTagDTO_>("/api/tag/list/tree", {
-    method: "GET",
-    ...(options || {}),
-  });
-}
-
-/** listMyTagVOByPage POST /api/tag/my/list/page/vo */
-export async function listMyTagVoByPageUsingPost(
+/** 此处后端没有提供注释 POST /tag/my/list/page/vo */
+export async function listMyTagVoByPage(
   body: API.TagQueryRequest,
   options?: { [key: string]: any }
 ) {
-  return request<API.BaseResponsePageTagVO_>("/api/tag/my/list/page/vo", {
+  return request<API.BaseResponsePageTagVO>("/tag/my/list/page/vo", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -115,27 +107,12 @@ export async function listMyTagVoByPageUsingPost(
   });
 }
 
-/** updateTag POST /api/tag/update */
-export async function updateTagUsingPost(
+/** 此处后端没有提供注释 POST /tag/update */
+export async function updateTag(
   body: API.TagUpdateRequest,
   options?: { [key: string]: any }
 ) {
-  return request<API.BaseResponseBoolean_>("/api/tag/update", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    data: body,
-    ...(options || {}),
-  });
-}
-
-/** updateTagByBatch POST /api/tag/update/batch */
-export async function updateTagByBatchUsingPost(
-  body: API.TagUpdateRequest,
-  options?: { [key: string]: any }
-) {
-  return request<API.BaseResponseBoolean_>("/api/tag/update/batch", {
+  return request<API.BaseResponseBoolean>("/tag/update", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

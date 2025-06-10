@@ -2,16 +2,15 @@
 
 import { FileUploadBiz } from "@/enums/FileUploadBizEnum";
 import React, { useRef } from "react";
-import { Card } from "antd";
 import { MarkdownEditor, MarkdownEditorInstance } from "@ant-design/md-editor";
-import { uploadFileUsingPost } from "@/api/fileController";
 import "@/styles/markdown/Markdown.module.scss";
+import { uploadFile } from "@/api/fileController";
 
 const uploadImage = async (fileList: File[] | string[]): Promise<string[]> => {
   try {
     const uploadedUrls = await Promise.all(
       fileList.map(async (file: any) => {
-        const res: any = await uploadFileUsingPost(
+        const res: any = await uploadFile(
           {
             biz: FileUploadBiz.POST_IMAGE_COVER,
           },

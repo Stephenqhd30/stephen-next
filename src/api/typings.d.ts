@@ -1,1031 +1,1564 @@
 declare namespace API {
-  type AffineTransform = {
-    determinant?: number;
-    identity?: boolean;
-    scaleX?: number;
-    scaleY?: number;
-    shearX?: number;
-    shearY?: number;
-    translateX?: number;
-    translateY?: number;
-    type?: number;
-  };
-
-  type Attribute = true;
-
-  type Auth = {
-    accessToken?: string;
-    createTime?: string;
-    id?: number;
-    isDelete?: number;
-    oauthId?: string;
-    oauthProvider?: string;
-    refreshToken?: string;
-    updateTime?: string;
-    userId?: number;
-  };
-
-  type AuthAddRequest = {
-    accessToken?: string;
-    oauthId?: string;
-    oauthProvider?: string;
-    refreshToken?: string;
-  };
-
-  type AuthQueryRequest = {
-    accessToken?: string;
-    current?: number;
-    id?: number;
-    notId?: number;
-    oauthId?: string;
-    oauthProvider?: string;
-    pageSize?: number;
-    refreshToken?: string;
-    sortField?: string;
-    sortOrder?: string;
-    userId?: number;
-  };
-
-  type AuthVO = {
-    accessToken?: string;
-    createTime?: string;
-    id?: number;
-    oauthId?: string;
-    oauthProvider?: string;
-    refreshToken?: string;
-    updateTime?: string;
-    userId?: number;
-    userVO?: UserVO;
-  };
-
-  type BaseResponseAuthVO_ = {
+  type BaseResponseBoolean = {
+    /** 状态码 */
     code?: number;
-    data?: AuthVO;
-    message?: string;
-  };
-
-  type BaseResponseBoolean_ = {
-    code?: number;
+    /** 数据 */
     data?: boolean;
+    /** 消息 */
     message?: string;
   };
 
-  type BaseResponseCaptcha_ = {
+  type BaseResponseCaptcha = {
+    /** 状态码 */
     code?: number;
     data?: Captcha;
+    /** 消息 */
     message?: string;
   };
 
-  type BaseResponseConversionVO_ = {
+  type BaseResponseInteger = {
+    /** 状态码 */
     code?: number;
-    data?: ConversionVO;
-    message?: string;
-  };
-
-  type BaseResponseInt_ = {
-    code?: number;
+    /** 数据 */
     data?: number;
+    /** 消息 */
     message?: string;
   };
 
-  type BaseResponseListTagDTO_ = {
-    code?: number;
-    data?: TagDTO[];
-    message?: string;
-  };
-
-  type BaseResponseLoginUserVO_ = {
+  type BaseResponseLoginUserVO = {
+    /** 状态码 */
     code?: number;
     data?: LoginUserVO;
+    /** 消息 */
     message?: string;
   };
 
-  type BaseResponseLong_ = {
+  type BaseResponseLong = {
+    /** 状态码 */
     code?: number;
+    /** 数据 */
     data?: number;
+    /** 消息 */
     message?: string;
   };
 
-  type BaseResponseMessageVO_ = {
+  type BaseResponsePagePost = {
+    /** 状态码 */
     code?: number;
-    data?: MessageVO;
+    data?: PagePost;
+    /** 消息 */
     message?: string;
   };
 
-  type BaseResponsePageAuth_ = {
+  type BaseResponsePagePostVO = {
+    /** 状态码 */
     code?: number;
-    data?: PageAuth_;
+    data?: PagePostVO;
+    /** 消息 */
     message?: string;
   };
 
-  type BaseResponsePageAuthVO_ = {
+  type BaseResponsePageTag = {
+    /** 状态码 */
     code?: number;
-    data?: PageAuthVO_;
+    data?: PageTag;
+    /** 消息 */
     message?: string;
   };
 
-  type BaseResponsePageConversion_ = {
+  type BaseResponsePageTagVO = {
+    /** 状态码 */
     code?: number;
-    data?: PageConversion_;
+    data?: PageTagVO;
+    /** 消息 */
     message?: string;
   };
 
-  type BaseResponsePageConversionVO_ = {
+  type BaseResponsePageUser = {
+    /** 状态码 */
     code?: number;
-    data?: PageConversionVO_;
+    data?: PageUser;
+    /** 消息 */
     message?: string;
   };
 
-  type BaseResponsePageMessage_ = {
+  type BaseResponsePageUserVO = {
+    /** 状态码 */
     code?: number;
-    data?: PageMessage_;
+    data?: PageUserVO;
+    /** 消息 */
     message?: string;
   };
 
-  type BaseResponsePageMessageVO_ = {
-    code?: number;
-    data?: PageMessageVO_;
-    message?: string;
-  };
-
-  type BaseResponsePagePost_ = {
-    code?: number;
-    data?: PagePost_;
-    message?: string;
-  };
-
-  type BaseResponsePagePostVO_ = {
-    code?: number;
-    data?: PagePostVO_;
-    message?: string;
-  };
-
-  type BaseResponsePageTag_ = {
-    code?: number;
-    data?: PageTag_;
-    message?: string;
-  };
-
-  type BaseResponsePageTagVO_ = {
-    code?: number;
-    data?: PageTagVO_;
-    message?: string;
-  };
-
-  type BaseResponsePageUser_ = {
-    code?: number;
-    data?: PageUser_;
-    message?: string;
-  };
-
-  type BaseResponsePageUserVO_ = {
-    code?: number;
-    data?: PageUserVO_;
-    message?: string;
-  };
-
-  type BaseResponsePostVO_ = {
+  type BaseResponsePostVO = {
+    /** 状态码 */
     code?: number;
     data?: PostVO;
+    /** 消息 */
     message?: string;
   };
 
-  type BaseResponseSearchVOObject_ = {
+  type BaseResponseSearchVOObject = {
+    /** 状态码 */
     code?: number;
-    data?: SearchVOObject_;
+    data?: SearchVOObject;
+    /** 消息 */
     message?: string;
   };
 
-  type BaseResponseString_ = {
+  type BaseResponseString = {
+    /** 状态码 */
     code?: number;
+    /** 数据 */
     data?: string;
+    /** 消息 */
     message?: string;
   };
 
-  type BaseResponseTagVO_ = {
+  type BaseResponseTagVO = {
+    /** 状态码 */
     code?: number;
     data?: TagVO;
+    /** 消息 */
     message?: string;
   };
 
-  type BaseResponseUser_ = {
+  type BaseResponseUser = {
+    /** 状态码 */
     code?: number;
     data?: User;
+    /** 消息 */
     message?: string;
   };
 
-  type BaseResponseUserVO_ = {
+  type BaseResponseUserVO = {
+    /** 状态码 */
     code?: number;
     data?: UserVO;
+    /** 消息 */
     message?: string;
-  };
-
-  type BufferedImage = {
-    accelerationPriority?: number;
-    alphaPremultiplied?: boolean;
-    alphaRaster?: WritableRaster;
-    colorModel?: ColorModel;
-    data?: Raster;
-    graphics?: Graphics;
-    height?: number;
-    minTileX?: number;
-    minTileY?: number;
-    minX?: number;
-    minY?: number;
-    numXTiles?: number;
-    numYTiles?: number;
-    propertyNames?: string[];
-    raster?: WritableRaster;
-    sampleModel?: SampleModel;
-    source?: ImageProducer;
-    sources?: RenderedImage[];
-    tileGridXOffset?: number;
-    tileGridYOffset?: number;
-    tileHeight?: number;
-    tileWidth?: number;
-    transparency?: number;
-    type?: number;
-    width?: number;
-    writableTileIndices?: Point[];
   };
 
   type Captcha = {
     code?: string;
-    image?: string;
-    imageBuffer?: BufferedImage;
     uuid?: string;
+    image?: string;
+    imageBuffer?: {
+      accelerationPriority?: number;
+      colorModel?: {
+        transparency?: number;
+        numComponents?: number;
+        numColorComponents?: number;
+        colorSpace?: {
+          type?: number;
+          numComponents?: number;
+          cs_sRGB?: boolean;
+        };
+        transferType?: number;
+        alphaPremultiplied?: boolean;
+        componentSize?: number[];
+        pixelSize?: number;
+      };
+      raster?: {
+        sampleModel?: {
+          width?: number;
+          height?: number;
+          numBands?: number;
+          dataType?: number;
+          transferType?: number;
+          sampleSize?: number[];
+          numDataElements?: number;
+        };
+        dataBuffer?: {
+          dataType?: number;
+          offset?: number;
+          size?: number;
+          offsets?: number[];
+          numBanks?: number;
+        };
+        minX?: number;
+        minY?: number;
+        width?: number;
+        height?: number;
+        sampleModelTranslateX?: number;
+        sampleModelTranslateY?: number;
+        numBands?: number;
+        numDataElements?: number;
+        parent?: {
+          sampleModel?: {
+            width?: number;
+            height?: number;
+            numBands?: number;
+            dataType?: number;
+            transferType?: number;
+            sampleSize?: number[];
+            numDataElements?: number;
+          };
+          dataBuffer?: {
+            dataType?: number;
+            offset?: number;
+            size?: number;
+            offsets?: number[];
+            numBanks?: number;
+          };
+          minX?: number;
+          minY?: number;
+          width?: number;
+          height?: number;
+          sampleModelTranslateX?: number;
+          sampleModelTranslateY?: number;
+          numBands?: number;
+          numDataElements?: number;
+          transferType?: number;
+          bounds?: {
+            x?: number;
+            y?: number;
+            width?: number;
+            height?: number;
+            bounds2D?: {
+              minX?: number;
+              minY?: number;
+              maxX?: number;
+              maxY?: number;
+              centerX?: number;
+              centerY?: number;
+              x?: number;
+              y?: number;
+              empty?: boolean;
+              height?: number;
+              width?: number;
+            };
+            empty?: boolean;
+            location?: { x?: number; y?: number };
+            size?: { width?: number; height?: number };
+            rect?: {
+              minX?: number;
+              minY?: number;
+              maxX?: number;
+              maxY?: number;
+              centerX?: number;
+              centerY?: number;
+              x?: number;
+              y?: number;
+              empty?: boolean;
+              height?: number;
+              width?: number;
+            };
+            minX?: number;
+            minY?: number;
+            maxX?: number;
+            maxY?: number;
+            centerX?: number;
+            centerY?: number;
+          };
+        };
+        rect?: {
+          sampleModel?: {
+            width?: number;
+            height?: number;
+            numBands?: number;
+            dataType?: number;
+            transferType?: number;
+            sampleSize?: number[];
+            numDataElements?: number;
+          };
+          dataBuffer?: {
+            dataType?: number;
+            offset?: number;
+            size?: number;
+            offsets?: number[];
+            numBanks?: number;
+          };
+          minX?: number;
+          minY?: number;
+          width?: number;
+          height?: number;
+          sampleModelTranslateX?: number;
+          sampleModelTranslateY?: number;
+          numBands?: number;
+          numDataElements?: number;
+          transferType?: number;
+          bounds?: {
+            x?: number;
+            y?: number;
+            width?: number;
+            height?: number;
+            bounds2D?: {
+              minX?: number;
+              minY?: number;
+              maxX?: number;
+              maxY?: number;
+              centerX?: number;
+              centerY?: number;
+              x?: number;
+              y?: number;
+              empty?: boolean;
+              height?: number;
+              width?: number;
+            };
+            empty?: boolean;
+            location?: { x?: number; y?: number };
+            size?: { width?: number; height?: number };
+            rect?: {
+              minX?: number;
+              minY?: number;
+              maxX?: number;
+              maxY?: number;
+              centerX?: number;
+              centerY?: number;
+              x?: number;
+              y?: number;
+              empty?: boolean;
+              height?: number;
+              width?: number;
+            };
+            minX?: number;
+            minY?: number;
+            maxX?: number;
+            maxY?: number;
+            centerX?: number;
+            centerY?: number;
+          };
+        };
+        transferType?: number;
+        bounds?: {
+          x?: number;
+          y?: number;
+          width?: number;
+          height?: number;
+          bounds2D?: {
+            minX?: number;
+            minY?: number;
+            maxX?: number;
+            maxY?: number;
+            centerX?: number;
+            centerY?: number;
+            x?: number;
+            y?: number;
+            empty?: boolean;
+            height?: number;
+            width?: number;
+          };
+          empty?: boolean;
+          location?: { x?: number; y?: number };
+          size?: { width?: number; height?: number };
+          rect?: {
+            minX?: number;
+            minY?: number;
+            maxX?: number;
+            maxY?: number;
+            centerX?: number;
+            centerY?: number;
+            x?: number;
+            y?: number;
+            empty?: boolean;
+            height?: number;
+            width?: number;
+          };
+          minX?: number;
+          minY?: number;
+          maxX?: number;
+          maxY?: number;
+          centerX?: number;
+          centerY?: number;
+        };
+      };
+      sampleModel?: {
+        width?: number;
+        height?: number;
+        numBands?: number;
+        dataType?: number;
+        transferType?: number;
+        sampleSize?: number[];
+        numDataElements?: number;
+      };
+      minX?: number;
+      minY?: number;
+      numXTiles?: number;
+      numYTiles?: number;
+      minTileX?: number;
+      minTileY?: number;
+      tileWidth?: number;
+      tileHeight?: number;
+      tileGridXOffset?: number;
+      tileGridYOffset?: number;
+      alphaPremultiplied?: boolean;
+      alphaRaster?: {
+        sampleModel?: {
+          width?: number;
+          height?: number;
+          numBands?: number;
+          dataType?: number;
+          transferType?: number;
+          sampleSize?: number[];
+          numDataElements?: number;
+        };
+        dataBuffer?: {
+          dataType?: number;
+          offset?: number;
+          size?: number;
+          offsets?: number[];
+          numBanks?: number;
+        };
+        minX?: number;
+        minY?: number;
+        width?: number;
+        height?: number;
+        sampleModelTranslateX?: number;
+        sampleModelTranslateY?: number;
+        numBands?: number;
+        numDataElements?: number;
+        parent?: {
+          sampleModel?: {
+            width?: number;
+            height?: number;
+            numBands?: number;
+            dataType?: number;
+            transferType?: number;
+            sampleSize?: number[];
+            numDataElements?: number;
+          };
+          dataBuffer?: {
+            dataType?: number;
+            offset?: number;
+            size?: number;
+            offsets?: number[];
+            numBanks?: number;
+          };
+          minX?: number;
+          minY?: number;
+          width?: number;
+          height?: number;
+          sampleModelTranslateX?: number;
+          sampleModelTranslateY?: number;
+          numBands?: number;
+          numDataElements?: number;
+          transferType?: number;
+          bounds?: {
+            x?: number;
+            y?: number;
+            width?: number;
+            height?: number;
+            bounds2D?: {
+              minX?: number;
+              minY?: number;
+              maxX?: number;
+              maxY?: number;
+              centerX?: number;
+              centerY?: number;
+              x?: number;
+              y?: number;
+              empty?: boolean;
+              height?: number;
+              width?: number;
+            };
+            empty?: boolean;
+            location?: { x?: number; y?: number };
+            size?: { width?: number; height?: number };
+            rect?: {
+              minX?: number;
+              minY?: number;
+              maxX?: number;
+              maxY?: number;
+              centerX?: number;
+              centerY?: number;
+              x?: number;
+              y?: number;
+              empty?: boolean;
+              height?: number;
+              width?: number;
+            };
+            minX?: number;
+            minY?: number;
+            maxX?: number;
+            maxY?: number;
+            centerX?: number;
+            centerY?: number;
+          };
+        };
+        rect?: {
+          sampleModel?: {
+            width?: number;
+            height?: number;
+            numBands?: number;
+            dataType?: number;
+            transferType?: number;
+            sampleSize?: number[];
+            numDataElements?: number;
+          };
+          dataBuffer?: {
+            dataType?: number;
+            offset?: number;
+            size?: number;
+            offsets?: number[];
+            numBanks?: number;
+          };
+          minX?: number;
+          minY?: number;
+          width?: number;
+          height?: number;
+          sampleModelTranslateX?: number;
+          sampleModelTranslateY?: number;
+          numBands?: number;
+          numDataElements?: number;
+          transferType?: number;
+          bounds?: {
+            x?: number;
+            y?: number;
+            width?: number;
+            height?: number;
+            bounds2D?: {
+              minX?: number;
+              minY?: number;
+              maxX?: number;
+              maxY?: number;
+              centerX?: number;
+              centerY?: number;
+              x?: number;
+              y?: number;
+              empty?: boolean;
+              height?: number;
+              width?: number;
+            };
+            empty?: boolean;
+            location?: { x?: number; y?: number };
+            size?: { width?: number; height?: number };
+            rect?: {
+              minX?: number;
+              minY?: number;
+              maxX?: number;
+              maxY?: number;
+              centerX?: number;
+              centerY?: number;
+              x?: number;
+              y?: number;
+              empty?: boolean;
+              height?: number;
+              width?: number;
+            };
+            minX?: number;
+            minY?: number;
+            maxX?: number;
+            maxY?: number;
+            centerX?: number;
+            centerY?: number;
+          };
+        };
+        transferType?: number;
+        bounds?: {
+          x?: number;
+          y?: number;
+          width?: number;
+          height?: number;
+          bounds2D?: {
+            minX?: number;
+            minY?: number;
+            maxX?: number;
+            maxY?: number;
+            centerX?: number;
+            centerY?: number;
+            x?: number;
+            y?: number;
+            empty?: boolean;
+            height?: number;
+            width?: number;
+          };
+          empty?: boolean;
+          location?: { x?: number; y?: number };
+          size?: { width?: number; height?: number };
+          rect?: {
+            minX?: number;
+            minY?: number;
+            maxX?: number;
+            maxY?: number;
+            centerX?: number;
+            centerY?: number;
+            x?: number;
+            y?: number;
+            empty?: boolean;
+            height?: number;
+            width?: number;
+          };
+          minX?: number;
+          minY?: number;
+          maxX?: number;
+          maxY?: number;
+          centerX?: number;
+          centerY?: number;
+        };
+      };
+      graphics?: {
+        clipBounds?: {
+          x?: number;
+          y?: number;
+          width?: number;
+          height?: number;
+          bounds2D?: {
+            minX?: number;
+            minY?: number;
+            maxX?: number;
+            maxY?: number;
+            centerX?: number;
+            centerY?: number;
+            x?: number;
+            y?: number;
+            empty?: boolean;
+            height?: number;
+            width?: number;
+          };
+          empty?: boolean;
+          location?: { x?: number; y?: number };
+          size?: { width?: number; height?: number };
+          rect?: {
+            minX?: number;
+            minY?: number;
+            maxX?: number;
+            maxY?: number;
+            centerX?: number;
+            centerY?: number;
+            x?: number;
+            y?: number;
+            empty?: boolean;
+            height?: number;
+            width?: number;
+          };
+          minX?: number;
+          minY?: number;
+          maxX?: number;
+          maxY?: number;
+          centerX?: number;
+          centerY?: number;
+        };
+        xormode?: {
+          red?: number;
+          green?: number;
+          blue?: number;
+          alpha?: number;
+          rgb?: number;
+          colorSpace?: {
+            type?: number;
+            numComponents?: number;
+            cs_sRGB?: boolean;
+          };
+          transparency?: number;
+        };
+        clip?: {
+          bounds2D?: {
+            minX?: number;
+            minY?: number;
+            maxX?: number;
+            maxY?: number;
+            centerX?: number;
+            centerY?: number;
+            x?: number;
+            y?: number;
+            empty?: boolean;
+            height?: number;
+            width?: number;
+          };
+          bounds?: {
+            x?: number;
+            y?: number;
+            width?: number;
+            height?: number;
+            bounds2D?: {
+              minX?: number;
+              minY?: number;
+              maxX?: number;
+              maxY?: number;
+              centerX?: number;
+              centerY?: number;
+              x?: number;
+              y?: number;
+              empty?: boolean;
+              height?: number;
+              width?: number;
+            };
+            empty?: boolean;
+            location?: { x?: number; y?: number };
+            size?: { width?: number; height?: number };
+            rect?: {
+              minX?: number;
+              minY?: number;
+              maxX?: number;
+              maxY?: number;
+              centerX?: number;
+              centerY?: number;
+              x?: number;
+              y?: number;
+              empty?: boolean;
+              height?: number;
+              width?: number;
+            };
+            minX?: number;
+            minY?: number;
+            maxX?: number;
+            maxY?: number;
+            centerX?: number;
+            centerY?: number;
+          };
+        };
+        clipRect?: {
+          x?: number;
+          y?: number;
+          width?: number;
+          height?: number;
+          bounds2D?: {
+            minX?: number;
+            minY?: number;
+            maxX?: number;
+            maxY?: number;
+            centerX?: number;
+            centerY?: number;
+            x?: number;
+            y?: number;
+            empty?: boolean;
+            height?: number;
+            width?: number;
+          };
+          empty?: boolean;
+          location?: { x?: number; y?: number };
+          size?: { width?: number; height?: number };
+          rect?: {
+            minX?: number;
+            minY?: number;
+            maxX?: number;
+            maxY?: number;
+            centerX?: number;
+            centerY?: number;
+            x?: number;
+            y?: number;
+            empty?: boolean;
+            height?: number;
+            width?: number;
+          };
+          minX?: number;
+          minY?: number;
+          maxX?: number;
+          maxY?: number;
+          centerX?: number;
+          centerY?: number;
+        };
+        color?: {
+          red?: number;
+          green?: number;
+          blue?: number;
+          alpha?: number;
+          rgb?: number;
+          colorSpace?: {
+            type?: number;
+            numComponents?: number;
+            cs_sRGB?: boolean;
+          };
+          transparency?: number;
+        };
+        fontMetrics?: {
+          font?: {
+            name?: string;
+            style?: number;
+            size?: number;
+            fontName?: string;
+            transform?: {
+              scaleX?: number;
+              shearY?: number;
+              shearX?: number;
+              scaleY?: number;
+              translateX?: number;
+              translateY?: number;
+              toRotation?: number;
+              toQuadrantRotation?: number;
+              determinant?: number;
+              type?: number;
+              identity?: boolean;
+            };
+            bold?: boolean;
+            italic?: boolean;
+            numGlyphs?: number;
+            missingGlyphCode?: number;
+            italicAngle?: number;
+            transformed?: boolean;
+            psname?: string;
+            size2D?: number;
+            availableAttributes?: Record<string, any>[];
+            attributes?: Record<string, any>;
+            family?: string;
+            plain?: boolean;
+          };
+          fontRenderContext?: {
+            antiAliased?: boolean;
+            transformType?: number;
+            transform?: {
+              scaleX?: number;
+              shearY?: number;
+              shearX?: number;
+              scaleY?: number;
+              translateX?: number;
+              translateY?: number;
+              toRotation?: number;
+              toQuadrantRotation?: number;
+              determinant?: number;
+              type?: number;
+              identity?: boolean;
+            };
+            antiAliasingHint?: Record<string, any>;
+            fractionalMetricsHint?: Record<string, any>;
+            transformed?: boolean;
+          };
+          maxDescent?: number;
+          widths?: number[];
+          maxAscent?: number;
+          maxDecent?: number;
+          maxAdvance?: number;
+          ascent?: number;
+          descent?: number;
+          leading?: number;
+          height?: number;
+        };
+        font?: {
+          name?: string;
+          style?: number;
+          size?: number;
+          fontName?: string;
+          transform?: {
+            scaleX?: number;
+            shearY?: number;
+            shearX?: number;
+            scaleY?: number;
+            translateX?: number;
+            translateY?: number;
+            toRotation?: number;
+            toQuadrantRotation?: number;
+            determinant?: number;
+            type?: number;
+            identity?: boolean;
+          };
+          bold?: boolean;
+          italic?: boolean;
+          numGlyphs?: number;
+          missingGlyphCode?: number;
+          italicAngle?: number;
+          transformed?: boolean;
+          psname?: string;
+          size2D?: number;
+          availableAttributes?: Record<string, any>[];
+          attributes?: Record<string, any>;
+          family?: string;
+          plain?: boolean;
+        };
+      };
+      writableTileIndices?: { x?: number; y?: number }[];
+      transparency?: number;
+      data?: {
+        sampleModel?: {
+          width?: number;
+          height?: number;
+          numBands?: number;
+          dataType?: number;
+          transferType?: number;
+          sampleSize?: number[];
+          numDataElements?: number;
+        };
+        dataBuffer?: {
+          dataType?: number;
+          offset?: number;
+          size?: number;
+          offsets?: number[];
+          numBanks?: number;
+        };
+        minX?: number;
+        minY?: number;
+        width?: number;
+        height?: number;
+        sampleModelTranslateX?: number;
+        sampleModelTranslateY?: number;
+        numBands?: number;
+        numDataElements?: number;
+        transferType?: number;
+        bounds?: {
+          x?: number;
+          y?: number;
+          width?: number;
+          height?: number;
+          bounds2D?: {
+            minX?: number;
+            minY?: number;
+            maxX?: number;
+            maxY?: number;
+            centerX?: number;
+            centerY?: number;
+            x?: number;
+            y?: number;
+            empty?: boolean;
+            height?: number;
+            width?: number;
+          };
+          empty?: boolean;
+          location?: { x?: number; y?: number };
+          size?: { width?: number; height?: number };
+          rect?: {
+            minX?: number;
+            minY?: number;
+            maxX?: number;
+            maxY?: number;
+            centerX?: number;
+            centerY?: number;
+            x?: number;
+            y?: number;
+            empty?: boolean;
+            height?: number;
+            width?: number;
+          };
+          minX?: number;
+          minY?: number;
+          maxX?: number;
+          maxY?: number;
+          centerX?: number;
+          centerY?: number;
+        };
+      };
+      type?: number;
+      source?: Record<string, any>;
+      propertyNames?: string[];
+      height?: number;
+      sources?: {
+        sampleModel?: {
+          width?: number;
+          height?: number;
+          numBands?: number;
+          dataType?: number;
+          transferType?: number;
+          sampleSize?: number[];
+          numDataElements?: number;
+        };
+        minX?: number;
+        minY?: number;
+        numXTiles?: number;
+        numYTiles?: number;
+        minTileX?: number;
+        minTileY?: number;
+        tileWidth?: number;
+        tileHeight?: number;
+        tileGridXOffset?: number;
+        tileGridYOffset?: number;
+        colorModel?: {
+          transparency?: number;
+          numComponents?: number;
+          numColorComponents?: number;
+          colorSpace?: {
+            type?: number;
+            numComponents?: number;
+            cs_sRGB?: boolean;
+          };
+          transferType?: number;
+          alphaPremultiplied?: boolean;
+          componentSize?: number[];
+          pixelSize?: number;
+        };
+        data?: {
+          sampleModel?: {
+            width?: number;
+            height?: number;
+            numBands?: number;
+            dataType?: number;
+            transferType?: number;
+            sampleSize?: number[];
+            numDataElements?: number;
+          };
+          dataBuffer?: {
+            dataType?: number;
+            offset?: number;
+            size?: number;
+            offsets?: number[];
+            numBanks?: number;
+          };
+          minX?: number;
+          minY?: number;
+          width?: number;
+          height?: number;
+          sampleModelTranslateX?: number;
+          sampleModelTranslateY?: number;
+          numBands?: number;
+          numDataElements?: number;
+          transferType?: number;
+          bounds?: {
+            x?: number;
+            y?: number;
+            width?: number;
+            height?: number;
+            bounds2D?: {
+              minX?: number;
+              minY?: number;
+              maxX?: number;
+              maxY?: number;
+              centerX?: number;
+              centerY?: number;
+              x?: number;
+              y?: number;
+              empty?: boolean;
+              height?: number;
+              width?: number;
+            };
+            empty?: boolean;
+            location?: { x?: number; y?: number };
+            size?: { width?: number; height?: number };
+            rect?: {
+              minX?: number;
+              minY?: number;
+              maxX?: number;
+              maxY?: number;
+              centerX?: number;
+              centerY?: number;
+              x?: number;
+              y?: number;
+              empty?: boolean;
+              height?: number;
+              width?: number;
+            };
+            minX?: number;
+            minY?: number;
+            maxX?: number;
+            maxY?: number;
+            centerX?: number;
+            centerY?: number;
+          };
+        };
+        propertyNames?: string[];
+        height?: number;
+        width?: number;
+      }[];
+      width?: number;
+    };
   };
 
-  type checkCaptchaCodeUsingPOSTParams = {
-    /** code */
+  type checkCaptchaCodeParams = {
     code: string;
   };
 
-  type checkUsingGETParams = {
-    /** echostr */
-    echostr?: string;
-    /** nonce */
-    nonce?: string;
-    /** signature */
-    signature?: string;
-    /** timestamp */
-    timestamp?: string;
-  };
-
-  type Color = {
-    alpha?: number;
-    blue?: number;
-    colorSpace?: ColorSpace;
-    green?: number;
-    red?: number;
-    rgb?: number;
-    transparency?: number;
-  };
-
-  type ColorModel = {
-    alphaPremultiplied?: boolean;
-    colorSpace?: ColorSpace;
-    componentSize?: number[];
-    numColorComponents?: number;
-    numComponents?: number;
-    pixelSize?: number;
-    transferType?: number;
-    transparency?: number;
-  };
-
-  type ColorSpace = {
-    cs_sRGB?: boolean;
-    numComponents?: number;
-    type?: number;
-  };
-
-  type Conversion = {
-    createTime?: string;
-    id?: number;
-    isDelete?: number;
-    title?: string;
-    updateTime?: string;
-    userId?: number;
-  };
-
-  type ConversionAddRequest = {
-    title?: string;
-  };
-
-  type ConversionEditRequest = {
-    id?: number;
-    title?: string;
-  };
-
-  type ConversionQueryRequest = {
-    current?: number;
-    id?: number;
-    notId?: number;
-    pageSize?: number;
-    searchText?: string;
-    sortField?: string;
-    sortOrder?: string;
-    title?: string;
-    userId?: number;
-  };
-
-  type ConversionUpdateRequest = {
-    id?: number;
-    title?: string;
-  };
-
-  type ConversionVO = {
-    createTime?: string;
-    id?: number;
-    title?: string;
-    updateTime?: string;
-    userId?: number;
-    userVO?: UserVO;
-  };
-
-  type DataBuffer = {
-    dataType?: number;
-    numBanks?: number;
-    offset?: number;
-    offsets?: number[];
-    size?: number;
+  type checkParams = {
+    timestamp: string;
+    nonce: string;
+    signature: string;
+    echostr: string;
   };
 
   type DeleteRequest = {
-    id?: number;
-  };
-
-  type Dimension = {
-    height?: number;
-    width?: number;
-  };
-
-  type Font = {
-    attributes?: Record<string, any>;
-    availableAttributes?: Attribute[];
-    bold?: boolean;
-    family?: string;
-    fontName?: string;
-    italic?: boolean;
-    italicAngle?: number;
-    missingGlyphCode?: number;
-    name?: string;
-    numGlyphs?: number;
-    plain?: boolean;
-    psname?: string;
-    size?: number;
-    size2D?: number;
-    style?: number;
-    transform?: AffineTransform;
-    transformed?: boolean;
-  };
-
-  type FontMetrics = {
-    ascent?: number;
-    descent?: number;
-    font?: Font;
-    fontRenderContext?: FontRenderContext;
-    height?: number;
-    leading?: number;
-    maxAdvance?: number;
-    maxAscent?: number;
-    maxDecent?: number;
-    maxDescent?: number;
-    widths?: number[];
-  };
-
-  type FontRenderContext = {
-    antiAliased?: boolean;
-    antiAliasingHint?: Record<string, any>;
-    fractionalMetricsHint?: Record<string, any>;
-    transform?: AffineTransform;
-    transformType?: number;
-    transformed?: boolean;
-  };
-
-  type getAuthVOByIdUsingGETParams = {
     /** id */
     id?: number;
   };
 
-  type getConversionVOByIdUsingGETParams = {
-    /** id */
-    id?: number;
+  type getPostVOByIdParams = {
+    id: number;
   };
 
-  type getMessageVOByIdUsingGETParams = {
-    /** id */
-    id?: number;
+  type getTagVOByIdParams = {
+    id: number;
   };
 
-  type getPostVOByIdUsingGETParams = {
-    /** id */
-    id?: number;
+  type getUserByIdParams = {
+    id: number;
   };
 
-  type getTagVOByIdUsingGETParams = {
-    /** id */
-    id?: number;
+  type getUserVOByIdParams = {
+    id: number;
   };
-
-  type getUserByIdUsingGETParams = {
-    /** id */
-    id?: number;
-  };
-
-  type getUserVOByIdUsingGETParams = {
-    /** id */
-    id?: number;
-  };
-
-  type Graphics = {
-    clip?: Shape;
-    clipBounds?: Rectangle;
-    clipRect?: Rectangle;
-    color?: Color;
-    font?: Font;
-    fontMetrics?: FontMetrics;
-  };
-
-  type ImageProducer = true;
 
   type LoginUserVO = {
-    createTime?: string;
+    /** 用户 id */
     id?: number;
-    token?: string;
-    updateTime?: string;
-    userAvatar?: string;
-    userEmail?: string;
+    /** 用户昵称 */
     userName?: string;
+    /** 用户头像 */
+    userAvatar?: string;
+    /** 用户角色：user/admin/ban */
     userRole?: string;
-  };
-
-  type Message = {
-    content?: string;
-    conversionId?: number;
+    /** 用户邮箱 */
+    userEmail?: string;
+    /** 创建时间 */
     createTime?: string;
-    id?: number;
-    senderType?: number;
-    userId?: number;
-  };
-
-  type MessageAddRequest = {
-    content?: string;
-    conversionId?: number;
-    senderType?: number;
-  };
-
-  type MessageEditRequest = {
-    content?: string;
-    conversionId?: number;
-    id?: number;
-    senderType?: number;
-  };
-
-  type MessageQueryRequest = {
-    content?: string;
-    conversionId?: number;
-    current?: number;
-    id?: number;
-    notId?: number;
-    pageSize?: number;
-    searchText?: string;
-    senderType?: number;
-    sortField?: string;
-    sortOrder?: string;
-    userId?: number;
-  };
-
-  type MessageUpdateRequest = {
-    content?: string;
-    id?: number;
-    senderType?: number;
-  };
-
-  type MessageVO = {
-    content?: string;
-    conversionId?: number;
-    createTime?: string;
-    id?: number;
-    senderType?: number;
-    userId?: number;
-    userVO?: UserVO;
+    /** 更新时间 */
+    updateTime?: string;
+    /** token */
+    token?: string;
   };
 
   type OrderItem = {
-    asc?: boolean;
     column?: string;
+    asc?: boolean;
   };
 
-  type PageAuth_ = {
-    countId?: string;
-    current?: number;
-    maxLimit?: number;
-    optimizeCountSql?: boolean;
-    orders?: OrderItem[];
-    pages?: number;
-    records?: Auth[];
-    searchCount?: boolean;
-    size?: number;
-    total?: number;
-  };
-
-  type PageAuthVO_ = {
-    countId?: string;
-    current?: number;
-    maxLimit?: number;
-    optimizeCountSql?: boolean;
-    orders?: OrderItem[];
-    pages?: number;
-    records?: AuthVO[];
-    searchCount?: boolean;
-    size?: number;
-    total?: number;
-  };
-
-  type PageConversion_ = {
-    countId?: string;
-    current?: number;
-    maxLimit?: number;
-    optimizeCountSql?: boolean;
-    orders?: OrderItem[];
-    pages?: number;
-    records?: Conversion[];
-    searchCount?: boolean;
-    size?: number;
-    total?: number;
-  };
-
-  type PageConversionVO_ = {
-    countId?: string;
-    current?: number;
-    maxLimit?: number;
-    optimizeCountSql?: boolean;
-    orders?: OrderItem[];
-    pages?: number;
-    records?: ConversionVO[];
-    searchCount?: boolean;
-    size?: number;
-    total?: number;
-  };
-
-  type PageMessage_ = {
-    countId?: string;
-    current?: number;
-    maxLimit?: number;
-    optimizeCountSql?: boolean;
-    orders?: OrderItem[];
-    pages?: number;
-    records?: Message[];
-    searchCount?: boolean;
-    size?: number;
-    total?: number;
-  };
-
-  type PageMessageVO_ = {
-    countId?: string;
-    current?: number;
-    maxLimit?: number;
-    optimizeCountSql?: boolean;
-    orders?: OrderItem[];
-    pages?: number;
-    records?: MessageVO[];
-    searchCount?: boolean;
-    size?: number;
-    total?: number;
-  };
-
-  type PagePost_ = {
-    countId?: string;
-    current?: number;
-    maxLimit?: number;
-    optimizeCountSql?: boolean;
-    orders?: OrderItem[];
-    pages?: number;
+  type PagePost = {
     records?: Post[];
-    searchCount?: boolean;
-    size?: number;
     total?: number;
+    size?: number;
+    current?: number;
+    orders?: OrderItem[];
+    optimizeCountSql?: PagePost;
+    searchCount?: PagePost;
+    optimizeJoinOfCountSql?: boolean;
+    maxLimit?: number;
+    countId?: string;
+    pages?: number;
   };
 
-  type PagePostVO_ = {
-    countId?: string;
-    current?: number;
-    maxLimit?: number;
-    optimizeCountSql?: boolean;
-    orders?: OrderItem[];
-    pages?: number;
+  type PagePostVO = {
     records?: PostVO[];
-    searchCount?: boolean;
-    size?: number;
     total?: number;
+    size?: number;
+    current?: number;
+    orders?: OrderItem[];
+    optimizeCountSql?: PagePostVO;
+    searchCount?: PagePostVO;
+    optimizeJoinOfCountSql?: boolean;
+    maxLimit?: number;
+    countId?: string;
+    pages?: number;
   };
 
-  type PageTag_ = {
-    countId?: string;
-    current?: number;
-    maxLimit?: number;
-    optimizeCountSql?: boolean;
-    orders?: OrderItem[];
-    pages?: number;
+  type PageTag = {
     records?: Tag[];
-    searchCount?: boolean;
-    size?: number;
     total?: number;
+    size?: number;
+    current?: number;
+    orders?: OrderItem[];
+    optimizeCountSql?: PageTag;
+    searchCount?: PageTag;
+    optimizeJoinOfCountSql?: boolean;
+    maxLimit?: number;
+    countId?: string;
+    pages?: number;
   };
 
-  type PageTagVO_ = {
-    countId?: string;
-    current?: number;
-    maxLimit?: number;
-    optimizeCountSql?: boolean;
-    orders?: OrderItem[];
-    pages?: number;
+  type PageTagVO = {
     records?: TagVO[];
-    searchCount?: boolean;
-    size?: number;
     total?: number;
+    size?: number;
+    current?: number;
+    orders?: OrderItem[];
+    optimizeCountSql?: PageTagVO;
+    searchCount?: PageTagVO;
+    optimizeJoinOfCountSql?: boolean;
+    maxLimit?: number;
+    countId?: string;
+    pages?: number;
   };
 
-  type PageUser_ = {
-    countId?: string;
-    current?: number;
-    maxLimit?: number;
-    optimizeCountSql?: boolean;
-    orders?: OrderItem[];
-    pages?: number;
+  type PageUser = {
     records?: User[];
-    searchCount?: boolean;
-    size?: number;
     total?: number;
-  };
-
-  type PageUserVO_ = {
-    countId?: string;
+    size?: number;
     current?: number;
-    maxLimit?: number;
-    optimizeCountSql?: boolean;
     orders?: OrderItem[];
+    optimizeCountSql?: PageUser;
+    searchCount?: PageUser;
+    optimizeJoinOfCountSql?: boolean;
+    maxLimit?: number;
+    countId?: string;
     pages?: number;
-    records?: UserVO[];
-    searchCount?: boolean;
-    size?: number;
-    total?: number;
   };
 
-  type Point = {
-    x?: number;
-    y?: number;
+  type PageUserVO = {
+    records?: UserVO[];
+    total?: number;
+    size?: number;
+    current?: number;
+    orders?: OrderItem[];
+    optimizeCountSql?: PageUserVO;
+    searchCount?: PageUserVO;
+    optimizeJoinOfCountSql?: boolean;
+    maxLimit?: number;
+    countId?: string;
+    pages?: number;
   };
 
   type Post = {
-    content?: string;
-    cover?: string;
-    createTime?: string;
-    favourNum?: number;
+    /** id */
     id?: number;
-    isDelete?: number;
-    tags?: string;
-    thumbNum?: number;
+    /** 标题 */
     title?: string;
-    updateTime?: string;
+    /** 内容 */
+    content?: string;
+    /** 封面 */
+    cover?: string;
+    /** 标签列表 json */
+    tags?: string;
+    /** 点赞数 */
+    thumbNum?: number;
+    /** 收藏数 */
+    favourNum?: number;
+    /** 创建用户 id */
     userId?: number;
+    /** 创建时间 */
+    createTime?: string;
+    /** 更新时间 */
+    updateTime?: string;
+    /** 是否删除 */
+    isDelete?: number;
   };
 
   type PostAddRequest = {
-    content?: string;
-    cover?: string;
-    tags?: string[];
+    /** 标题 */
     title?: string;
+    /** 内容 */
+    content?: string;
+    /** 封面 */
+    cover?: string;
+    /** 标签列表 */
+    tags?: string[];
   };
 
   type PostEditRequest = {
-    content?: string;
-    cover?: string;
+    /** id */
     id?: number;
-    tags?: string[];
+    /** 标题 */
     title?: string;
+    /** 内容 */
+    content?: string;
+    /** 封面 */
+    cover?: string;
+    /** 标签列表 */
+    tags?: string[];
   };
 
   type PostFavourAddRequest = {
+    /** 帖子 id */
     postId?: number;
   };
 
   type PostFavourQueryRequest = {
+    /** 当前页号 */
     current?: number;
+    /** 页面大小 */
     pageSize?: number;
-    postQueryRequest?: PostQueryRequest;
+    /** 排序字段 */
     sortField?: string;
+    /** 排序顺序（默认升序） */
     sortOrder?: string;
+    postQueryRequest?: PostQueryRequest;
+    /** 用户 id */
     userId?: number;
   };
 
   type PostQueryRequest = {
-    content?: string;
+    /** 当前页号 */
     current?: number;
-    favourUserId?: number;
-    id?: number;
-    notId?: number;
-    orTags?: string[];
+    /** 页面大小 */
     pageSize?: number;
-    searchText?: string;
+    /** 排序字段 */
     sortField?: string;
+    /** 排序顺序（默认升序） */
     sortOrder?: string;
-    tags?: string[];
+    /** id */
+    id?: number;
+    /** notId */
+    notId?: number;
+    /** 搜索词 */
+    searchText?: string;
+    /** 标题 */
     title?: string;
+    /** 内容 */
+    content?: string;
+    /** 标签列表 */
+    tags?: string[];
+    /** 至少有一个标签 */
+    orTags?: string[];
+    /** 创建用户 id */
     userId?: number;
+    /** 收藏用户 id */
+    favourUserId?: number;
   };
 
   type PostThumbAddRequest = {
+    /** 帖子 id */
     postId?: number;
   };
 
   type PostUpdateRequest = {
-    content?: string;
-    cover?: string;
+    /** id */
     id?: number;
-    tags?: string[];
+    /** 标题 */
     title?: string;
+    /** 内容 */
+    content?: string;
+    /** 封面 */
+    cover?: string;
+    /** 标签列表 */
+    tags?: string[];
   };
 
   type PostVO = {
-    content?: string;
-    cover?: string;
-    createTime?: string;
-    favourNum?: number;
-    hasFavour?: boolean;
-    hasThumb?: boolean;
+    /** id */
     id?: number;
-    tags?: string[];
-    thumbNum?: number;
+    /** 标题 */
     title?: string;
-    updateTime?: string;
+    /** 内容 */
+    content?: string;
+    /** 封面 */
+    cover?: string;
+    /** 点赞数 */
+    thumbNum?: number;
+    /** 收藏数 */
+    favourNum?: number;
+    /** 创建用户 id */
     userId?: number;
+    /** 创建时间 */
+    createTime?: string;
+    /** 更新时间 */
+    updateTime?: string;
+    /** 标签列表 */
+    tags?: string[];
     userVO?: UserVO;
-  };
-
-  type Raster = {
-    bounds?: Rectangle;
-    dataBuffer?: DataBuffer;
-    height?: number;
-    minX?: number;
-    minY?: number;
-    numBands?: number;
-    numDataElements?: number;
-    parent?: Raster;
-    sampleModel?: SampleModel;
-    sampleModelTranslateX?: number;
-    sampleModelTranslateY?: number;
-    transferType?: number;
-    width?: number;
-  };
-
-  type Rectangle = {
-    bounds2D?: Rectangle2D;
-    centerX?: number;
-    centerY?: number;
-    empty?: boolean;
-    height?: number;
-    location?: Point;
-    maxX?: number;
-    maxY?: number;
-    minX?: number;
-    minY?: number;
-    size?: Dimension;
-    width?: number;
-    x?: number;
-    y?: number;
-  };
-
-  type Rectangle2D = {
-    bounds?: Rectangle;
-    bounds2D?: Rectangle2D;
-    centerX?: number;
-    centerY?: number;
-    empty?: boolean;
-    height?: number;
-    maxX?: number;
-    maxY?: number;
-    minX?: number;
-    minY?: number;
-    width?: number;
-    x?: number;
-    y?: number;
-  };
-
-  type RenderedImage = {
-    colorModel?: ColorModel;
-    data?: Raster;
-    height?: number;
-    minTileX?: number;
-    minTileY?: number;
-    minX?: number;
-    minY?: number;
-    numXTiles?: number;
-    numYTiles?: number;
-    propertyNames?: string[];
-    sampleModel?: SampleModel;
-    sources?: RenderedImage[];
-    tileGridXOffset?: number;
-    tileGridYOffset?: number;
-    tileHeight?: number;
-    tileWidth?: number;
-    width?: number;
-  };
-
-  type SampleModel = {
-    dataType?: number;
-    height?: number;
-    numBands?: number;
-    numDataElements?: number;
-    sampleSize?: number[];
-    transferType?: number;
-    width?: number;
+    /** 是否已点赞 */
+    hasThumb?: boolean;
+    /** 是否已收藏 */
+    hasFavour?: boolean;
   };
 
   type SearchRequest = {
+    /** 当前页号 */
     current?: number;
+    /** 页面大小 */
     pageSize?: number;
-    searchText?: string;
+    /** 排序字段 */
     sortField?: string;
+    /** 排序顺序（默认升序） */
     sortOrder?: string;
+    /** 搜索词 */
+    searchText?: string;
+    /** 分类 */
     type?: string;
   };
 
-  type SearchVOObject_ = {
+  type SearchVOObject = {
     dataList?: Record<string, any>[];
   };
 
-  type Shape = {
-    bounds?: Rectangle;
-    bounds2D?: Rectangle2D;
-  };
-
   type Tag = {
-    createTime?: string;
+    /** id */
     id?: number;
-    isDelete?: number;
-    isParent?: number;
-    parentId?: number;
+    /** 标签名称 */
     tagName?: string;
-    updateTime?: string;
+    /** 用户id */
     userId?: number;
+    /** 父标签id */
+    parentId?: number;
+    /** 0-不是父标签，1-是父标签 */
+    isParent?: number;
+    /** 创建时间 */
+    createTime?: string;
+    /** 更新时间 */
+    updateTime?: string;
+    /** 是否删除 */
+    isDelete?: number;
   };
 
   type TagAddRequest = {
-    isParent?: number;
+    /** 标签名称 */
+    tagName?: string;
+    /** 父标签id */
     parentId?: number;
-    tagName?: string;
-  };
-
-  type TagChildren = {
-    children?: TagChildren[];
-    id?: number;
-    tagName?: string;
-  };
-
-  type TagDTO = {
-    children?: TagChildren[];
-    id?: number;
-    tagName?: string;
+    /** 0-不是父标签，1-是父标签 */
+    isParent?: number;
   };
 
   type TagEditRequest = {
+    /** id */
     id?: number;
+    /** 标签名称 */
     tagName?: string;
   };
 
   type TagQueryRequest = {
+    /** 当前页号 */
     current?: number;
-    id?: number;
-    isParent?: number;
+    /** 页面大小 */
     pageSize?: number;
-    parentId?: number;
+    /** 排序字段 */
     sortField?: string;
+    /** 排序顺序（默认升序） */
     sortOrder?: string;
+    /** id */
+    id?: number;
+    /** 标签名称 */
     tagName?: string;
+    /** 用户id */
     userId?: number;
+    /** 父标签id */
+    parentId?: number;
+    /** 0-不是父标签，1-是父标签 */
+    isParent?: number;
   };
 
   type TagUpdateRequest = {
+    /** id */
     id?: number;
-    idList?: number[];
-    isParent?: number;
-    parentId?: number;
+    /** 标签名称 */
     tagName?: string;
+    /** 父标签id */
+    parentId?: number;
+    /** 0-不是父标签，1-是父标签 */
+    isParent?: number;
+    /** id列表 */
+    idList?: number[];
   };
 
   type TagVO = {
-    createTime?: string;
+    /** id */
     id?: number;
-    isParent?: number;
-    parentId?: number;
+    /** 标签名称 */
     tagName?: string;
-    updateTime?: string;
+    /** 用户id */
     userId?: number;
+    /** 父标签id */
+    parentId?: number;
+    /** 0-不是父标签，1-是父标签 */
+    isParent?: number;
+    /** 创建时间 */
+    createTime?: string;
+    /** 更新时间 */
+    updateTime?: string;
     userVO?: UserVO;
   };
 
-  type uploadFileUsingPOSTParams = {
+  type uploadFileParams = {
+    uploadFileRequest: UploadFileRequest;
+  };
+
+  type UploadFileRequest = {
+    /** 业务 */
     biz?: string;
   };
 
   type User = {
-    createTime?: string;
+    /** id */
     id?: number;
-    isDelete?: number;
-    mpOpenId?: string;
-    unionId?: string;
-    updateTime?: string;
+    /** 用户账号 */
     userAccount?: string;
-    userAvatar?: string;
-    userEmail?: string;
-    userName?: string;
+    /** 用户密码 */
     userPassword?: string;
+    /** 开放平台id */
+    unionId?: string;
+    /** 公众号openId */
+    mpOpenId?: string;
+    /** 用户昵称 */
+    userName?: string;
+    /** 用户头像 */
+    userAvatar?: string;
+    /** 用户角色：user/admin/ban */
     userRole?: string;
+    /** 用户邮箱 */
+    userEmail?: string;
+    /** 创建时间 */
+    createTime?: string;
+    /** 更新时间 */
+    updateTime?: string;
+    /** 是否删除 */
+    isDelete?: number;
   };
 
   type UserAddRequest = {
-    userAccount?: string;
-    userAvatar?: string;
-    userEmail?: string;
+    /** 用户昵称 */
     userName?: string;
+    /** 账号 */
+    userAccount?: string;
+    /** 用户头像 */
+    userAvatar?: string;
+    /** 用户角色: user, admin */
     userRole?: string;
+    /** 用户邮箱 */
+    userEmail?: string;
   };
 
   type UserEditRequest = {
-    userAvatar?: string;
-    userEmail?: string;
+    /** 用户昵称 */
     userName?: string;
+    /** 用户密码 */
     userPassword?: string;
+    /** 用户头像 */
+    userAvatar?: string;
+    /** 用户邮箱 */
+    userEmail?: string;
   };
 
-  type userLoginByWxOpenUsingGETParams = {
-    /** code */
+  type userLoginByWxOpenParams = {
     code: string;
   };
 
   type UserLoginRequest = {
+    /** 账号 */
     userAccount?: string;
+    /** 密码 */
     userPassword?: string;
   };
 
   type UserQueryRequest = {
+    /** 当前页号 */
     current?: number;
-    id?: number;
-    mpOpenId?: string;
-    notId?: number;
+    /** 页面大小 */
     pageSize?: number;
-    searchText?: string;
+    /** 排序字段 */
     sortField?: string;
+    /** 排序顺序（默认升序） */
     sortOrder?: string;
+    /** id */
+    id?: number;
+    /** notId */
+    notId?: number;
+    /** 开放平台id */
     unionId?: string;
-    userEmail?: string;
+    /** 公众号openId */
+    mpOpenId?: string;
+    /** 用户昵称 */
     userName?: string;
+    /** 用户角色：user/admin/ban */
     userRole?: string;
+    /** 用户邮箱 */
+    userEmail?: string;
+    /** 搜索关键词 */
+    searchText?: string;
   };
 
   type UserRegisterRequest = {
-    checkPassword?: string;
+    /** 账号 */
     userAccount?: string;
+    /** 密码 */
     userPassword?: string;
+    /** 再次输入密码 */
+    checkPassword?: string;
   };
 
   type UserUpdateRequest = {
+    /** id */
     id?: number;
-    userAvatar?: string;
-    userEmail?: string;
+    /** 用户昵称 */
     userName?: string;
+    /** 用户密码 */
     userPassword?: string;
+    /** 用户头像 */
+    userAvatar?: string;
+    /** 用户角色：user/admin/ban */
     userRole?: string;
+    /** 用户邮箱 */
+    userEmail?: string;
   };
 
   type UserVO = {
-    createTime?: string;
+    /** id */
     id?: number;
-    mpOpenId?: string;
-    unionId?: string;
-    updateTime?: string;
-    userAvatar?: string;
-    userEmail?: string;
+    /** 用户昵称 */
     userName?: string;
+    /** 开放平台id */
+    unionId?: string;
+    /** 公众号openId */
+    mpOpenId?: string;
+    /** 用户头像 */
+    userAvatar?: string;
+    /** 用户角色：user/admin/ban */
     userRole?: string;
-  };
-
-  type WritableRaster = {
-    bounds?: Rectangle;
-    dataBuffer?: DataBuffer;
-    height?: number;
-    minX?: number;
-    minY?: number;
-    numBands?: number;
-    numDataElements?: number;
-    parent?: Raster;
-    sampleModel?: SampleModel;
-    sampleModelTranslateX?: number;
-    sampleModelTranslateY?: number;
-    transferType?: number;
-    width?: number;
-    writableParent?: WritableRaster;
+    /** 用户邮箱 */
+    userEmail?: string;
+    /** 创建时间 */
+    createTime?: string;
+    /** 更新时间 */
+    updateTime?: string;
   };
 }

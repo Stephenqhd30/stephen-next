@@ -9,8 +9,8 @@ import { useDispatch } from "react-redux";
 import { AppDispatch } from "@/store";
 import { setLoginUser } from "@/store/modules";
 import { useRouter } from "next/navigation";
-import { userLogoutUsingPost } from "@/api/userController";
 import { LoginRegisterModal } from "@/components/ReLogin";
+import {userLogout} from '@/api/userController';
 
 export type AvatarDropdownProps = {
   currentUser?: API.LoginUserVO;
@@ -26,7 +26,7 @@ const AvatarDropdown: React.FC<AvatarDropdownProps> = ({ currentUser }) => {
 
   const loginOut = async () => {
     try {
-      const res: any = await userLogoutUsingPost();
+      const res: any = await userLogout();
       if (res.code === 0 && res.data) {
         dispatch(setLoginUser({}));
         router.replace("/");

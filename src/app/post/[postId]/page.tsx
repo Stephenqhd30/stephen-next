@@ -1,11 +1,11 @@
 "use client";
 
 import React, { useCallback, useEffect, useState } from "react";
-import { PageContainer, ProCard } from "@ant-design/pro-components";
+import { PageContainer } from "@ant-design/pro-components";
 import { Grid, message } from "antd";
-import { searchPostVoByPageUsingPost } from "@/api/searchController";
 import { MdViewer } from "@/components/Markdown";
 import { useParams } from "next/navigation";
+import {searchPostVoByPage} from '@/api/searchController';
 
 const { useBreakpoint } = Grid;
 
@@ -24,7 +24,7 @@ const PostDetailsPage: React.FC = () => {
   const loadData = useCallback(async () => {
     if (!postId) return;
     try {
-      const res: any = await searchPostVoByPageUsingPost({
+      const res: any = await searchPostVoByPage({
         id: postId as any,
       });
       if (res.code === 0 && res?.data?.records?.length) {

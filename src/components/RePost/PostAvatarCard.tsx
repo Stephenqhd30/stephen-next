@@ -4,7 +4,6 @@ import { StatisticCard } from "@ant-design/pro-components";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
 
-// 使用 relativeTime 插件
 dayjs.extend(relativeTime);
 
 interface PostAvatarCardProps {
@@ -42,7 +41,7 @@ const PostCard: React.FC<PostAvatarCardProps> = ({ post }) => {
       chart={
         <Image
           preview={false}
-          className="w-8 h-8 border-2 border-white shadow-lg"
+          className="w-8 h-8 border-2 border-white shadow-lg object-cover"
           src={post.cover || "/logo.svg"}
           alt={post.title}
           draggable="false"

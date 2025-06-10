@@ -2,12 +2,12 @@
 /* eslint-disable */
 import request from "@/request";
 
-/** addPost POST /api/post/add */
-export async function addPostUsingPost(
+/** 此处后端没有提供注释 POST /post/add */
+export async function addPost(
   body: API.PostAddRequest,
   options?: { [key: string]: any }
 ) {
-  return request<API.BaseResponseLong_>("/api/post/add", {
+  return request<API.BaseResponseLong>("/post/add", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -17,12 +17,12 @@ export async function addPostUsingPost(
   });
 }
 
-/** deletePost POST /api/post/delete */
-export async function deletePostUsingPost(
+/** 此处后端没有提供注释 POST /post/delete */
+export async function deletePost(
   body: API.DeleteRequest,
   options?: { [key: string]: any }
 ) {
-  return request<API.BaseResponseBoolean_>("/api/post/delete", {
+  return request<API.BaseResponseBoolean>("/post/delete", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -32,12 +32,12 @@ export async function deletePostUsingPost(
   });
 }
 
-/** editPost POST /api/post/edit */
-export async function editPostUsingPost(
+/** 此处后端没有提供注释 POST /post/edit */
+export async function editPost(
   body: API.PostEditRequest,
   options?: { [key: string]: any }
 ) {
-  return request<API.BaseResponseBoolean_>("/api/post/edit", {
+  return request<API.BaseResponseBoolean>("/post/edit", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -47,13 +47,13 @@ export async function editPostUsingPost(
   });
 }
 
-/** getPostVOById GET /api/post/get/vo */
-export async function getPostVoByIdUsingGet(
+/** 此处后端没有提供注释 GET /post/get/vo */
+export async function getPostVoById(
   // 叠加生成的Param类型 (非body参数swagger默认没有生成对象)
-  params: API.getPostVOByIdUsingGETParams,
+  params: API.getPostVOByIdParams,
   options?: { [key: string]: any }
 ) {
-  return request<API.BaseResponsePostVO_>("/api/post/get/vo", {
+  return request<API.BaseResponsePostVO>("/post/get/vo", {
     method: "GET",
     params: {
       ...params,
@@ -62,12 +62,12 @@ export async function getPostVoByIdUsingGet(
   });
 }
 
-/** listPostByPage POST /api/post/list/page */
-export async function listPostByPageUsingPost(
+/** 此处后端没有提供注释 POST /post/list/page */
+export async function listPostByPage(
   body: API.PostQueryRequest,
   options?: { [key: string]: any }
 ) {
-  return request<API.BaseResponsePagePost_>("/api/post/list/page", {
+  return request<API.BaseResponsePagePost>("/post/list/page", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -77,12 +77,12 @@ export async function listPostByPageUsingPost(
   });
 }
 
-/** listPostVOByPage POST /api/post/list/page/vo */
-export async function listPostVoByPageUsingPost(
+/** 此处后端没有提供注释 POST /post/list/page/vo */
+export async function listPostVoByPage(
   body: API.PostQueryRequest,
   options?: { [key: string]: any }
 ) {
-  return request<API.BaseResponsePagePostVO_>("/api/post/list/page/vo", {
+  return request<API.BaseResponsePagePostVO>("/post/list/page/vo", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -92,12 +92,12 @@ export async function listPostVoByPageUsingPost(
   });
 }
 
-/** listMyPostVOByPage POST /api/post/my/list/page/vo */
-export async function listMyPostVoByPageUsingPost(
+/** 此处后端没有提供注释 POST /post/my/list/page/vo */
+export async function listMyPostVoByPage(
   body: API.PostQueryRequest,
   options?: { [key: string]: any }
 ) {
-  return request<API.BaseResponsePagePostVO_>("/api/post/my/list/page/vo", {
+  return request<API.BaseResponsePagePostVO>("/post/my/list/page/vo", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -107,12 +107,12 @@ export async function listMyPostVoByPageUsingPost(
   });
 }
 
-/** updatePost POST /api/post/update */
-export async function updatePostUsingPost(
+/** 此处后端没有提供注释 POST /post/update */
+export async function updatePost(
   body: API.PostUpdateRequest,
   options?: { [key: string]: any }
 ) {
-  return request<API.BaseResponseBoolean_>("/api/post/update", {
+  return request<API.BaseResponseBoolean>("/post/update", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

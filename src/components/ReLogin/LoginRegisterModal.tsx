@@ -1,14 +1,13 @@
 import React, { useState } from "react";
-import { Modal, message } from "antd";
+import { message, Modal } from "antd";
 import { LoginForm, ProForm, ProFormText } from "@ant-design/pro-form";
 import { LockOutlined, UserOutlined } from "@ant-design/icons";
-import { userLoginUsingPost } from "@/api/userController";
-import { userRegisterUsingPost } from "@/api/userController"; // 注册 API
 import Image from "next/image";
 import { AppDispatch } from "@/store";
 import { useDispatch } from "react-redux";
 import { setLoginUser } from "@/store/modules";
 import { LOGO, SUBTITLE, TITLE } from "@/constants";
+import { userLogin, userRegister } from "@/api/userController";
 
 interface LoginRegisterModalProps {
   open: boolean;
@@ -22,14 +21,14 @@ const LoginRegisterModal: React.FC<LoginRegisterModalProps> = ({
   open,
   onCancel,
 }) => {
-  const [isLogin, setIsLogin] = useState(true); // 控制当前是登录框还是注册框
+  const [isLogin, setIsLogin] = useState(true);
   const [form] = ProForm.useForm();
   const dispatch = useDispatch<AppDispatch>();
 
   // 登录框提交
   const doLoginSubmit = async (values: any) => {
     try {
-      const res: any = await userLoginUsingPost(values);
+      const res: any = await userLogin(values);
       if (res.code === 0 && res.data) {
         message.success("登录成功！");
         localStorage.setItem("stephen-next-token", res.data.token);
@@ -47,10 +46,10 @@ const LoginRegisterModal: React.FC<LoginRegisterModalProps> = ({
   // 注册框提交
   const doRegisterSubmit = async (values: any) => {
     try {
-      const res = await userRegisterUsingPost(values);
+      const res = await userRegister(values);
       if (res.data) {
         message.success("注册成功，请登录");
-        setIsLogin(true); // 注册完成后切换到登录框
+        setIsLogin(true);
       }
     } catch (e: any) {
       message.error("注册失败，" + e.message);

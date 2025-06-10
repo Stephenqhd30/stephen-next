@@ -3,7 +3,6 @@
 import React, { useState } from "react";
 import { Button } from "antd";
 import { ProCard } from "@ant-design/pro-components";
-import { Markdown } from "@ant-design/pro-editor";
 import PostAvatarCard from "@/components/RePost/PostAvatarCard";
 import PostCardModal from "@/components/RePost/PostCardModal";
 import ActionTabbar from "@/components/RePost/ActionTabbar";
@@ -35,7 +34,7 @@ const PostCard: React.FC<PostAvatarCardProps> = ({ post }) => {
           onCancel={() => setVisible(false)}
         />
       )}
-      <MdViewer value={truncatedContent} key={post.id} />
+      <MdViewer isMobile={true} value={truncatedContent} key={post.id} />
       {content.length > maxLength && (
         <Button type="link" onClick={() => setVisible(!visible)}>
           {"展开"}

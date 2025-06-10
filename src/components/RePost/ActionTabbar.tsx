@@ -6,8 +6,8 @@ import {
   StarOutlined,
   StarTwoTone,
 } from "@ant-design/icons";
-import { doPostFavourUsingPost } from "@/api/postFavourController";
-import { doThumbUsingPost } from "@/api/postThumbController";
+import {doPostFavour} from '@/api/postFavourController';
+import {doThumb} from '@/api/postThumbController';
 
 interface Props {
   post: API.PostVO;
@@ -34,7 +34,7 @@ const ActionTabbar: React.FC<Props> = ({ post }) => {
    */
   const handleFavour = async () => {
     try {
-      const res: any = await doPostFavourUsingPost({
+      const res: any = await doPostFavour({
         postId: post.id,
       });
       if (res.code === 0 && res.data) {
@@ -54,7 +54,7 @@ const ActionTabbar: React.FC<Props> = ({ post }) => {
    */
   const handleThumb = async () => {
     try {
-      const res: any = await doThumbUsingPost({
+      const res: any = await doThumb({
         postId: post.id,
       });
       if (res.code === 0 && res.data) {
